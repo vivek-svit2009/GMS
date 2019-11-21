@@ -127,6 +127,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ckeditor\ckeditor.js" />
+    <Content Include="Assets\css\bootstrap-clockpicker.min.css" />
+    <Content Include="Assets\css\bootstrap-datetimepicker.css" />
+    <Content Include="Assets\css\bootstrap-select.min.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\owl.carousel.min.css" />
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\formValidation\formValidation.min.css" />
+    <Content Include="Assets\formValidation\formValidation.min.js" />
+    <Content Include="Assets\formValidation\js\bootstrap.min.js" />
+    <Content Include="Assets\images\1.png" />
+    <Content Include="Assets\images\2.jfif" />
+    <Content Include="Assets\images\3.jpg" />
+    <Content Include="Assets\images\4.png" />
+    <Content Include="Assets\images\angel-meetup.png" />
+    <Content Include="Assets\images\logo.png" />
+    <Content Include="Assets\images\m1.jpg" />
+    <Content Include="Assets\images\virtual-incubation.png" />
+    <Content Include="Assets\js\bootstrap-clockpicker.min.js" />
+    <Content Include="Assets\js\bootstrap-datetimepicker.js" />
+    <Content Include="Assets\js\bootstrap-select.min.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\custom-file-input.js" />
+    <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\jquery.min.js" />
+    <Content Include="Assets\js\jquery.raty.js" />
+    <Content Include="Assets\js\jquery.validate.min.js" />
+    <Content Include="Assets\js\moment.js" />
+    <Content Include="Assets\js\owl.carousel.min.js" />
+    <Content Include="Assets\js\readmore.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
