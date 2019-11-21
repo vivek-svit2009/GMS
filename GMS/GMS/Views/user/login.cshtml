@@ -18,9 +18,10 @@
     <div class="container">
         <header class="header-title text-left">
             <!--<p>Mentors Sign in to continue your journey of guiding others and helping them achieve their goals!<br>
-            Startups sign in to continue your journey of fulfilling your dreams while being guided by the best in the business!</p>-->
+        Startups sign in to continue your journey of fulfilling your dreams while being guided by the best in the business!</p>-->
         </header>
-        <form action="/user/login" id="mentor_login" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        @using (Html.BeginForm("login", "user", FormMethod.Post))
+        {
             <div class="data-table">
                 <div class="data-cell per_info">
 
@@ -37,14 +38,15 @@
                             <input type="password" name="password" value="" class="form-control  input-pass" id="password" maxlength="15" placeholder="Password*" />
 
                         </div>
-                        <div class="form-group login-submit clearfix">
-                            <input type="submit" value="Log In" class="btn btn-lg btn-primary btn-submit pull-left">
-                            <a href="/user/forget_password" class="btn-fgt pull-right">Forgot Password?</a>
+                        
+                            <div class="form-group login-submit clearfix">
+                                <input type="submit" value="Log In" class="btn btn-lg btn-primary btn-submit pull-left">
+                                <a href="/user/forget_password" class="btn-fgt pull-right">Forgot Password?</a>
+                            </div>
+
+
                         </div>
-
-
                     </div>
-                </div>
                 <div class="data-cell">
                     <div class="text-center reg_start">
                         <div class="login-others text-center">
@@ -61,7 +63,7 @@
                     </div>
                 </div>
             </div>
+        }
 
-        </form>
     </div>
 </section>
