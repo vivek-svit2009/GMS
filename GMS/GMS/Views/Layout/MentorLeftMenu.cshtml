@@ -1,11 +1,11 @@
 ﻿<div class="dashboard-left data-cell">
 
     <div id="sidebar-nav">
-        <link href="https://www.mentorally.com/assets/frontend/css/cropper.min.css" type="text/css" rel="stylesheet">
-        <script type="text/javascript" src="https://www.mentorally.com/assets/frontend/js/cropper.min.js"></script>
+        <link href="/assets/frontend/css/cropper.min.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="/assets/frontend/js/cropper.min.js"></script>
         <div class="log-user-data" id="manual_personal">
             <div class="log-user-img">
-                <img class="img-circle" src="https://www.mentorally.com/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" alt="">
+                <img class="img-circle" src="/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" alt="">
                 <a href="javascript:void(0)" id="edit_personal_info" data-toggle="modal" data-target="#profileModal" class="btn btn-edit"><i class="fa fa-edit"></i></a>
             </div>
             <div class="log-user-info">
@@ -16,14 +16,14 @@
 
 
         <ul class="nav">
-            <li><a href="https://www.mentorally.com/notifications"><i class="fa fa-bell"></i><span>Activity Stream</span></a></li>
-            <li><a class="active" href="https://www.mentorally.com/mentor/profile"><i class="fa fa-info"></i><span>General Information</span></a></li>
-            <li><a href="https://www.mentorally.com/mentor/create_schedule"><i class="fa fa-calendar"></i><span>Scheduling</span></a></li>
-            <li><a href="https://www.mentorally.com/events/my"><i class="fa fa-bullhorn"></i><span>Events</span></a></li>
-            <li><a href="https://www.mentorally.com/webinars/show"><i class="fa fa-globe"></i><span>Webinar</span></a></li>
-            <li><a href="https://www.mentorally.com/wallet/all"><i class="fa fa-dollar"></i><span>Wallet</span></a></li>
-            <li><a href="https://www.mentorally.com/messages"><i class="fa fa-comments"></i><span>Messaging</span></a></li>
-            <li><a href="https://www.mentorally.com/mentor/my_network"><i class="fa fa-wifi"></i><span>My Network</span></a></li>
+            <li><a href="/notifications"><i class="fa fa-bell"></i><span>Activity Stream</span></a></li>
+            <li><a class="active" href="/mentor/profile"><i class="fa fa-info"></i><span>General Information</span></a></li>
+            <li><a href="/mentor/create_schedule"><i class="fa fa-calendar"></i><span>Scheduling</span></a></li>
+            <li><a href="/events/my"><i class="fa fa-bullhorn"></i><span>Events</span></a></li>
+            <li><a href="/webinars/show"><i class="fa fa-globe"></i><span>Webinar</span></a></li>
+            <li><a href="/wallet/all"><i class="fa fa-dollar"></i><span>Wallet</span></a></li>
+            <li><a href="/messages"><i class="fa fa-comments"></i><span>Messaging</span></a></li>
+            <li><a href="/mentor/my_network"><i class="fa fa-wifi"></i><span>My Network</span></a></li>
         </ul>
     </div>
 
@@ -49,11 +49,11 @@
                                 <div class="jc-demo-box">
 
                                     <div id="preview"></div>
-                                    <img class="img-circle" src="https://www.mentorally.com/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" id="profile_image" alt="Profile Img">
+                                    <img class="img-circle" src="/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" id="profile_image" alt="Profile Img">
 
                                     <div class="clearfix upload-pro-btn mt20">
                                         <p class="text-help">Upload your photo here.<br />The photo can be a GIF, PNG or JPG type file.</p>
-                                        <form action="https://www.mentorally.com/mentor/profile" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                        <form action="/mentor/profile" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                                             <input type="file" data-buttonText="Edit Photo" class="filestyle  inputfile-1" name="image" data-input="false" data-buttonName="btn-black btn-sm" data-icon="false" id="o_file" data-badge="false" data-target="#aImgShow">
 
                                             <input type="hidden" name="crop_x" id="crop_x" value="" />
@@ -229,7 +229,7 @@
             fd.append('crop_h', $('#crop_h').val());
 
             $.ajax({
-                url: 'https://www.mentorally.com/Ajaxcontroller/upload_profile_image',
+                url: '/Ajaxcontroller/upload_profile_image',
                 type: 'POST',
                 data: fd,
                 async: false,
