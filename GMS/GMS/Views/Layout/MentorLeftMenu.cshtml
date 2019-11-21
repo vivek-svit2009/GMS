@@ -1,0 +1,263 @@
+﻿<div class="dashboard-left data-cell">
+
+    <div id="sidebar-nav">
+        <link href="https://www.mentorally.com/assets/frontend/css/cropper.min.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="https://www.mentorally.com/assets/frontend/js/cropper.min.js"></script>
+        <div class="log-user-data" id="manual_personal">
+            <div class="log-user-img">
+                <img class="img-circle" src="https://www.mentorally.com/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" alt="">
+                <a href="javascript:void(0)" id="edit_personal_info" data-toggle="modal" data-target="#profileModal" class="btn btn-edit"><i class="fa fa-edit"></i></a>
+            </div>
+            <div class="log-user-info">
+                <h3 class="log-user-title">SHIV KUMAR SHARMA</h3>
+                <p class="log-user-mail">vishal.svit2009@gmail.com</p>
+            </div>
+        </div>
+
+
+        <ul class="nav">
+            <li><a href="https://www.mentorally.com/notifications"><i class="fa fa-bell"></i><span>Activity Stream</span></a></li>
+            <li><a class="active" href="https://www.mentorally.com/mentor/profile"><i class="fa fa-info"></i><span>General Information</span></a></li>
+            <li><a href="https://www.mentorally.com/mentor/create_schedule"><i class="fa fa-calendar"></i><span>Scheduling</span></a></li>
+            <li><a href="https://www.mentorally.com/events/my"><i class="fa fa-bullhorn"></i><span>Events</span></a></li>
+            <li><a href="https://www.mentorally.com/webinars/show"><i class="fa fa-globe"></i><span>Webinar</span></a></li>
+            <li><a href="https://www.mentorally.com/wallet/all"><i class="fa fa-dollar"></i><span>Wallet</span></a></li>
+            <li><a href="https://www.mentorally.com/messages"><i class="fa fa-comments"></i><span>Messaging</span></a></li>
+            <li><a href="https://www.mentorally.com/mentor/my_network"><i class="fa fa-wifi"></i><span>My Network</span></a></li>
+        </ul>
+    </div>
+
+
+    <div class="modal fade modal-upload" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="mapServicesLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Profile Picture</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div id="msg" style="display:none;"></div>
+                    <div class="modal-body-next">
+                        <div class="modal-message alert" style="display: none;"></div>
+                        <div class="model-error" id="alertt"></div>
+
+
+                        <div class="row">
+                            <div class="span12">
+                                <div class="jc-demo-box">
+
+                                    <div id="preview"></div>
+                                    <img class="img-circle" src="https://www.mentorally.com/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" id="profile_image" alt="Profile Img">
+
+                                    <div class="clearfix upload-pro-btn mt20">
+                                        <p class="text-help">Upload your photo here.<br />The photo can be a GIF, PNG or JPG type file.</p>
+                                        <form action="https://www.mentorally.com/mentor/profile" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                            <input type="file" data-buttonText="Edit Photo" class="filestyle  inputfile-1" name="image" data-input="false" data-buttonName="btn-black btn-sm" data-icon="false" id="o_file" data-badge="false" data-target="#aImgShow">
+
+                                            <input type="hidden" name="crop_x" id="crop_x" value="" />
+                                            <input type="hidden" name="crop_y" id="crop_y" value="" />
+                                            <input type="hidden" name="crop_w" id="crop_w" value="" />
+                                            <input type="hidden" name="crop_h" id="crop_h" value="" />
+                                            <input type="submit" name="submitbtn" value="Upload" id="upload" style="display:none" class="btn btn-primary btn-lg" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    $(function () {
+        // image preview
+        $('input[name="image"]').on('change', function () {
+            $('#profile_image').remove();
+            if (typeof (FileReader) != "undefined") {
+                var image_holder = $("#preview");
+                image_holder.empty();
+                var file = this.files[0];
+                var imagefile = file.type;
+                var file_size = file.size;
+                var match = ["image/jpeg", "image/png", "image/jpg", "image/gif", "video/mov", "video/avi", "video/mp4", "video/mp3", "video/wmv"];
+                if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]) || (imagefile == match[3]) || (imagefile == match[4]) || (imagefile == match[5]) || (imagefile == match[6]) || (imagefile == match[7]) || (imagefile == match[8]))) {
+                    $("#image").val('');
+                    $("#image").replaceWith($("#image").clone(true));
+                    $("<p />", {
+                        "class": "text-danger",
+                        "text": "Upload only jpeg/jpg, png or gif image."
+                    }).appendTo(image_holder);
+                    return false;
+                }
+                else if (file_size > 2097152) { // 2MB = 2097152 kB = 1024 * 1024 * 2
+                    $("#image").val('');
+                    //$("#image").replaceWith($("#image").clone(true));
+                    $("<p />", {
+                        "class": "text-danger",
+                        "text": "Uploaded image exceeds the maximum allowed size of 2MB."
+                    }).appendTo(image_holder);
+                    return false;
+                }
+                else {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $("<img />", {
+                            "src": e.target.result,
+                            "class": "img-responsive",
+                            "id": "img_preview"
+
+                        }).appendTo(image_holder);
+
+                    }
+                    image_holder.show();
+                    reader.readAsDataURL($(this)[0].files[0]);
+                    $('#upload').show();
+                }
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+
+            var id = $(this).data('target');
+            var src = this;
+            showImage(src);
+        });
+    });
+
+    function showImage(src) {
+        var fr = new FileReader();
+        fr.onload = function (e) {
+            setTimeout(function () {
+                var image = document.querySelector('#img_preview');
+
+                cropper = new Cropper(image, {
+                    cropBoxResizable: true,
+                    dragMode: 'none',
+                    zoomable: false,
+                    built: function () {
+                        var cropper = this.cropper;
+                        cropper.setCropBoxData({ "left": 0, "top": 0, "width": 100, "height": 100 });
+                        var cropped = cropper.getData();
+
+                        $('#crop_x').val(Math.round(cropped.x));
+                        $('#crop_y').val(Math.round(cropped.y));
+                        $('#crop_w').val(Math.round(cropped.width));
+                        $('#crop_h').val(Math.round(cropped.height));
+                        $('#cropperModal').modal('hide');
+                        $('#cropper_msg').html('Cropped image changes will be reflected once you submit this form.');
+                        $('#cropper_msg').removeClass('hidden');
+
+                    },
+                    cropstart: function (data) {
+                        var cropper = this.cropper;
+                        var cropbox = cropper.getCropBoxData();
+                        start_cropbox_w = Math.round(cropbox.width);
+                        start_cropbox_h = Math.round(cropbox.height);
+                        start_cropbox_l = Math.round(cropbox.left);
+                        start_cropbox_t = Math.round(cropbox.top);
+                    },
+                    cropend: function (data) {
+                        var cropper = this.cropper;
+                        var cropbox = cropper.getCropBoxData();
+                        var cropbox_w = Math.round(cropbox.width);
+                        var cropbox_h = Math.round(cropbox.height);
+                        var cropbox_l = Math.round(cropbox.left);
+                        var cropbox_t = Math.round(cropbox.top);
+                        var container_w = $('#img-container').width();
+                        var container_h = $('#img-container').height();
+                        if (start_cropbox_w != cropbox_w) {
+                            if (container_h < cropbox_w)
+                                cropbox_w = cropbox_h;
+                            else
+                                cropbox_h = cropbox_w;
+                        }
+                        else if (start_cropbox_h != cropbox_h) {
+                            if (container_w < cropbox_h)
+                                cropbox_h = cropbox_w;
+                            else
+                                cropbox_w = cropbox_h;
+                        }
+                        cropper.setCropBoxData({ "left": cropbox_l, "top": cropbox_t, "width": cropbox_w, "height": cropbox_h });
+                        var cropped = cropper.getData();
+
+
+                        $('#crop_x').val(Math.round(cropped.x));
+                        $('#crop_y').val(Math.round(cropped.y));
+                        $('#crop_w').val(Math.round(cropped.width));
+                        $('#crop_h').val(Math.round(cropped.height));
+
+                    }
+                });
+            }, 500);
+        };
+        fr.readAsDataURL(src.files[0]);
+    }
+
+
+    $("#upload").click(function (evt) {
+
+        var crop_xaxis = parseInt($('#crop_x').val());
+        var crop_width = parseInt($('#crop_w').val());
+        var myImg = document.querySelector("#img_preview");
+        var realWidth = myImg.naturalWidth;
+        var realHeight = myImg.naturalHeight;
+
+        if ((crop_xaxis <= -1) || (crop_width >= realWidth)) {
+            alert('Please select a crop region inside image area then press upload.'); return false;
+        }
+        else {
+
+            evt.preventDefault();
+            var fd = new FormData();
+            fd.append('file', $('#o_file')[0].files[0]);
+            fd.append('crop_x', $('#crop_x').val());
+            fd.append('crop_y', $('#crop_y').val());
+            fd.append('crop_w', $('#crop_w').val());
+            fd.append('crop_h', $('#crop_h').val());
+
+            $.ajax({
+                url: 'https://www.mentorally.com/Ajaxcontroller/upload_profile_image',
+                type: 'POST',
+                data: fd,
+                async: false,
+                cache: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                processData: false,
+                //dataType:'json',
+                success: function (response) {
+                    var res = JSON.parse(response);
+                    if (res.status) {
+                        alert(res.msg);
+                        var url = base_url + '/assets/uploads/' + res.image;
+                        $('#manual_personal').find('img').attr('src', url);
+                        //$('#profileModal').modal('hide');
+                        location.reload();
+                    }
+                    else {
+                        alert(res.msg);
+                        return false;
+
+                    }
+                }
+            });
+            return false;
+        }
+
+    });
+
+
+</script>

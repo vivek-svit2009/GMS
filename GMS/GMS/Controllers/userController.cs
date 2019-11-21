@@ -29,6 +29,7 @@ namespace GMS.Controllers
             {
                 if (IsProfile.ToString() == "True")
                 {
+                    Session["UserEmail"] = form.email;
                     return RedirectToAction("profile", "mentor");
                 }
                 else
@@ -47,6 +48,7 @@ namespace GMS.Controllers
 
                     if (IsProfile1.ToString() == "True")
                     {
+                        Session["UserEmail"] = form.email;
                         return RedirectToAction("profile", "startup");
                     }
                     else
