@@ -2,30 +2,854 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<section id="home-slider" class="relative owl-carousel">
+    <!---<div class="item text-center" style="background-image:url(/Startup_funding2.jpg);"></div>-->
+    <div class="item text-center" style="background-image:url(../assets/images/4.png);"></div>
+    <div class="item text-center" style="background-image:url(../assets/images/2.jfif);"></div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="item text-center" style="background-image:url(../assets/images/3.jpg);">
+        <div class="data-table">
+            <div class="data-cell">
+                <div class="hp-banner-caption">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="mentor-heading"><strong>For Mentors</strong></h2>
+                            <p class="mentor-content"><i class="fa fa-hand-o-right"></i> Collaborate with potential Startups & Founders</p>
+                            <a href="/mentor/registration" class="btn btn-lg btn-primary mentor-signup">Signup</a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h2 class="startup-heading"><strong>For Startups</strong></h2>
+                            <p class="startup-content"><i class="fa fa-hand-o-right"></i> Collaborate with best experts &amp; grow faster</p>
+                            <a href="/startup/registration" class="btn btn-lg btn-primary startup-signup">Signup</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="indicator"></div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <!--<div class="item text-center" style="background-image:url(/assets/frontend/images/home-banner-4.jpg);">
+      <div class="data-table">
+        <div class="data-cell">
+            <div class="banner-header">
+              <header class="banner-header-title text-left">
+                <h3>Get Access to <strong>Inside Angel Mind</strong></h3>
+                <p>This is a series of interactions that we are conducting with the leading mentors, angel investors<br />
+                who will share from their wealth of knowledge insights on key aspects of setting up and running a successful startup.</p>
+                <a href="#slidevdo" class="btn btn-lg btn-primary" data-toggle="modal"><i class="fa fa-play-circle-o"></i> Watch Video</a>
+              </header>
+            </div>
+
+        </div>
+      </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <div class="item text-center" style="background-image:url(/assets/frontend/images/home-banner-1.jpg);">
+      <div class="data-table">
+        <div class="data-cell">
+            <div class="banner-header">
+              <header class="banner-header-title text-left">
+                <h3>Get <strong>Access</strong> To</h3>
+                <p>India's Most Exciting Mentor Network</p>
+                <a href="/mentor/registration" class="btn btn-lg btn-primary">Get Started</a> <a href="/meet-our-mentors" class="btn btn-lg btn-default">Find Your Expert</a>
+              </header>
+            </div>
+
+        </div>
+      </div>
     </div>
-</div>
+        <div class="item text-center" style="background-image:url(/assets/frontend/images/home-banner-2.jpg);">
+      <div class="data-table">
+        <div class="data-cell">
+            <div class="banner-header">
+              <header class="banner-header-title text-left">
+                <h3>GrowthHacks with <strong>Mentors</strong></h3>
+                <p>Develop new Skills while raising funds.</p>
+                <a href="/mentor/registration" class="btn btn-lg btn-primary">Get Started</a> <a href="/meet-our-mentors" class="btn btn-lg btn-default">Find Your Expert</a>
+              </header>
+            </div>
+
+        </div>
+      </div>
+    </div>
+        <div class="item text-center" style="background-image:url(/assets/frontend/images/home-banner-3.jpg);">
+      <div class="data-table">
+        <div class="data-cell">
+            <div class="banner-header">
+              <header class="banner-header-title text-left">
+                <h3>Learn to <strong>Lead</strong></h3>
+                <p>Wide selection of the right mentor, skill, timing and pace.</p>
+                <a href="/mentor/registration" class="btn btn-lg btn-primary">Get Started</a> <a href="/meet-our-mentors" class="btn btn-lg btn-default">Find Your Expert</a>
+              </header>
+            </div>
+
+        </div>
+      </div>
+    </div>-->
+</section>
+<section class="section about-mentor bg-grey">
+    <div class="container">
+        <header class="header-title text-center">
+            <h3 class="title">Meet Our Mentors</h3>
+            <p>Over 100 mentors from various domains and expertise. Get personalized incubation support from our handpicked angel investors. The engagement would be a blend of emails, live chats, scheduled calls & face-to-face sessions.</p>
+        </header>
+
+        <div class="mentor-carousel owl-carousel">
+
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/mentor-profile/aniruddhamalpani"><img src="/assets/uploads/frontuser/869e3803f151fa645b34e0ac509b7206.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Aniruddha Malpani</h4>
+                        <p><h5>Founder</h5> </p>
+                        <!--
+                                        <p><br>
+                        -->
+                        Mumbai, Maharashtra, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="chips-view text-sm"></div>                                <div class="p-cta">
+                        <a href="/mentor-profile/aniruddhamalpani" class="btn-vw">View Details</a>
+                        <a href="/user/connect/aniruddhamalpani" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/mentor-profile/pavanverma"><img src="/assets/uploads/frontuser/181e548dc93f819d944be5fc6091d56e.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+                                <img src="/assets/frontend/images/star-on.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Pavan Verma</h4>
+                        <p><h5>Founder & CEO</h5> </p>
+                        <!--
+                                        <p><br>
+                        -->
+                        Noida, Uttar Pradesh, India</p>
+                    </div>
+                    <div class="chips-view text-sm"><span>Growth Strategy</span><span>CRM</span><span>Software Development</span><span>BootStrapping</span><span>Angel Funding</span><span>Public Speaking</span><span>Productivity</span></div>
+
+
+                    <!--
+                                    <div class="col-sm-4">
+                                      <div class="indst-checkbox">
+                                        <label for="industry1">
+                                          <span class="data-table">
+                                            <span class="data-cell">
+                                                                                </span>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </div>
+                    -->
+                    <div class="p-cta">
+                        <a href="/mentor-profile/pavanverma" class="btn-vw">View Details</a>
+                        <a href="/user/connect/pavanverma" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/mentor-profile/bhoovarahanthirumalai"><img src="/assets/uploads/frontuser/5ce29fb912224ad372da5035441ecbce.png" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>BHOOVARAHAN THIRUMALAI</h4>
+                        <p><h5>Co-founder, board member. CEO</h5> </p>
+                        <!--
+                                        <p><br>
+                        -->
+                        chennai, Tamil Nadu, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="chips-view text-sm"><span>Business Plan/Model</span><span>Customer Engagement</span><span>Go to Market Strategy</span><span>Sales & Lead Generation</span><span>Growth Strategy</span><span>Innovation</span><span>BootStrapping</span><span>Angel Funding</span><span>Team Building</span></div>
+
+
+                    <!--
+                                    <div class="col-sm-4">
+                                      <div class="indst-checkbox">
+                                        <label for="industry1">
+                                          <span class="data-table">
+                                            <span class="data-cell">
+                                                                                </span>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </div>
+                    -->
+                    <div class="p-cta">
+                        <a href="/mentor-profile/bhoovarahanthirumalai" class="btn-vw">View Details</a>
+                        <a href="/user/connect/bhoovarahanthirumalai" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/mentor-profile/chandrashekarkupperi"><img src="/assets/uploads/frontuser/ed4daa5c416cd0d5c4df3c095ddda774.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Chandrashekar Kupperi</h4>
+                        <p><h5>Founder Director</h5> </p>
+                        <!--
+                                        <p><br>
+                        -->
+                        Chennai, Tamil Nadu, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="chips-view text-sm"><span>Business Plan/Model</span><span>Financial Consulting</span><span>Venture Capital</span><span>Angel Funding</span></div>
+
+
+                    <!--
+                                    <div class="col-sm-4">
+                                      <div class="indst-checkbox">
+                                        <label for="industry1">
+                                          <span class="data-table">
+                                            <span class="data-cell">
+                                                                                </span>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </div>
+                    -->
+                    <div class="p-cta">
+                        <a href="/mentor-profile/chandrashekarkupperi" class="btn-vw">View Details</a>
+                        <a href="/user/connect/chandrashekarkupperi" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center load-more">
+            <a href="/meet-our-mentors" class="btn btn-lg btn-default">View All Mentors</a>
+            <a href="/meet-our-startups" class="btn btn-lg btn-default">View All Startups</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="section about-mentor bg-grey">
+    <div class="container">
+        <header class="header-title text-center">
+            <h3 class="title">Webinars</h3>
+            <p>Our recent and upcoming webinars.</p>
+        </header>
+        <div class="mentor-carousel owl-carousel">
+
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/how-to-pitch-to-investors"><img src="/assets/uploads/webinars/thumbs/2fa6ce29aa5d020f930e8b9998868a95.jpg" alt=""></a></figure>
+                    <h4 class="title">How to Pitch to Investors</h4>
+                    <p class="add-by">Organized By : GMS</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 30 October, 2019 &nbsp;4:00 pm</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/how-to-pitch-to-investors" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/how-to-scale-your-startup"><img src="/assets/uploads/webinars/thumbs/4ba3cc4bbd871dfdeed17d55827bde8d.jpg" alt=""></a></figure>
+                    <h4 class="title">How to Scale your Startup</h4>
+                    <p class="add-by">Organized By : GMS</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 02 October, 2019 &nbsp;4:30 pm</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/how-to-scale-your-startup" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/startup-fundraising-strategy"><img src="/assets/uploads/webinars/thumbs/aa68221d5858cf691f15bab2270fddd3.jpg" alt=""></a></figure>
+                    <h4 class="title">STARTUP FUNDRAISING STRATEGY</h4>
+                    <p class="add-by">Organized By : GMS</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 18 September, 2019 &nbsp;4:30 pm</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/startup-fundraising-strategy" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/art-of-raising-angel-investment-52"><img src="/assets/uploads/webinars/thumbs/6f702e0f7f8f650109793646ff80aeb9.jpg" alt=""></a></figure>
+                    <h4 class="title">Art of Raising Angel Investment </h4>
+                    <p class="add-by">Organized By : Gaurav V Singhvi</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 31 August, 2019 &nbsp;11:00 am</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/art-of-raising-angel-investment-52" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/building-a-successful-startup-47"><img src="/assets/uploads/webinars/thumbs/fa76b7f4272ce8095449cd5250036373.jpg" alt=""></a></figure>
+                    <h4 class="title">Building a successful startup</h4>
+                    <p class="add-by">Organized By : GMS</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 30 August, 2019 &nbsp;11:30 am</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/building-a-successful-startup-47" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/what-investors-looks-in-startups-before-making-investments"><img src="/assets/uploads/webinars/thumbs/811e6fc9b4a4835aa22d13977d375e93.jpg" alt=""></a></figure>
+                    <h4 class="title">What Investors looks in Startups before making Investments</h4>
+                    <p class="add-by">Organized By : GMS</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 28 August, 2019 &nbsp;4:30 pm</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/what-investors-looks-in-startups-before-making-investments" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/how-to-prepare-for-investor-pitch"><img src="/assets/uploads/webinars/thumbs/b418a94ffb4801c5345912e1be7bf9f6.jpg" alt=""></a></figure>
+                    <h4 class="title">How to Prepare for Investor Pitch</h4>
+                    <p class="add-by">Organized By : Neeraj Tyagi</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 14 August, 2019 &nbsp;5:00 pm</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/how-to-prepare-for-investor-pitch" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/raising-angel-investment-for-your-startup-successfully"><img src="/assets/uploads/webinars/thumbs/f5fd5ae7dcf8a01aa62567405e6666f4.jpg" alt=""></a></figure>
+                    <h4 class="title">Raising Angel Investment For Your Startup Successfully</h4>
+                    <p class="add-by">Organized By : Mr Neeraj Tyagi</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 24 July, 2019 &nbsp;4:00 pm</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/raising-angel-investment-for-your-startup-successfully" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/act-on-your-finance-strategy"><img src="/assets/uploads/webinars/thumbs/789537b42a96026e7fe1e71cd548e6d8.jpg" alt=""></a></figure>
+                    <h4 class="title">ACT on YOUR FINANCE STRATEGY </h4>
+                    <p class="add-by">Organized By : Sangeeta Sumesh</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 17 July, 2019 &nbsp;11:00 am</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/act-on-your-finance-strategy" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/startup-valuation-and-fund-raising"><img src="/assets/uploads/webinars/thumbs/925b2780b37e18d0edd72c2f334c0d5b.jpg" alt=""></a></figure>
+                    <h4 class="title">STARTUP VALUATION AND FUND RAISING</h4>
+                    <p class="add-by">Organized By : Chandrashekar Kupperi</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 04 July, 2019 &nbsp;11:15 am</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/startup-valuation-and-fund-raising" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="mentors">
+                    <figure><a href="/webinars/details/how-to-make-money-through-startup-investments"><img src="/assets/uploads/webinars/thumbs/6722a0ff3ddcdbcd5b96cd506a83c60d.jpg" alt=""></a></figure>
+                    <h4 class="title">How to Make Money Through Startup Investments</h4>
+                    <p class="add-by">Organized By : Neeraj Tyagi</p>
+                    <div class="mid-body">
+                        <div class="webinar-info">
+                            <p class="v-date"> 21 June, 2019 &nbsp;4:00 pm</p>
+                        </div>
+
+                    </div>
+                    <div class="p-cta">
+                        <a href="/webinars/details/how-to-make-money-through-startup-investments" class="btn btn-primary">View Details</a>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center load-more">
+            <a href="/webinars" class="btn btn-lg btn-default">View All Webianrs</a>
+        </div>
+
+    </div>
+</section>
+
+<!--[Events]-->
+
+<section class="section bg-grey">
+    <div class="container">
+        <header class="header-title text-center">
+            <h2 class="title">Events</h2>
+            <p>View all upcoming and latest events handcrafted by industry's best minds</p>
+        </header>
+
+        <div class="event-section">
+            <ul class="nav tab-nav event-tab">
+
+                <li class="active"><a href="#upcoming-events" data-toggle="tab">All Events</a></li>
+                <li><a href="#featured-events " data-toggle="tab">Featured Events </a></li>
+            </ul>
+            <div class="tab-content clearfix">
+
+                <div class="tab-pane fade active in" id="upcoming-events">
+                    <div class="upcoming-btn">
+                        <a href="/events" class="btn btn-lg btn-default">View all upcomings events</a>
+                    </div>
+                    <div class="upcomin-events owl-carousel">
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/demo-day-2019"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/d43055bc24d2dad68b435a2da736a787.jpg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/demo-day-2019">
+                                            DEMO DAY 2019
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">St Johns Auditorium,&#8230;</p>
+
+                                        <p class="v-date"> 23 November, 2019 &nbsp;10:00 am To 24 November, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+
+                                    <a href="https://startupsclub.com/attendeepass" target="_blank" class="btn btn-primary">Register Now</a>                                                    <a href="/events/details/demo-day-2019" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/startup-funding-collaboration-meetup"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/3fe012c58fde99af9ca6cf500e595c55.jpg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/startup-funding-collaboration-meetup">
+                                            Startup Funding & Collaboration Meetup
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">Incuespace, Connaught Place,&#8230;</p>
+
+                                        <p class="v-date"> 21 September, 2019 &nbsp;3:00 pm To 22 September, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/startup-funding-collaboration-meetup" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/women-entrepreneurship-2019-new-horizons"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/2ce1dfceb55cb7df3fa4df2956c7f104.jpg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/women-entrepreneurship-2019-new-horizons">
+                                            Women Entrepreneurship 2019 - New Horizons
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">Sheraton New Delhi&#8230;</p>
+
+                                        <p class="v-date"> 06 September, 2019 &nbsp;9:00 am To 07 September, 2019</p>
+                                        <p class="v-by">Added By: Pavan Verma(Mentor)</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/women-entrepreneurship-2019-new-horizons" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/open-gov-data-hack-2019"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/56344afd1753fdd836a5513c882916a8.png);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/open-gov-data-hack-2019">
+                                            OPEN GOV DATA HACK 2019
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">Four Cities Of&#8230;</p>
+
+                                        <p class="v-date"> 28 August, 2019 &nbsp;9:00 am To 29 September, 2019</p>
+                                        <p class="v-by">Added By: Pavan Verma(Mentor)</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/open-gov-data-hack-2019" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/pune-startup-fest19"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/eec5bb1053a82732dafb2fe9eea640d0.jpg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/pune-startup-fest19">
+                                            Pune StartUp Fest'19
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">Wellesley Rd,Shivajinagar, Pune,&#8230;</p>
+
+                                        <p class="v-date"> 23 February, 2019 &nbsp;9:00 am To 24 February, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/pune-startup-fest19" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/e-summit-2019"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/b514964463071d243991859327316a74.jpg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/e-summit-2019">
+                                            E-Summit 2019
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">IIT Roorkee, Roorkee,&#8230;</p>
+
+                                        <p class="v-date"> 02 February, 2019 &nbsp;10:00 am To 03 February, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/e-summit-2019" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/startup-networking-conference-2019"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/b0751bcdd1690457b599e9fb654d237e.jpeg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/startup-networking-conference-2019">
+                                            Startup Networking Conference 2019
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">H R Mahajani&#8230;</p>
+
+                                        <p class="v-date"> 02 February, 2019 &nbsp;10:00 am To 03 February, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/startup-networking-conference-2019" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/entrepreneurship-summit-2019"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/e473aac455a8e4b51f2e29a1fbffda1a.jpg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/entrepreneurship-summit-2019">
+                                            Entrepreneurship Summit 2019
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">Delhi Technological University,&#8230;</p>
+
+                                        <p class="v-date"> 31 January, 2019 &nbsp;9:00 am To 02 February, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/entrepreneurship-summit-2019" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/role-of-ipr-for-startups-avoiding-common-ip-pitfalls"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/d02d9e9cfb02f073aed47c1fa7e843bb.jpg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/role-of-ipr-for-startups-avoiding-common-ip-pitfalls">
+                                            Role of IPR for startups - Avoiding common IP pitfalls
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">MSME DI, Connaught&#8230;</p>
+
+                                        <p class="v-date"> 22 January, 2019 &nbsp;3:00 pm To 22 January, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/role-of-ipr-for-startups-avoiding-common-ip-pitfalls" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/startup-powercamp"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/b22c85760ddd148044ee617dd62ba9b5.jpeg);"></div></a>
+                                <div class="panel-heading">
+                                    <h3 class="title">
+                                        <a href="/events/details/startup-powercamp">
+                                            Startup PowerCamp
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="event-info">
+                                        <p class="v-add">Animaker, 8th Floor,&#8230;</p>
+
+                                        <p class="v-date"> 19 January, 2019 &nbsp;9:30 am To 19 January, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/events/details/startup-powercamp" class=" btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="tab-pane fade  " id="featured-events">
+                    <div class="upcomin-events owl-carousel">
+                        <div class="item">
+                            <div class="panel panel-event">
+                                <a href="/events/details/demo-day-2019"><div class="panel-event-img" style="background-image:url(/assets/uploads/event/thumbs/d43055bc24d2dad68b435a2da736a787.jpg);"></div></a>
+                                <div class="panel-body">
+                                    <h3 class="panel-event-title">
+                                        <a href="/events/details/demo-day-2019">
+                                            DEMO DAY 2019
+                                        </a>
+                                    </h3>
+                                    <div class="event-info">
+                                        <p class="v-add">St Johns Auditorium,&#8230;</p>
+
+                                        <p class="v-date"> 23 November, 2019 &nbsp;10:00 am To 24 November, 2019</p>
+
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+
+                                    <a href="/events/registration/demo-day-2019" class="btn btn-primary">Register Now</a>                                                    <a href="/events/details/demo-day-2019" class="btn btn-default">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--[/Events]-->
+<section class="section gradient">
+    <div class="container">
+        <header class="header-title text-center">
+            <h3 class="title">What we do</h3>
+            <!--            <p>We help startups collaborate with some of the best mentoring experts to steer   towards the right direction addressing the key business challenges and creating value for founders and their startups. We understand that entrepreneurs need attention and support through their exciting and challenging journey and that's why we have created three unique approaches for you to choose from and engage with.</p>-->
+            <p>We help startups collaborate with some of the best mentoring experts to steer   towards the right direction addressing the key business challenges and creating value for founders and their startups</p>
+        </header>
+
+        <div class="row text-center">
+            <div class="col-sm-4">
+                <div class="panel panel-usp">
+                    <img src="/assets/images/1.png" alt="Mentor Collaboration">
+                    <div class="panel-usp-text">
+                        <h4><b>Mentor Collaboration</b></h4>
+                        <!--                        <p>Post your problem statement and we will find the right expert/mentor for you. Alternatively you can also browse through our wide mentor base and find the right mentor for yourself.</p>-->
+                        <p>We will find the right expert/mentor for you</p>
+                    </div>
+                    <a href="/startup/registration" class="btn btn-lg btn-default">Get Started</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-usp">
+                    <img src="/assets/images/virtual-incubation.png" alt="Virtual Incubation">
+                    <div class="panel-usp-text">
+                        <h4><b>Virtual Incubation</b></h4>
+                        <!--                        <p>Get personalized incubation support from our handpicked angel investors. The engagement would be a blend of emails, live chats, scheduled calls & face-to-face sessions. </p>-->
+                        <p>Get personalized incubation support from our handpicked angel investors.</p>
+                    </div>
+
+                    <a href="/program/details/virtual-incubation-programs" class="btn btn-lg btn-default">Explore More</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-usp">
+                    <img src="/assets/images/angel-meetup.png" alt="Angel MeetUp ">
+                    <div class="panel-usp-text">
+                        <h4><b>Investor Meet</b></h4>
+                        <!--                        <p>Designed for startups that are at a product ready stage & need support for the Go to market strategy, investor pitching & fundraising. You will get dedicated face-to-face meetings with fundraising experts & angel investors.</p>-->
+                        <p>Support for the Go to market strategy, investor pitching & fundraising</p>
+                    </div>
+                    <a href="/startup/registration" class="btn btn-lg btn-default">Signup</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>

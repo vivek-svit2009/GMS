@@ -1,42 +1,881 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en-US" class="no-js">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="StartupLink">
+    <meta name="keywords" content="StartupLink">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <title>India's no. startup mentorship and virtual incubition platform- GMS</title>
+    <link rel="shortcut icon" href="~/assets/images/favicon.png" type="image/vnd.microsoft.icon" />
+    <link href="~/assets/formValidation/formValidation.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/css/owl.carousel.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-select.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-datetimepicker.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-clockpicker.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="~/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/assets/formValidation/formValidation.min.js"></script>
+    <script type="text/javascript" src="~/assets/formValidation/js/framework/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/custom-file-input.js"></script>
+    <script type="text/javascript" src="~/assets/js/moment.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-clockpicker.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/readmore.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/custom.js"></script>
+    <script type="text/javascript" src="~/assets/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/js/jquery.validate.min.js"></script>
+    <script>
+            var base_url = '/';
+    </script>
+    <script type="text/javascript" src="~/assets/js/jquery.raty.js"></script>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+
+
+</head>
+
+
+
+
+<body class="">
+    <div id="fb-root"></div>
+    <header id="header">
+        <div class="container-fluid clearfix relative">
+            <a href="/" class="navbar-brand"><img src="~/assets/images/logo.png" alt="GMS"></a>
+            <div class="toggle-btn"><span></span></div>
+            <div class="bg-overlay">&nbsp;</div>
+            <nav id="navbar">
+                <ul class="navbar-nav nav">
+                    <li><a href="/webinars">Webinars</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/blog">Blogs</a></li>
+                    <li><a href="/videos">STARTUP LIBRARY</a></li>
+                    <li><a href="/meet-our-mentors">Mentor</a></li>
+
+
+
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a class="active" href="/user/login">Sign In</a></li>
+                </ul>
+                <!--
+                    </ul>
+                    </nav>
+                -->
+
+
+        </div>
+    </header>
+    <style>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 100px;
+            list-style: none;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            padding: 0;
+            opacity: 0.5;
+        }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                text-transform: uppercase;
+                color: #000;
+                padding: 8px 20px;
+                font-size: 15px;
+                border-radius: 4px;
+                display: block;
+            }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    text-transform: uppercase;
+                    color: #000;
+                    padding: 8px 20px;
+                    font-size: 15px;
+                    border-radius: 4px;
+                    display: block;
+                }
+
+        /* Show the dropdown menu on hover */
+        .sdfsdfasdf:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .sdfsdfasdf:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+
+    <!--[Home Slider]-->
+    <!--[/Home Slider]-->
+    <!----<div class="modal fade vdo-popup" id="slidevdo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Get Access to Inside Angel Mind</h4>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" id="video2" src="https://www.youtube.com/embed/UHJGkHeFXd4?rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>---->
+
+    <style>
+        /*custom css*/
+
+        section.section.gradient {
+            padding: 0;
+        }
+
+            section.section.gradient .container {
+                padding: 30px 0;
+            }
+
+        .hp-banner-caption h2 {
+            margin: 0;
+        }
+
+        section.section.about-mentor.bg-grey {
+            padding: 30px 0;
+        }
+
+        .indicator {
+            display: none;
+        }
+
+        .hp-banner-caption .row .col-md-6:nth-child(1) {
+            border-right: 1px solid #fff;
+        }
+
+        .hp-banner-caption .row .col-md-6 h2.mentor-heading {
+            margin-left: 20%;
+        }
+
+        .hp-banner-caption .row .col-md-6 p.mentor-content {
+            margin-left: 100px;
+        }
+
+        .hp-banner-caption .btn-lg.mentor-signup {
+            margin-left: 20%;
+        }
+
+        .hp-banner-caption .row .col-md-6 h2.startup-heading {
+            margin-right: 20%;
+        }
+
+        .hp-banner-caption .row .col-md-6 p.startup-content {
+            margin-right: 100px;
+        }
+
+        .hp-banner-caption .btn-lg.startup-signup {
+            margin-right: 20%;
+        }
+
+        section#home-slider {
+            height: 530px;
+        }
+
+        /*mobile responsive media*/
+        @@media only screen and (min-width:320px) and (max-width:330px) {
+            .hp-banner-caption .row .col-md-6 h2.mentor-heading {
+                margin-top: 30px;
+            }
+        }
+
+        @@media only screen and (min-width:320px) and (max-width: 480px) {
+            section#home-slider {
+                height: auto;
+            }
+
+            .hp-banner-caption .row .col-md-6:nth-child(1) {
+                border-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .hp-banner-caption .row .col-md-6 h2.mentor-heading {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 p.mentor-content {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .btn-lg.mentor-signup {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 h2.startup-heading {
+                margin-right: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 p.startup-content {
+                margin-right: 0;
+            }
+
+            .hp-banner-caption .btn-lg.startup-signup {
+                margin-right: 0;
+            }
+        }
+
+        @@media only screen and (min-width:481px) and (max-width: 767px) {
+            section#home-slider {
+                height: auto;
+            }
+
+            .hp-banner-caption .row .col-md-6:nth-child(1) {
+                border-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .hp-banner-caption .row .col-md-6 h2.mentor-heading {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 p.mentor-content {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .btn-lg.mentor-signup {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 h2.startup-heading {
+                margin-right: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 p.startup-content {
+                margin-right: 0;
+            }
+
+            .hp-banner-caption .btn-lg.startup-signup {
+                margin-right: 0;
+            }
+        }
+
+        @@media only screen and (min-width:768px) and (max-width: 991px) {
+            section#home-slider {
+                height: auto;
+            }
+
+            .hp-banner-caption .row .col-md-6:nth-child(1) {
+                border-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .hp-banner-caption .row .col-md-6 h2.mentor-heading {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 p.mentor-content {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .btn-lg.mentor-signup {
+                margin-left: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 h2.startup-heading {
+                margin-right: 0;
+            }
+
+            .hp-banner-caption .row .col-md-6 p.startup-content {
+                margin-right: 0;
+            }
+
+            .hp-banner-caption .btn-lg.startup-signup {
+                margin-right: 0;
+            }
+        }
+
+        @@media only screen and (min-width:992px) and (max-width: 1199px) {
+            section#home-slider {
+                height: auto;
+            }
+        }
+    </style>
+
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+    </style>
+
+    <section class="section gradient">
+        <!--     <div class="container" >
+              <header class="header-title text-center">
+                <h3 class="title">Find us in your city</h3>
+              </header>
+              <div class="col-sm-3 asdasdasdas">
+                                <a href="/chapters/delhi"><img  src="/assets/frontend/images/india-gate.jpg" style="width:100%;opacity: 0.7;">
+                                <div class="centered">Delhi</div></a>
+                </div>
+                <div class="col-sm-3 asdasdasdas">
+                                <img  src="/assets/frontend/images/gateway-of-india.jpg" style="width:100%;opacity: 0.7;">
+                                <div class="centered">Mumbai</div>
+                </div>
+                <div class="col-sm-3 asdasdasdas">
+                                <a href="/chapters/chennai"><img  src="/assets/frontend/images/chennai.jpg" style="width:100%;opacity: 0.7;">
+                                <div class="centered">Chennai</div></a>
+                </div>
+                <div class="col-sm-3 asdasdasdas">
+                                <a href="/chapters/bangalore"><img  src="/assets/frontend/images/vidhan-soudha.jpg" style="width:100%;opacity: 0.7;">
+                                <div class="centered">Bangalore</div></a>
+                </div>
+            </div>
+        </section> -->
+        <!--<section class="section bg-grey">
+                <div class="container">
+                <div class="data-table intro-vdo-row">
+              <div class="data-cell cell-left intro-vdo-text">
+                <h2 class="title">What we do</h2>
+                <p><strong>Opportunity to Guide Tomorrow's Leaders</strong></p>
+                <p><strong>Facilitating Limitless Expertise! Connect, Learn and Grow with world's best mentors.</strong></p>
+                <p>GMS is a vibrant mentor network that supports startups and SMEs and helps them learn the leadership skills that will help them grow their businesses. We help connect with world's best industry experts, mentors & investors and provide easy tools to enable learning & monitor growth.</p>
+                <p>GMS is also creating city-based entrepreneurial ecosystems of mentors, investors and incubators for supporting startups and SMEs to build and activate startup hubs in India with a focus on tier-2 cities.</p>
+                <div class="mt20">
+                        <a href="/meet-our-mentors" class="btn btn-lg btn-primary">Find an expert</a>
+                        <a href="/mentor/registration" class="btn btn-lg btn-default">Be an expert</a>
+                </div>
+              </div>
+              <div class="data-cell cell-right">
+                <div class="mtr-intro-vdo">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id="video1" src="https://www.youtube.com/embed/b-F_eQKJ-r4?rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+              </div>
+            </div>
+
+
+                <header class="header-title text-center">
+                <h2 class="title">What we do</h2>
+              <p><strong>Facilitating Limitless Expertise! Connect, Learn and Grow with world's best mentors.</strong></p>
+              <p>GMS is a vibrant mentor network that supports startups and SMEs and helps them learn the leadership skills that will help them grow their businesses. We help connect with world's best industry experts, mentors & investors and provide easy tools to enable learning & monitor growth.</p>
+              <p>GMS is also creating city-based entrepreneurial ecosystems of mentors, investors and incubators for supporting startups and SMEs to build and activate startup hubs in India with a focus on tier-2 cities.</p>
+              <a href="/meet-our-mentors" class="btn btn-lg btn-primary">Find an expert</a>
+              <a href="/mentor/registration" class="btn btn-lg btn-default">Be an expert</a>
+            </header>-->
+        <!--<div class="row mt30">
+            <div class="col-sm-4 shadow">
+            <div class="panel solutions-panel">
+                    <a href="/startup/registration">
+                <div class="panel-image"><img src="/assets/frontend/images/startup-solutions-img.jpg" alt=""></div>
+                <div class="panel-body">
+                  <h4 class="title-sm">Startup Solutions</h4>
+                  <div class="more">
+                    <p><strong>Fostering Entrepreneurship with World's Best Minds</strong></p>
+                    <p>There is no better learning than engaging with a successful industry expert. Our elite group of mentors has consistently guided entrepreneurs on how to build & grow a sustainable business. From tech gurus to growth hack experts, angel investors to visionary successful entrepreneurs you will find all of them here at this unique community of entrepreneur enablers.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 shadow">
+            <div class="panel solutions-panel">
+                    <a href="#">
+                <div class="panel-image"><img src="/assets/frontend/images/professional-solutions-img.jpg" alt=""></div>
+                <div class="panel-body">
+                  <h4 class="title-sm">Professional Solutions</h4>
+                  <div class="more">
+                    <p><strong>Enabling Experts for Next Generation Workplaces</strong></p>
+                    <p>Upgrade your skills, or simply learn a new one with our personalized and scalable coaching solutions. Choose your expert, design your own learning schedule, & caliber your own pace, it's the kind of personalize mentoring you have always wished for.</p>
+                    <p>The programs have been carefully designed & facilitated by our community of highly skilled industry experts, successful entrepreneurs, creators & innovators.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 shadow">
+            <div class="panel solutions-panel">
+                    <a href="/mentor/registration">
+                <div class="panel-image"><img src="/assets/frontend/images/mentors-img.jpg" alt=""></div>
+                <div class="panel-body">
+                  <h4 class="title-sm">Mentors</h4>
+                  <div class="more">
+                    <p><strong>Opportunity to Build Tomorrow's Leaders</strong></p>
+                    <p>If supporting passionate entrepreneurs is close to your heart, then GMS is the place for you. Share your success and failures, with budding entrepreneurs and help them in the realization of their dreams.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        </section>-->
+        <!--[/What we do]-->
+        <!--<section class="section sec-angel-vdo bg-grey">
+                <div class="container">
+            <div class="data-table intro-vdo-row rtl">
+              <div class="data-cell cell-left intro-vdo-text">
+                <h2 class="title">Inside Angel Mind</h2>
+                <p>This is a series of interactions that we are conducting with the leading mentors, angel investors who will share from their wealth of knowledge insights on key aspects of setting up and running a successful startup. So stay tuned.</p>
+                <p><strong>Star Mentor of this month Dr. Aniruddha Malpani</strong></p>
+              </div>
+              <div class="data-cell cell-right">
+                <div class="mtr-intro-vdo">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id="video2" src="https://www.youtube.com/embed/UHJGkHeFXd4?rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="section sec-intro-vdo">
+                <div class="container">
+            <div class="data-table rtl intro-vdo-row">
+              <div class="data-cell cell-left intro-vdo-text">
+                <h2 class="title">Become a Mentor</h2>
+                <p><strong>Opportunity to Guide Tomorrow's Leaders</strong></p>
+                        <p>If supporting passionate entrepreneurs is close to your heart, then GMS is the place for you. Share your success and failures with budding entrepreneurs and help them learn from your experiences, thus in turn helping them realize their dreams!</p>
+                <div class="mt20">
+                        <a href="/mentor/registration" class="btn btn-lg btn-primary">Sign Up</a>
+                </div>
+              </div>
+              <div class="data-cell cell-right">
+                <div class="mtr-intro-vdo">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id="video3" src="https://www.youtube.com/embed/m4yeA8G-tt0?rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </section>-->
+        <!--[How it Works]-->
+        <!--<section class="section sec-guide">
+                <div class="container">
+          <header class="header-title text-center">
+            <h2 class="title">How it works</h2>
+          </header>
+          <div class="data-process">
+          <div class="tab-icon">
+          <ul class="list-unstyled">
+            <li class="active"><a href="#process1" data-toggle="tab"><img src="/assets/frontend/images/process-icon1.png" alt=""></a></li>
+            <li><a href="#process2" data-toggle="tab"><img src="/assets/frontend/images/process-icon2.png" alt=""></a></li>
+            <li><a href="#process3" data-toggle="tab"><img src="/assets/frontend/images/process-icon3.png" alt=""></a></li>
+            <li><a href="#process4" data-toggle="tab"><img src="/assets/frontend/images/process-icon4.png" alt=""></a></li>
+          </ul>
+        </div>
+          <div class="tab-content">
+            <div class="guide-text tab-pane fade in active" id="process1">
+              <h4>Find an Expert</h4>
+              <p>Discover the perfect mentor for all your unique challenges from our large community of the best experts!	</p>
+            </div>
+            <div class="guide-text tab-pane fade" id="process2">
+              <h4>Request/Schedule a Call</h4>
+              <p>Select 3 dates and time that will be convenient for you while specifying a reason for the call. The expert you want to connect with has 72 hours to respond to your request, else your request will close.  </p>
+            </div>
+            <div class="guide-text tab-pane fade" id="process3">
+              <h4>Get Confirmation</h4>
+              <p>Once the expert agrees to connect with you, you will get a confirmation email from us. The mail will contain a conference line and an access code. So after this, you can easily bookmark your calendar and prepare some topic or questions that you might want to cover in that call.</p></div>
+           <div class="guide-text tab-pane fade" id="process4">
+              <h4>Connect Directly &amp; Pay</h4>
+              <p>Once we make an estimate of the length of your call, we will pre-charge you based on the expert’s per minute rate, making sure that they get paid. After the call, you are free to leave a suitable rating session’s review for the expert. </p>
+            </div>
+          </div>
+        </div>
+            <div class="text-center load-more">
+                <p><strong>At any point of your engagement if you need any assistance just click on help and we would be more than happy to support immediately.</strong></p>
+              <a href="/meet-our-mentors" class="btn btn-lg btn-whit-border">Find Your Mentor</a>
+            </div>
+          </div>
+        </section>-->
+        <!--[/How it Works]-->
+        <!--[StartUps Tab]-->
+        <!--
+        <section class="section">
+                <div class="container">
+                <div class="row">
+                <div class="col-sm-8">
+                <ul class="nav tab-nav startup-tab">
+                    <li class="active"><a href="#startups" data-toggle="tab">StartUps</a></li>
+                    <li><a href="#mentors" data-toggle="tab">Mentors</a></li>
+                    <li><a href="#professional" data-toggle="tab">Professional </a></li>
+
+                  </ul>
+                <div class="tabs-nave">
+
+                  <div class="tab-content">
+                        <div class="tab-pane fade active in" id="startups">
+                        <p><strong>Startup advice from world's best mentors</strong></p>
+                      <p>Our startup members get an opportunity to obtain channelized learning from founders, co-founders, angel investors, mentors and noteworthy startup venturists.</p>
+                      <p><strong>Get connected. Learn &amp; Grow.</strong></p>
+                      <a href="" class="btn btn-lg btn-primary">Join Now</a>
+                    </div>
+                                                        <div class="tab-pane fade" id="mentors">
+                                <p><strong>Opportunity to Build Tomorrow's Leaders</strong></p>
+                      <p>If supporting passionate entrepreneurs is close to your heart, then GMS is the place for you. Share your success, failures & invaluable advice, with budding entrepreneurs and help them in the realization of their dreams.  Your invaluable advice will</p>
+                      <p>We completely understand that your advice is incomparable and thus, give you an option to monetize your business expertize by keeping a favorable fee for your services. So if you are an expert of any business domain, then take the first step towards contributing to the entrepreneurial success of passionate startup community.</p>
+                      <p><strong>Get connected. Share knowledge & inspire the entrepreneurs.</strong></p>
+                      <a href="" class="btn btn-lg btn-primary">Join Now</a>
+                    </div>
+                    <div class="tab-pane fade" id="professional">
+                                <p><strong>Enabling Experts for Next Generation Workplaces</strong></p>
+                      <p>Upgrade your skills, or simply learn a new one with our personalized and scalable coaching solutions. Choose your expert, design your own learning schedule, & caliber your own pace, it's the kind of personalize mentoring you have always wished for. </p>
+                      <p>The programs have been carefully designed & facilitated by our community of highly skilled industry experts, successful entrepreneurs, creators & innovators.</p>
+                      <a href="#" class="btn btn-lg btn-primary">Explore More</a>
+                    </div>
+                                                </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="start-ups-slider owl-carousel">
+                        <div class="item">
+                        <figure><img src="/start-ups-slider.jpg" alt="">
+                        <figcaption>Featuring founders across country know how much it takes to Startup</figcaption>
+                    </figure>
+                  </div>
+                  <div class="item">
+                        <figure><img src="/start-ups-slider2.jpg" alt="">
+                        <figcaption>How to raise money for your Startup</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        -->
+        <!--[/StartUps Tab]-->
+
+
+        @RenderBody();
+
+        <!--[/Events]-->
+        <!--[What we do]-->
+        <!--[Programs]-->
+        <!--<section class="section">
+            <div class="container">
+                <header class="header-title text-center">
+                    <h3 class="title">Virtual Incubation Programs</h3>
+                </header>
+                    <div class="data-table col-program">
+                    <div class="data-cell cell-left">
+                        <h3>Register and Participate</h3>
+                        <p>Register and participate in the programs to get personalised mentoring and support from some of the best Angel Investors.</p>
+                        <div class="cta">
+                                        <a href="/program/enrollnow/virtual-incubation-programs" class="btn btn-lg btn-primary">Enroll Now</a><br>
+                                <a href="/program/details/virtual-incubation-programs" class="btn btn-lg btn-default">Program Details</a>
+                        </div>
+                    </div>
+
+                    <div class="data-cell cell-right">
+                        <img src="/assets/frontend/images/mentor-program-banner.jpg" alt="Building a successful startup">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>-->
+        <!--[/Programs]-->
+        <!--[Resource]-->
+        <!--<section class="section sec-resources">
+            <div class="container">
+                <header class="header-title text-center">
+                    <h3 class="title">Resources</h3>
+                </header>
+                <div class="row rsc-row">
+                    <div class="col-sm-8">
+                        <div class="hp-vdo-block">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" id="video4" src="https://www.youtube.com/embed/hTwe4Su9wp8?rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div class="hp-vdo-footer clearfix">
+                                <h4 class="title pull-left">A line up of videos</h4>
+                                <a class="btn btn-primary pull-right" href="/videos/index">Explore More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row row-gap">
+                            <div class="col-xs-6 col-sm-12">
+                                <div class="panel latest-post">
+                                    <a href="/news">
+                                        <figure style="background-image:url(/assets/frontend/images/latest-news.jpg)">
+                                            <figcaption>Latest News</figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-12">
+                                <div class="latest-post">
+                                    <a href="/blog">
+                                        <figure style="background-image:url(/assets/frontend/images/blog-post.jpg)">
+                                            <figcaption>Blog Post</figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="panel latest-post">
+                        <a href="/blog/category/news">
+                    <figure>
+                      <img src="/assets/frontend/images/latest-news.jpg" alt="">
+                      <figcaption>Latest News</figcaption>
+                    </figure>
+                  </a>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <!--[/Resource]-->
+        <!--[Follow Us]-->
+        <!--<section class="section bg-grey hidden">
+                <div class="container">
+                <header class="header-text text-center pb40">
+                <h2 class="title-lg">Follow Us</h2>
+            </header>
+            <div class="fallow-wapper">
+
+              <div class="row">
+                <div class="col-sm-6">
+                        <div class="social-widget">
+                                                        <div class="fb-page" data-href="https://www.facebook.com/GMS/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-height="400" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GMS/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GMS/">GMS</a></blockquote></div>
+                  </div>
+                </div>
+                  <div class="col-sm-6">
+                        <div class="social-widget">
+                                <a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#e34521" href="https://twitter.com/GMSIndia?ref_src=twsrc%5Etfw">Tweets by GMSIndia</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </section>-->
+        <!--[/Follow Us]-->
+        <!--[Stay In Touch]-->
+        <section class="section stay-in-touch">
+            <div class="container">
+                <header class="header-title text-center">
+                    <h3 class="title-lg">We would like to stay in touch</h3>
+                </header>
+                <form action="/ajaxcontroller/getInTuch" id="subscribe_form" name="pForm" autocomplete="off" method="post" accept-charset="utf-8">
+
+
+                    <div class="row stay-touch-form row-gap">
+                        <div class="col-md-3 col-sm-6 col-xs-12 form-group form-group-lg">
+                            <input type="text" name="f_name" value="" class="form-control" id="f_name" placeholder="First Name" maxlength="80" />
+
+
+                            <div id="ef_name" class="text-danger er"></div>
+
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 form-group form-group-lg">
+                            <input type="text" name="l_name" value="" class="form-control" id="l_name" placeholder="Last Name" maxlength="80" />
+
+
+                            <div id="el_name" class="text-danger er"></div>
+
+                        </div>
+                        <div class="col-md-4 col-xs-12 form-group form-group-lg">
+                            <input type="text" name="s_email" value="" class="form-control" id="s_email" placeholder="Email Address" maxlength="80" />
+
+                            <div id="es_email" class="text-danger er"></div>
+                        </div>
+                        <div class="col-md-2 col-md-offset-0 col-sm-4 col-sm-offset-4 col-xs-12 form-group">
+                            <a href="javascript:void(0)" id="getintuch" class="btn btn-lg btn-primary btn-block">Submit</a>
+                        </div>
+
+                        <div class="col-xs-12 text-center">
+                            <div id="msg" class="text-success"></div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!--[/Stay In Touch]-->
+        <style>
+
+            /* Centered text */
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: 700;
+                color: #443f3f;
+                font-size: 32px;
+                margin: 0;
+                text-transform: uppercase;
+                letter-spacing: -2px;
+            }
+
+            .asdasdasdas {
+                cursor: pointer;
+                opacity: 0.9;
+                margin-bottom: 20px;
+            }
+
+                .asdasdasdas:hover {
+                    cursor: pointer;
+                    opacity: 0.5;
+                }
+
+            .chips-view span {
+                font-size: 10px;
+                font-weight: 500;
+                padding: 4px !important;
+                margin: 0 2px 3px 0 !important;
+                background: #f4f3f3;
+            }
+
+            .mentors .mid-body {
+                min-height: 65px !important;
+            }
+
+            .mentors {
+                height: 550px;
+            }
+        </style>
+        <script type="text/javascript" src="/assets/frontend/js/common.js"></script>
+        <!--[Footer]-->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-about">
+                            <a href="/"><img class="footer-logo" src="~/assets/images/logo.png" alt="GMS"></a>
+                            <p>Welcome to GMS, an innovative platform for #entrepreneurs to get access to invaluable #mentoring from global professional experts. Started by a group of highly motivated successful entrepreneurs having experience of setting up businesses and working with global brands.The idea is to offer a fully managed ecosystem for entrepreneurs & mentors to share knowledge & build tomorrow's products and services.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 footer-nav">
+                        <h4 class="f-title">Quick Links</h4>
+                        <nav>
+                            <ul>
+                                <li class=""><a href="/webinars" target="">Webinars</a></li>
+                                <li class=""><a href="/terms-of-service" target="">Terms of Service</a></li>
+                                <li class=""><a href="/videos" target="">Startups Library</a></li>
+                                <li class=""><a href="/privacy-policy" target="">Privacy Policy</a></li>
+                                <li class=""><a href="/events" target="">Events</a></li>
+                                <li class=""><a href="/contact-us" target="">Contact Us</a></li>
+                                <li class=""><a href="/blog" target="">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-contact">
+                            <h4 class="f-title">Keep In Touch</h4>
+                            <p><i class="icon icon-map"></i>Crossing Republik, Ghaziabad, UP</p>
+                            <p><i class="icon icon-ph"></i>+91-8423282590</p>
+                            <p><i class="icon icon-ml"></i><a href="mailto:vivek.svit2009@gmail.com">vivek.svit2009@gmail.com</a></p>
+
+                        </div>
+                        <div class="social">
+                            <h4 class="f-title">Connect With Us</h4>
+                            <ul>
+                                <li><a href="/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+
+
+                                <li><a href="/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+
+
+                                <li><a href="/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+
+
+                                <li><a href="/" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright">&copy; Copyright 2019 GMS. All Rights Reserved. Powered by VIVEK KUMAR SHARMA</div>
+                </div>
+            </div>
+        </footer>
+        <!--[/Footer]-->
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#getintuch").click(function (evt) {
+                    $(this).prop('disabled', true);
+                    $thisv = $(this);
+                    var first_name = $("#f_name").val();
+                    var last_name = $("#l_name").val();
+                    var email = $("#s_email").val();
+
+                    $.ajax({
+                        url: '/Ajaxcontroller/getInTuch',
+                        type: 'POST',
+                        data: { first_name: first_name, last_name: last_name, email: email },
+                        datatype: 'json',
+                        cache: false,
+                        success: function (data) {
+                            var dataar = jQuery.parseJSON(data);
+
+                            if (dataar.type == 'success') {
+                                $('#ef_name').html('');
+                                $('#el_name').html('');
+                                $('#es_email').html('');
+                                var msg = dataar.msg;
+                                $('#msg').html(msg);
+                                $("#subscribe_form")[0].reset();
+                            }
+                            else {
+
+                                var first_name = dataar.first_name;
+                                var last_name = dataar.last_name;
+                                var email = dataar.email;
+
+                                if (first_name)
+                                    $('#ef_name').html(first_name);
+                                else
+                                    $('#ef_name').html('');
+                                if (last_name)
+                                    $('#el_name').html(last_name);
+                                else
+                                    $('#el_name').html('');
+                                if (email)
+                                    $('#es_email').html(email);
+                                else if (dataar.msg == 'allready')
+                                    $('#es_email').html("This email id already exists.");
+                                else
+                                    $('#es_email').html('');
+                                $('#msg').html('');
+                            }
+                            $thisv.prop('disabled', false);
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+        <div class="loading_more loader" style="display:none;"></div>
+
+        <div id="fb-root"></div>
 </body>
 </html>
