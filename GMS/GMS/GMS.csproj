@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\userController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -149,6 +150,7 @@
     <Content Include="Assets\js\bootstrap-datetimepicker.js" />
     <Content Include="Assets\js\bootstrap-select.min.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\common.js" />
     <Content Include="Assets\js\custom-file-input.js" />
     <Content Include="Assets\js\custom.js" />
     <Content Include="Assets\js\jquery.min.js" />
@@ -192,6 +194,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\user\login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

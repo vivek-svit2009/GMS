@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "login";
+}
+
+<section class="inner-banner" style="background-image:url(../assets/images/signin-banner.jpg)">
+    <div class="banner-header">
+        <div class="container">
+            <header class="banner-header-title">
+                <h1 class="title"><strong>User</strong> Sign In</h1>
+                <p>"Welcome Users! Sign in to continue with this wonderful journey towards mutual growth and independence"</p>
+            </header>
+        </div>
+    </div>
+</section>
+
+<section class="section light-blue-bg register-sec gradient">
+    <div class="container">
+        <header class="header-title text-left">
+            <!--<p>Mentors Sign in to continue your journey of guiding others and helping them achieve their goals!<br>
+            Startups sign in to continue your journey of fulfilling your dreams while being guided by the best in the business!</p>-->
+        </header>
+        <form action="/user/login" id="mentor_login" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="data-table">
+                <div class="data-cell per_info">
+
+
+                    <div class="user-sigin">
+
+                        <div class="form-group form-group-lg">
+                            <label>Email</label>
+                            <input type="text" name="email" value="" class="form-control input-user" id="email" maxlength="255" placeholder="Email*" />
+
+                        </div>
+                        <div class="form-group form-group-lg">
+                            <label>Password</label>
+                            <input type="password" name="password" value="" class="form-control  input-pass" id="password" maxlength="15" placeholder="Password*" />
+
+                        </div>
+                        <div class="form-group login-submit clearfix">
+                            <input type="submit" value="Log In" class="btn btn-lg btn-primary btn-submit pull-left">
+                            <a href="/user/forget_password" class="btn-fgt pull-right">Forgot Password?</a>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="data-cell">
+                    <div class="text-center reg_start">
+                        <div class="login-others text-center">
+                            <h3 class="register-title">Or Sign In With</h3>
+                            <div class="login-social text-center">
+                                <a href="/user/linkdin_login" title="Sign in with Linkedin"><img src="../assets/images/login-linkedin.png" alt="Linkedin"></a>
+                            </div>
+                            <p><label>Don't have an account? Join Us as</label> <a href="/mentor/registration"><strong> Mentor</strong></a>&nbsp;<a href="/startup/registration"><strong>Startup</strong></a></p>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
