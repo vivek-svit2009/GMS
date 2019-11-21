@@ -29,12 +29,14 @@ namespace GMS.Controllers
             {
                 if (IsProfile.ToString() == "True")
                 {
+                    Session["UserType"] = "User";
                     Session["UserEmail"] = form.email;
-                    return RedirectToAction("profile", "mentor");
+                    
+                    return RedirectToAction("profile", "startup");
                 }
                 else
                 {
-                    return RedirectToAction("register_info", "mentor");
+                    return RedirectToAction("register_info", "startup");
                 }
             }
             else
@@ -48,12 +50,14 @@ namespace GMS.Controllers
 
                     if (IsProfile1.ToString() == "True")
                     {
+                        Session["UserType"] = "Mentor";
                         Session["UserEmail"] = form.email;
-                        return RedirectToAction("profile", "startup");
+                        return RedirectToAction("profile", "mentor");
                     }
                     else
                     {
-                        return RedirectToAction("register_info", "startup");
+                        return RedirectToAction("register_info", "mentor");
+                       
                     }
                 }
                 else

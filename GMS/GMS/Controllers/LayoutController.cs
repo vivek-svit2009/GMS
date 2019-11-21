@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Dynamic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GMS.Models;
 
 namespace GMS.Controllers
 {
     public class LayoutController : Controller
     {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
+
         // GET: Layout
         public ActionResult Index()
         {
@@ -19,7 +26,42 @@ namespace GMS.Controllers
         }
         public ActionResult StartupRecommendation()
         {
-            return PartialView();
+            dynamic mymodel = new ExpandoObject();
+            mymodel.StartupRecommendation = GetStartups();
+            mymodel.DemoRecommendation = GetDemos();
+
+            return PartialView(mymodel);
+        }
+        public List<StartupRecommendation> GetStartups()
+        {
+            List<StartupRecommendation> list = new List<StartupRecommendation>();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("SelectAllUser", con);
+
+            da.Fill(dt);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                var startupRecommendation = new StartupRecommendation();
+                startupRecommendation.Id = Convert.ToInt32(row["Id"].ToString());
+                startupRecommendation.Name = row["Name"].ToString();
+                startupRecommendation.Image = row["Image"].ToString();
+                startupRecommendation.Industry = row["Industry"].ToString();
+
+                list.Add(startupRecommendation);
+
+            }
+            return list;
+        }
+        public List<DemoRecommendation> GetDemos()
+        {
+            List<DemoRecommendation> DemoRecommendation = new List<DemoRecommendation>();
+            DemoRecommendation.Add(new DemoRecommendation { Id = 1, Date = "21-Nov-2019", Name = "Amit Gupta", Time = "10:00 am" ,Image="knkn", Address= "St Johns Auditorium" });
+            DemoRecommendation.Add(new DemoRecommendation { Id = 2, Date = "20-Nov-2019", Name = "Chetan Gujjar", Time = "10:00 am", Image = "knkn", Address = "St Johns Auditorium" });
+            DemoRecommendation.Add(new DemoRecommendation { Id = 3, Date = "19-Nov-2019", Name = "Bhavin Patel", Time = "10:00 am", Image = "knkn", Address = "St Johns Auditorium" });
+            return DemoRecommendation;
         }
         public ActionResult Footer()
         {

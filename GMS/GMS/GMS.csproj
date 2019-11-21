@@ -128,6 +128,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginUser.cs" />
+    <Compile Include="Models\RightSideLayout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,7 @@
     <Content Include="Assets\images\3.jpg" />
     <Content Include="Assets\images\4.png" />
     <Content Include="Assets\images\angel-meetup.png" />
+    <Content Include="Assets\images\cover.jpg" />
     <Content Include="Assets\images\logo.png" />
     <Content Include="Assets\images\m1.jpg" />
     <Content Include="Assets\images\virtual-incubation.png" />
