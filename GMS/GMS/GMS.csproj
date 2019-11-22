@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Models\LoginUser.cs" />
     <Compile Include="Models\RightSideLayout.cs" />
+    <Compile Include="Models\TopMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
