@@ -70,5 +70,10 @@ namespace GMS.Controllers
 
             
         }
+        public ActionResult logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("login", "user");
+        }
     }
 }

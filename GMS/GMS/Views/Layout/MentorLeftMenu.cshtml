@@ -1,16 +1,22 @@
-﻿<div class="dashboard-left data-cell">
+﻿@{
+   
+        GMS.Models.MentorTopItem MyMP = (GMS.Models.MentorTopItem)
+            ViewData["MyMP"];
+   
+}
+<div class="dashboard-left data-cell">
 
     <div id="sidebar-nav">
         <link href="/assets/frontend/css/cropper.min.css" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="/assets/frontend/js/cropper.min.js"></script>
         <div class="log-user-data" id="manual_personal">
             <div class="log-user-img">
-                <img class="img-circle" src="/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" alt="">
+                <img class="img-circle" src="@MyMP.Image" alt="">
                 <a href="javascript:void(0)" id="edit_personal_info" data-toggle="modal" data-target="#profileModal" class="btn btn-edit"><i class="fa fa-edit"></i></a>
             </div>
             <div class="log-user-info">
-                <h3 class="log-user-title">SHIV KUMAR SHARMA</h3>
-                <p class="log-user-mail">vishal.svit2009@gmail.com</p>
+                <h3 class="log-user-title">@MyMP.Name</h3>
+                <p class="log-user-mail">@MyMP.Email</p>
             </div>
         </div>
 
