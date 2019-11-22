@@ -4,25 +4,48 @@
         <a href="/" class="navbar-brand"><img src="~/assets/images/logo.png" alt="GMS"></a>
         <div class="toggle-btn"><span></span></div>
         <div class="bg-overlay">&nbsp;</div>
-        <nav id="navbar">
-            <ul class="navbar-nav nav">
-                <li><a href="/webinars">Webinars</a></li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="/blog">Blogs</a></li>
-                <li><a href="/videos">STARTUP LIBRARY</a></li>
-                <li><a href="/meet-our-mentors">Mentor</a></li>
+
+        @if (Session["UserEmail"] != null)
+        {
+            <nav id="navbar">
+                <ul class="navbar-nav nav">
+                    <li><a href="/webinars">Webinars</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/blog">Blogs</a></li>
+                    <li><a href="/videos">STARTUP LIBRARY</a></li>
+                    <li><a href="/meet-our-mentors">Mentor</a></li>
+                </ul>
+
+            </nav>
+            <div class="log-nav">
+
+                <div class="dropdown log-dropdown"><a href="javascript:void(0);" data-toggle="dropdown"><img class="head-user-img img-circle" src="/assets/uploads/frontuser/b968ca895fcaf15bf16605902081c458.jpeg" alt=""></a><ul class="dropdown-menu"><li class="log-user-name"><span>Hi</span>SHIV KUMAR SHARMA</li><li><a href="/mentor/profile">Profile</a></li><li><a href="/user/logout"> Logout</a></li></ul></div>
+</div>
+
+        }
+        else
+        {
+                <nav id="navbar">
+                    <ul class="navbar-nav nav">
+                        <li><a href="/webinars">Webinars</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/blog">Blogs</a></li>
+                        <li><a href="/videos">STARTUP LIBRARY</a></li>
+                        <li><a href="/meet-our-mentors">Mentor</a></li>
 
 
 
-                <li><a href="/about-us">About Us</a></li>
-                <li><a class="active" href="/user/login">Sign In</a></li>
-            </ul>
-           
+                        <li><a href="/about-us">About Us</a></li>
+                        <li><a class="active" href="/user/login">Sign In</a></li>
+                        
+
+                    </ul>
+
                 </nav>
-            
 
+        }
 
-    </div>
+            </div>
 </header>
 <style>
     .dropdown-content {
