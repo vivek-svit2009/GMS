@@ -1,0 +1,82 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8" lang="en-US"><![endif]-->
+<!--[if !(IE 8)]><!-->
+<html lang="en-US" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="StartupLink">
+    <meta name="keywords" content="StartupLink">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <title>GMS</title>
+    <link rel="shortcut icon" href="~/assets/images/favicon.png" type="image/vnd.microsoft.icon" />
+    <link href="~/assets/formValidation/formValidation.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/css/owl.carousel.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-select.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-datetimepicker.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-clockpicker.min.css" type="text/css" rel="stylesheet">
+    <link href="~/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="~/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/assets/formValidation/formValidation.min.js"></script>
+    <script type="text/javascript" src="~/assets/formValidation/js/framework/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/custom-file-input.js"></script>
+    <script type="text/javascript" src="~/assets/js/moment.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-clockpicker.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/readmore.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/custom.js"></script>
+    <script type="text/javascript" src="~/assets/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/js/jquery.validate.min.js"></script>
+    <script>
+        var base_url = '/';
+    </script>
+    <script type="text/javascript" src="~/assets/js/jquery.raty.js"></script>
+
+
+</head>
+
+
+<body class="">
+    <!--[Header]-->
+
+    @Html.Action("TopMenu","Layout")
+    <!--[Banner]-->
+    <div class="user-cover-img" style="background-image:url(/assets/images/cover.jpg)"></div>
+    <!--[/Banner]-->
+    <!--[Dashboard]-->
+    <section class="dashboard data-table">
+        @Html.Action("StartupLeftMenu", "Layout")
+
+        @RenderBody()
+
+        @Html.Action("MentorRecommendation", "Layout")
+
+    </section>
+    <!--[/Dashboard]-->
+
+
+
+    <script type="text/javascript" src="~/assets/js/common.js"></script>
+    <!--[Footer]-->
+    @Html.Action("Footer", "Layout")
+    <!--[/Footer]-->
+
+
+
+
+
+
+
+</body>
+</html>

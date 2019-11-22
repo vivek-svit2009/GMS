@@ -95,7 +95,7 @@ namespace GMS.Controllers
             }
             else
             {
-                return PartialView();
+                return PartialView() ;
             }
         }
         public ActionResult StartupRecommendation()
@@ -145,7 +145,7 @@ namespace GMS.Controllers
         {
             if (Session["UserEmail"] != null)
             {
-                if (Session["UserType"].Equals("Mentor"))
+                if (Session["UserType"].ToString()=="Mentor")
                 {
                     SqlCommand cmd = new SqlCommand("SelectMentorProfile", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -176,9 +176,9 @@ namespace GMS.Controllers
                         return RedirectToAction("login", "user");
                     }
                 }
-                else if (Session["UserType"].Equals("User"))
+                else if (Session["UserType"].ToString()=="User")
                 {
-                    SqlCommand cmd = new SqlCommand("SelectUserProfile", con);
+                    SqlCommand cmd = new SqlCommand("SelectUsersProfile", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@email", Session["UserEmail"].ToString());
@@ -217,6 +217,14 @@ namespace GMS.Controllers
             {
                 return PartialView();
             }
+        }
+        public ActionResult StartupLeftMenu()
+        {
+            return PartialView();
+        }
+        public ActionResult MentorRecommendation()
+        {
+           return PartialView();
         }
     }
 }
