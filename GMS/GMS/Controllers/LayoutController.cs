@@ -220,7 +220,81 @@ namespace GMS.Controllers
         }
         public ActionResult StartupLeftMenu()
         {
-            return PartialView();
+            if (Session["UserEmail"] != null)
+            {
+                if (Session["UserType"].Equals("Mentor"))
+                {
+                    SqlCommand cmd = new SqlCommand("SelectMentorProfile", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@email", Session["UserEmail"].ToString());
+                    con.Open();
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+
+                        MentorTopItem mp = new MentorTopItem
+                        {
+
+                            Name = dr["Name"].ToString(),
+                            Image = dr["Image"].ToString(),
+                            Email = dr["Email"].ToString()
+
+
+                        };
+                        ViewData["MyMP"] = mp;
+
+                        con.Close();
+                        return PartialView();
+                    }
+                    else
+                    {
+                        return RedirectToAction("login", "user");
+                    }
+                }
+                else if (Session["UserType"].Equals("User"))
+                {
+                    SqlCommand cmd = new SqlCommand("SelectUsersProfile", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@email", Session["UserEmail"].ToString());
+                    con.Open();
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+
+                        MentorTopItem mp = new MentorTopItem
+                        {
+
+                            Name = dr["Name"].ToString(),
+                            Image = dr["Image"].ToString(),
+                            Email = dr["Email"].ToString()
+
+                        };
+                        ViewData["MyMP"] = mp;
+
+                        con.Close();
+                        return PartialView();
+                    }
+                    else
+                    {
+                        return RedirectToAction("login", "user");
+                    }
+                }
+                else
+                {
+                    return RedirectToAction("login", "user");
+                }
+
+            }
+            else
+            {
+                return PartialView();
+            }
         }
         public ActionResult MentorRecommendation()
         {

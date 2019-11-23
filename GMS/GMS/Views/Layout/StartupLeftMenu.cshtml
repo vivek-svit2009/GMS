@@ -1,29 +1,35 @@
-﻿<div class="dashboard-left data-cell">
+﻿@{
+
+    GMS.Models.MentorTopItem MyMP = (GMS.Models.MentorTopItem)
+        ViewData["MyMP"];
+
+}
+<div class="dashboard-left data-cell">
 
 
 
     <div id="sidebar-nav">
         <div class="log-user-data" id="manual_personal">
             <div class="log-user-img">
-                <img class="img-circle" src="https://www.mentorally.com/assets/uploads/frontuser/4b0b8a92333ad7e96a657a92f9a38c05.jpg" alt="">
+                <img class="img-circle" src="@MyMP.Image" alt="">
                 <a href="javascript:void(0)" id="edit_personal_info" data-toggle="modal" data-target="#profileModal" class="btn btn-edit"><i class="fa fa-pencil"></i></a>
 
             </div>
 
             <div class="log-user-info">
-                <h3 class="log-user-title">VIVEK</h3>
-                <p class="log-user-mail">vivek.svit2011@GMAIL.COM</p>
+                <h3 class="log-user-title">@MyMP.Name</h3>
+                <p class="log-user-mail">@MyMP.Email</p>
             </div>
         </div>
 
 
 
         <ul class="nav">
-            <li><a class="active" href="https://www.mentorally.com/startup/profile"><i class="fa fa-info"></i><span>General Information</span></a></li>
-            <li><a href="https://www.mentorally.com/notifications/index"><i class="fa fa-bell"></i><span>Notifications</span></a></li>
-            <li><a href="https://www.mentorally.com/messages/index"><i class="fa fa-comments"></i><span>Messaging</span></a></li>
-            <li><a href="https://www.mentorally.com/events/registered"><i class="fa fa-bullhorn"></i><span>Events</span></a></li>
-            <li><a href="https://www.mentorally.com/wallet/all"><i class="fa fa-dollar"></i><span>Wallet</span></a></li>
+            <li><a class="active" href="/startup/profile"><i class="fa fa-info"></i><span>General Information</span></a></li>
+            <li><a href="/notifications/index"><i class="fa fa-bell"></i><span>Notifications</span></a></li>
+            <li><a href="/messages/index"><i class="fa fa-comments"></i><span>Messaging</span></a></li>
+            <li><a href="/events/registered"><i class="fa fa-bullhorn"></i><span>Events</span></a></li>
+            <li><a href="/wallet/all"><i class="fa fa-dollar"></i><span>Wallet</span></a></li>
         </ul>
     </div>
 
@@ -34,7 +40,7 @@
                     <h3>Profile Picture</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-                <form action="https://www.mentorally.com/startup/profile" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                <form action="/startup/profile" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 
                     <div class="modal-body">
                         <div id="msg" style="display:none;"></div>
@@ -42,7 +48,7 @@
                             <div class="modal-message alert" style="display: none;"></div>
                             <div class="model-error" id="alertt"></div>
                             <div class="uploaded_img" id="db_uploaded_img">
-                                <img class="img-circle" src="https://www.mentorally.com/assets/uploads/frontuser/4b0b8a92333ad7e96a657a92f9a38c05.jpg" id="aImgShow" alt="Profile Img">
+                                <img class="img-circle" src="/assets/uploads/frontuser/4b0b8a92333ad7e96a657a92f9a38c05.jpg" id="aImgShow" alt="Profile Img">
                             </div>
 
                             <div id="preview">
@@ -221,7 +227,7 @@
             fd.append('crop_h', $('#crop_h').val());
 
             $.ajax({
-                url: 'https://www.mentorally.com/Ajaxcontroller/upload_profile_image',
+                url: '/Ajaxcontroller/upload_profile_image',
                 type: 'POST',
                 data: fd,
                 async: false,

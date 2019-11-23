@@ -11,7 +11,14 @@ namespace GMS.Controllers
         // GET: startup
         public ActionResult profile()
         {
-            return View();
+            if (Session["UserEmail"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("login", "user");
+            }
         }
     }
 }
