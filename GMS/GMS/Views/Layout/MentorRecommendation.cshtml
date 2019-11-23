@@ -1,1 +1,46 @@
-﻿
+﻿@model IEnumerable<GMS.Models.MentorRecommendation>
+    @using GMS.Models
+<div class="data-cell dashboard-right">
+
+    <div class="panel-sidebar">
+        <h3 class="panel-sidebar-title">Recommendations</h3>
+        <div class="carousel-sidebar">
+
+            @foreach (var row in Model)
+            {
+                <div class="sidebar-media sidebar-user clearfix">
+                    <a href="/mentor-profile/@row.Id" class="sidebar-media-thumb" style="background-image:url('@row.Image')"></a>
+                    <div class="sidebar-media-body">
+                        <h4><a href="/mentor-profile/@row.Id">@row.Name</a></h4>
+                        <p>@row.PrimaryIndustry</p>
+                        <div class="cta-btn">
+                            <a href="/mentor-profile/@row.Id" class="btn btn-sm btn-default">View Details</a>
+                            <a href="/user/connect/@row.Id" class="btn btn-sm btn-grey">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+
+            </div>
+
+        <div class="text-center load-more mt30">
+            <a href="/meet-our-mentors" class="btn btn-sm btn-primary">View All Mentors</a>
+        </div>
+
+    </div>
+
+    <div class="panel-sidebar sidebar-events">
+        <h3 class="panel-sidebar-title">Upcoming Events</h3>
+
+        <div class="text-center load-more mt30">
+            No Upcoming events available
+        </div>
+
+    </div>
+   
+    
+
+</div>

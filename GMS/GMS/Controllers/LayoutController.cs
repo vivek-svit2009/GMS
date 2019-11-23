@@ -224,7 +224,26 @@ namespace GMS.Controllers
         }
         public ActionResult MentorRecommendation()
         {
-           return PartialView();
+            List<MentorRecommendation> list = new List<MentorRecommendation>();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("SelectAllMentor", con);
+
+            da.Fill(dt);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                var MentorRecommendation = new MentorRecommendation();
+                MentorRecommendation.Id = Convert.ToInt32(row["Id"].ToString());
+                MentorRecommendation.Name = row["Name"].ToString();
+                MentorRecommendation.Image = row["Image"].ToString();
+                MentorRecommendation.PrimaryIndustry = row["PrimaryIndustry"].ToString();
+
+                list.Add(MentorRecommendation);
+
+            }
+            return PartialView(list);
         }
     }
 }

@@ -21,4 +21,11 @@ namespace GMS.Models
         public string Time { get; set; }
         public string Address { get; set; }
     }
+    public class MentorRecommendation
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string PrimaryIndustry { get; set; }
+        public string Image { get; set; }
+    }
 }
