@@ -28,4 +28,9 @@ namespace GMS.Models
         public string PrimaryIndustry { get; set; }
         public string Image { get; set; }
     }
+    public class ppp
+    {
+        public string status { get; set; }
+        public string image { get; set; }
+    }
 }

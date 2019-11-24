@@ -1,0 +1,333 @@
+﻿
+@{
+    ViewBag.Title = "registration";
+}
+
+<section class="sec-about inner-banner" style="background-image:url(https://www.mentorally.com/assets/frontend/images/Mentor-Regitration.jpg)">
+    <div class="banner-header">
+        <div class="container">
+            <header class="banner-header-title">
+                <h1 class="title"><strong>Mentor</strong> Registration</h1>
+            </header>
+        </div>
+    </div>
+</section>
+<!--[/Banner]-->
+<!--[Form]-->
+<section class="section light-blue-bg register-sec gradient">
+    <div class="container">
+        <header class="header-title text-left">
+            <h2 class="title">Personal Information</h2>
+        </header>
+
+
+        <form action="https://www.mentorally.com/mentor/registration" id="mentor_registration" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+
+            <div class="data-table">
+                <div class="data-cell per_info">
+                    <div class="form-group form-group-lg">
+                        <label>Name*</label>
+                        <input type="text" name="name" value="" class="form-control" id="name" maxlength="50" placeholder="Name*" />
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label>Mail Id*</label>
+                        <input type="text" name="email" value="" class="form-control" id="email" maxlength="255" placeholder="Mail Id*" />
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label>Reach me at*</label>
+                        <input type="text" name="phone" value="" class="form-control" id="phone" maxlength="15" placeholder="Mobile*" />
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label>Password*</label>
+                        <input type="password" name="password" value="" class="form-control" id="password" maxlength="15" placeholder="Password*" />
+                        <small>Password must contain one uppercase, one lowercase, one special character and one number and should have 8 characters as minimum length.</small>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label>Confirm Password*</label>
+                        <input type="password" name="confirm_password" value="" class="form-control" id="confirm_password" maxlength="15" placeholder="Confirm Password*" />
+                    </div>
+                </div>
+                <div class="data-cell cell-upload-img text-center">
+                    <p>Upload Profile Picture<p>
+
+                        <div class="profile-pic" data-toggle="modal" data-target="#profileModal">
+                            <label for="prof-pic">
+                                <img src="https://www.mentorally.com/assets/frontend/images/placeholder.jpg" alt="Profile Img" id="profile_thumb_image">
+
+                                <div class="placeholder-label">
+                                    <span>Upload Image</span>
+                                </div>
+                            </label>
+                        </div>
+                    <p class="text-help">(minimum dimension 300x360 & maximum size 2 Mb)</p>
+                    <input type="hidden" name="profile_image" id="profile_image" value="" />
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="clearfix mt30">
+                <input type="submit" name="next" value="Next" class="btn btn-lg btn-primary btn-register">
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<link href="https://www.mentorally.com/assets/frontend/css/cropper.min.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="https://www.mentorally.com/assets/frontend/js/cropper.min.js"></script>
+<div class="modal fade modal-upload" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="mapServicesLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Profile Picture</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-next">
+                    <div class="modal-message alert" style="display: none;"></div>
+                    <div class="model-error" id="alertt"></div>
+                    <div class="row">
+                        <div class="span12">
+                            <div id="preview"></div>
+                            <div class="clearfix upload-pro-btn mt20">
+                                <p class="text-help">Upload your photo here.<br />The photo can be a GIF, PNG or JPG type file.</p>
+                                <form action="https://www.mentorally.com/mentor/registration" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                    <input type="file" data-buttonText="Edit Photo" class="filestyle  inputfile-1" name="image" data-input="false" data-buttonName="btn-black btn-sm" data-icon="false" id="o_file" data-badge="false" data-target="#aImgShow">
+
+                                    <input type="hidden" name="crop_x" id="crop_x" value="" />
+                                    <input type="hidden" name="crop_y" id="crop_y" value="" />
+                                    <input type="hidden" name="crop_w" id="crop_w" value="" />
+                                    <input type="hidden" name="crop_h" id="crop_h" value="" />
+                                    <input type="submit" name="submitbtn" value="Crop Image" id="upload" style="display:none" class="btn btn-primary btn-lg" />
+                                </form>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	  // image preview
+      $('input[name="image"]').on('change', function () {
+        if (typeof (FileReader) != "undefined") {
+          var image_holder = $("#preview");
+          image_holder.empty();
+          var file = this.files[0];
+          var imagefile = file.type;
+          var file_size = file.size;
+          var match= ["image/jpeg","image/png","image/jpg","image/gif","video/mov","video/avi","video/mp4","video/mp3","video/wmv"];
+          if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]) || (imagefile==match[3]) || (imagefile==match[4]) || (imagefile==match[5])|| (imagefile==match[6]) || (imagefile==match[7]) || (imagefile==match[8]))) {
+            $("#image").val('');
+            $("#image").replaceWith($("#image").clone(true));
+            $("<p />", {
+                    "class" : "text-danger",
+                    "text" : "Upload only jpeg/jpg, png or gif image."
+                }).appendTo(image_holder);
+            return false;
+          }
+          else if (file_size > 2097152) { // 2MB = 2097152 kB = 1024 * 1024 * 2
+            $("#image").val('');
+            //$("#image").replaceWith($("#image").clone(true));
+            $("<p />", {
+                    "class" : "text-danger",
+                    "text" : "Uploaded image exceeds the maximum allowed size of 2MB."
+                }).appendTo(image_holder);
+            return false;
+          }
+          else {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("<img />", {
+                    "src": e.target.result,
+                    "class": "img-responsive",
+                    "id": "img_preview"
+
+                }).appendTo(image_holder);
+
+             }
+            image_holder.show();
+            reader.readAsDataURL($(this)[0].files[0]);
+             $('#upload').show();
+          }
+        } else {
+          alert("This browser does not support FileReader.");
+        }
+
+         var id = $(this).data('target');
+		var src = this;
+		showImage(src);
+      });
+		function showImage(src)
+							{
+							var fr = new FileReader();
+							fr.onload = function(e)
+							{
+							setTimeout(function(){
+								var image = document.querySelector('#img_preview');
+
+								cropper = new Cropper(image, {
+									cropBoxResizable: true,
+									dragMode: 'none',
+									zoomable: false,
+									built: function () {
+										var cropper = this.cropper;
+										cropper.setCropBoxData({ "left":0,"top":0,"width":100,"height":100 });
+							var cropped = cropper.getData();
+
+								$('#crop_x').val(Math.round(cropped.x));
+								$('#crop_y').val(Math.round(cropped.y));
+								$('#crop_w').val(Math.round(cropped.width));
+								$('#crop_h').val(Math.round(cropped.height));
+							//~ $('#cropperModal').modal('hide');
+
+							//~ $('#cropper_msg').html('Cropped image changes will be reflected once you submit this form.');
+							//~ $('#cropper_msg').removeClass('hidden');
+
+					},
+					cropstart: function (data) {
+						var cropper = this.cropper;
+						var cropbox = cropper.getCropBoxData();
+						start_cropbox_w = Math.round(cropbox.width);
+						start_cropbox_h = Math.round(cropbox.height);
+						start_cropbox_l = Math.round(cropbox.left);
+						start_cropbox_t = Math.round(cropbox.top);
+					},
+					cropend: function (data) {
+						var cropper = this.cropper;
+						var cropbox = cropper.getCropBoxData();
+						var cropbox_w = Math.round(cropbox.width);
+						var cropbox_h = Math.round(cropbox.height);
+						var cropbox_l = Math.round(cropbox.left);
+						var cropbox_t = Math.round(cropbox.top);
+						var container_w = $('#img-container').width();
+						var container_h = $('#img-container').height();
+						if(start_cropbox_w!=cropbox_w){
+							if(container_h < cropbox_w)
+							cropbox_w = cropbox_h;
+							else
+								cropbox_h = cropbox_w;
+							}
+							else if(start_cropbox_h!=cropbox_h){
+								if(container_w < cropbox_h)
+									cropbox_h = cropbox_w;
+								else
+								cropbox_w = cropbox_h;
+							}
+							cropper.setCropBoxData({ "left":cropbox_l,"top":cropbox_t,"width":cropbox_w,"height":cropbox_h });
+							var cropped = cropper.getData();
+
+
+								$('#crop_x').val(Math.round(cropped.x));
+								$('#crop_y').val(Math.round(cropped.y));
+								$('#crop_w').val(Math.round(cropped.width));
+								$('#crop_h').val(Math.round(cropped.height));
+
+						}
+					});
+				}, 500);
+			};
+			fr.readAsDataURL(src.files[0]);
+			}
+	
+	  $("#mentor_registration").validate({
+		  ignore: "",
+		rules: {
+		name: {
+        required: true,
+			minlength: 2
+		  },
+		  email: {
+			required: true,
+			email: true
+		  },
+		  password: {
+			required: true,
+			minlength: 8,
+			regx_pass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]{8,}$/
+		  },
+		   confirm_password: {
+			required: true,
+			minlength: 8,
+			equalTo : "#password"
+		  },
+
+		  profile_image: {
+			required: true
+		  },
+		   phone: {
+					required:true,
+					regx: /^[0-9]{9,15}$/,
+					minlength: 10,
+					maxlength: 15,
+				}
+		},
+		messages: {
+		   name: {
+			required: "The Name field is required.",
+			minlength: "The Name field must be at least 2 characters in length."
+		  },
+		  phone: {
+			required: "The Contact No. field is required.",
+			minlength: "A 10 digits number is required.",
+			maxlength: "A 15 digits number only."
+		  },
+		  password: {
+			required: "The Password field is required.",
+			minlength: "The Password field must be at least 8 characters in length."
+		  },
+		   confirm_password: {
+			required: "The Confirm Password field is required.",
+			equalTo: "The Confirm Password field does not match the Password field."
+		  },
+		   profile_image: {
+			required: "The Profile Image field is required."
+		  },
+		  email: "The Email field must contain a valid email address."
+		},
+		submitHandler: function(form) {
+		  form.submit();
+		}
+
+	  });
+
+	   $.validator.addMethod("regx", function(value, element, regexpr) {
+		return regexpr.test(value);
+	}, "Please enter minimum 10 digits number only.");
+	//password validation function
+	  $.validator.addMethod("regx_pass", function(value, element, regexpr) {
+		return regexpr.test(value);
+	}, "Please enter valid password.");
+
+
+	});
+</script>
+
+
+
+
+
+

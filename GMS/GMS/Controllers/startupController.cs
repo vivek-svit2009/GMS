@@ -20,5 +20,9 @@ namespace GMS.Controllers
                 return RedirectToAction("login", "user");
             }
         }
+        public ActionResult Registration()
+        {
+            return View();
+        }
     }
 }

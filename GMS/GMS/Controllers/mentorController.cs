@@ -21,5 +21,9 @@ namespace GMS.Controllers
             }
             
         }
+        public ActionResult registration()
+        {
+            return View();
+        }
     }
 }

@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\mentorController.cs" />
@@ -214,9 +215,13 @@
     <Content Include="Views\Layout\StartupLeftMenu.cshtml" />
     <Content Include="Views\Layout\MentorRecommendation.cshtml" />
     <Content Include="Views\startup\profile.cshtml" />
+    <Content Include="Views\mentor\registration.cshtml" />
+    <Content Include="Views\startup\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\uploads\temp_upload\" />
+    <Folder Include="Views\Ajax\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

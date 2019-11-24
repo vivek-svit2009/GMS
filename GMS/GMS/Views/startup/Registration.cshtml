@@ -1,0 +1,472 @@
+﻿@model GMS.Models.ppp
+@{
+    ViewBag.Title = "Registration";
+}
+
+<section class="sec-video inner-banner">
+    <div class="mtr-intro-vdo hidden-xs">
+        <a id="stop-vid" href="javascript:void();"><img src="/assets/frontend/images/close-icon.png" alt=""></a>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" id="video1" src="https://www.youtube.com/embed/b-F_eQKJ-r4?rel=0&amp;controls=0&showinfo=0&loop=1&enablejsapi=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="container text-center hidden-xs">
+        <div class="profile-header">
+            <a href="javascript:void();" class="ply_vid"><img src="/assets/frontend/images/play-icon.png" alt=""></a>
+            <h3 class="prof-title">What is Mentorally? And What We Do?</h3>
+        </div>
+    </div>
+    <div class="profile-header hidden visible-xs text-center">
+        <a href="https://www.youtube.com/watch?v=b-F_eQKJ-r4" target="_blank"><img src="/assets/frontend/images/play-icon.png" alt=""></a>
+        <h3 class="prof-title">What is Mentorally? And What We Do?</h3>
+    </div>
+
+</section>
+<!--[/Banner]-->
+<!--[Form]-->
+<!--<div class="section sec-steps text-center">
+    <div class="container">
+    <a href="#" class="step-block active">
+      <img src="/assets/frontend/images/icon-step1.png" alt="Step 1">
+      <h5>Step 1</h5>
+    </a>
+    <a href="#" class="step-block disable">
+      <img src="/assets/frontend/images/icon-step2.png" alt="Step 2">
+      <h5>Step 2</h5>
+    </a>
+  </div>
+</div>-->
+
+
+<section class="section light-blue-bg register-sec gradient">
+    <div class="container">
+        <header class="header-title text-left">
+            <h2 class="title">Startup Registration</h2>
+            <p>Tell us about yourself and your startup and lets begin with this association to take your business one step ahead. </p>
+        </header>
+
+        <div class="data-table">
+            <div class="data-cell per_info">
+
+                <form action="/startup/registration" id="mentor_registration" class="register-form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+
+                    <h3 class="register-title">Personal Information</h3>
+                    <div class="form-group form-group-lg">
+                        <label>Name*</label>
+                        <input type="text" name="name" value="" class="form-control" id="name" maxlength="50" placeholder="Name*" />
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label>Mail Id*</label>
+                        <input type="text" name="email" value="" class="form-control" id="email" maxlength="255" placeholder="Mail Id*" />
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label>Reach me at*</label>
+                        <input type="text" name="phone" value="" class="form-control" id="phone" maxlength="15" placeholder="Mobile*" />
+                    </div>
+
+
+
+                    <div class="form-group form-group-lg">
+                        <label>Password</label>
+                        <input type="password" name="password" value="" class="form-control" id="password" maxlength="15" placeholder="Password*" />
+                        <p class="text-help">Password must contain one uppercase, one lowercase, one special character and one number and should have 8 characters as minimum length.</p>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label>Confirm Password</label>
+                        <input type="password" name="confirm_password" value="" class="form-control" id="confirm_password" maxlength="15" placeholder="Confirm Password*" />
+                    </div>
+
+                    <div class="form-group form-group-lg">
+                        <label>Profile Image*</label>
+                        <div class="profile-pic" data-toggle="modal" data-target="#profileModal">
+                            <label for="prof-pic">
+                                <img src="/assets/frontend/images/placeholder.jpg" alt="Profile Img" id="profile_thumb_image">
+
+                                <div class="placeholder-label">
+                                    <span>Upload Image</span>
+                                </div>
+                            </label>
+                        </div>
+                        <p class="text-help">(minimum dimension 300x360 & maximum size 2 Mb)</p>
+                        <input type="hidden" name="profile_image" id="profile_image" value="" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" name="next" value="Next" class="btn btn-lg btn-primary btn-register">
+                    </div>
+
+                </form>
+            </div>
+            <div class="data-cell">
+                <div class="text-center reg_start">
+                    <img src="/assets/frontend/images/clock-icon.png" alt="">
+                    <h3 class="register-title">Not sure about registering <br />for your startup?</h3>
+                    <p>but would still need some advise for your startup? We understand... just share your immediate challenge or problem and we will get in touch</p>
+                    <a href="javascript:void();" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#get_touch">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--[/Form]-->
+
+<div class="modal fade reg_modal" id="get_touch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="data-table">
+                    <div class="data-cell" style="background-image:url(/assets/frontend/images/get-touch.jpg);"></div>
+                    <div class="data-cell">
+                        <div class="modal_form" id="startup_getInTuch_form">
+                            <p>Fill out this short form below and share your immediate concerns and challenges.</p>
+                            <form action="/startup/registration" id="startup_getInTuch" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                <div class="form-group">
+                                    <label>Your Name*</label>
+                                    <input type="text" name="name" value="" class="form-control" id="name" maxlength="50" placeholder="Name*" />
+                                    <div id="err_name" class="er"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email*</label>
+                                    <input type="text" name="email" value="" class="form-control" id="email" placeholder="Email*" maxlength="255" />
+                                    <div id="err_email" class="er"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact No*</label>
+                                    <input type="text" name="phone" value="" class="form-control" id="phone" placeholder="Contact No*" maxlength="15" />
+                                    <div id="err_phone" class="er"></div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Your Startup</label>
+                                    <input type="text" name="startup" value="" class="form-control" id="startup" placeholder="Your Startup" maxlength="15" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Problem Statement</label>
+                                    <textarea name="comment" cols="45" rows="5" class="form-control"></textarea>
+                                </div>
+                                <div id="success_msg"></div>
+                                <div class="clearfix">
+                                    <input type="button" name="save" value="Submit" class="btn btn-lg btn-primary btn-register sumit_button">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<link href="/assets/css/cropper.min.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/assets/js/cropper.min.js"></script>
+<div class="modal fade modal-upload" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="mapServicesLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Profile Picture</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-next">
+                    <div class="modal-message alert" style="display: none;"></div>
+                    <div class="model-error" id="alertt"></div>
+                    <div class="row">
+                        <div class="span12">
+                            <div id="preview"></div>
+                            <div class="clearfix upload-pro-btn mt20">
+                                <p class="text-help">Upload your photo here.<br />The photo can be a GIF, PNG or JPG type file.</p>
+                                <form action="/startup/registration" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                    <input type="file" data-buttonText="Edit Photo" class="filestyle  inputfile-1" name="image" data-input="false" data-buttonName="btn-black btn-sm" data-icon="false" id="o_file" data-badge="false" data-target="#aImgShow">
+
+                                    <input type="hidden" name="crop_x" id="crop_x" value="" />
+                                    <input type="hidden" name="crop_y" id="crop_y" value="" />
+                                    <input type="hidden" name="crop_w" id="crop_w" value="" />
+                                    <input type="hidden" name="crop_h" id="crop_h" value="" />
+                                    <input type="submit" name="submitbtn" value="Crop Image" id="upload" style="display:none" class="btn btn-primary btn-lg" />
+                                </form>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        // image preview
+        $('input[name="image"]').on('change', function () {
+            if (typeof (FileReader) != "undefined") {
+                var image_holder = $("#preview");
+                image_holder.empty();
+                var file = this.files[0];
+                var imagefile = file.type;
+                var file_size = file.size;
+                var match = ["image/jpeg", "image/png", "image/jpg", "image/gif", "video/mov", "video/avi", "video/mp4", "video/mp3", "video/wmv"];
+                if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]) || (imagefile == match[3]) || (imagefile == match[4]) || (imagefile == match[5]) || (imagefile == match[6]) || (imagefile == match[7]) || (imagefile == match[8]))) {
+                    $("#image").val('');
+                    $("#image").replaceWith($("#image").clone(true));
+                    $("<p />", {
+                        "class": "text-danger",
+                        "text": "Upload only jpeg/jpg, png or gif image."
+                    }).appendTo(image_holder);
+                    return false;
+                }
+                else if (file_size > 2097152) { // 2MB = 2097152 kB = 1024 * 1024 * 2
+                    $("#image").val('');
+                    //$("#image").replaceWith($("#image").clone(true));
+                    $("<p />", {
+                        "class": "text-danger",
+                        "text": "Uploaded image exceeds the maximum allowed size of 2MB."
+                    }).appendTo(image_holder);
+                    return false;
+                }
+                else {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $("<img />", {
+                            "src": e.target.result,
+                            "class": "img-responsive",
+                            "id": "img_preview"
+
+                        }).appendTo(image_holder);
+
+                    }
+                    image_holder.show();
+                    reader.readAsDataURL($(this)[0].files[0]);
+                    $('#upload').show();
+                }
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+
+            var id = $(this).data('target');
+            var src = this;
+            showImage(src);
+        });
+        function showImage(src) {
+            var fr = new FileReader();
+            fr.onload = function (e) {
+                setTimeout(function () {
+                    var image = document.querySelector('#img_preview');
+
+                    cropper = new Cropper(image, {
+                        cropBoxResizable: true,
+                        dragMode: 'none',
+                        zoomable: false,
+                        built: function () {
+                            var cropper = this.cropper;
+                            cropper.setCropBoxData({ "left": 0, "top": 0, "width": 100, "height": 100 });
+                            var cropped = cropper.getData();
+
+                            $('#crop_x').val(Math.round(cropped.x));
+                            $('#crop_y').val(Math.round(cropped.y));
+                            $('#crop_w').val(Math.round(cropped.width));
+                            $('#crop_h').val(Math.round(cropped.height));
+                            //~ $('#cropperModal').modal('hide');
+
+                            //~ $('#cropper_msg').html('Cropped image changes will be reflected once you submit this form.');
+                            //~ $('#cropper_msg').removeClass('hidden');
+
+                        },
+                        cropstart: function (data) {
+                            var cropper = this.cropper;
+                            var cropbox = cropper.getCropBoxData();
+                            start_cropbox_w = Math.round(cropbox.width);
+                            start_cropbox_h = Math.round(cropbox.height);
+                            start_cropbox_l = Math.round(cropbox.left);
+                            start_cropbox_t = Math.round(cropbox.top);
+                        },
+                        cropend: function (data) {
+                            var cropper = this.cropper;
+                            var cropbox = cropper.getCropBoxData();
+                            var cropbox_w = Math.round(cropbox.width);
+                            var cropbox_h = Math.round(cropbox.height);
+                            var cropbox_l = Math.round(cropbox.left);
+                            var cropbox_t = Math.round(cropbox.top);
+                            var container_w = $('#img-container').width();
+                            var container_h = $('#img-container').height();
+                            if (start_cropbox_w != cropbox_w) {
+                                if (container_h < cropbox_w)
+                                    cropbox_w = cropbox_h;
+                                else
+                                    cropbox_h = cropbox_w;
+                            }
+                            else if (start_cropbox_h != cropbox_h) {
+                                if (container_w < cropbox_h)
+                                    cropbox_h = cropbox_w;
+                                else
+                                    cropbox_w = cropbox_h;
+                            }
+                            cropper.setCropBoxData({ "left": cropbox_l, "top": cropbox_t, "width": cropbox_w, "height": cropbox_h });
+                            var cropped = cropper.getData();
+
+
+                            $('#crop_x').val(Math.round(cropped.x));
+                            $('#crop_y').val(Math.round(cropped.y));
+                            $('#crop_w').val(Math.round(cropped.width));
+                            $('#crop_h').val(Math.round(cropped.height));
+
+                        }
+                    });
+                }, 500);
+            };
+            fr.readAsDataURL(src.files[0]);
+        }
+        $("#upload").click(function (evt) {
+
+            var crop_xaxis = parseInt($('#crop_x').val());
+            var crop_width = parseInt($('#crop_w').val());
+            var myImg = document.querySelector("#img_preview");
+            var realWidth = myImg.naturalWidth;
+            var realHeight = myImg.naturalHeight;
+
+            if ((crop_xaxis <= -1) || (crop_width >= realWidth)) {
+                alert('Please select a crop region inside image area then press upload.'); return false;
+            }
+            else {
+
+                evt.preventDefault();
+                var fd = new FormData();
+                fd.append('file', $('#o_file')[0].files[0]);
+                fd.append('crop_x', $('#crop_x').val());
+                fd.append('crop_y', $('#crop_y').val());
+                fd.append('crop_w', $('#crop_w').val());
+                fd.append('crop_h', $('#crop_h').val());
+
+                $.ajax({
+                    url: 'http://localhost:52585/Ajax/upload_tempProfile_image',
+                    type: 'POST',
+                    data: fd,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    enctype: 'multipart/form-data',
+                    processData: false,
+                    //dataType:'json',
+                    success: function (response) {
+
+                        if (response.status) {
+                            var url = 'http://localhost:52585/assets/uploads/temp_upload/' + response.image;
+                            $('#profile_thumb_image').attr('src', url);
+                            $('#profile_image').val(response.image);
+                            $('#profileModal').modal('hide');
+                            //~ location.reload();
+                        }
+                        else {
+                            alert(res.msg);
+                            return false;
+
+                        }
+                    }
+                });
+                return false;
+            }
+
+        });
+
+
+
+        $('.ply_vid').click(function () {
+            $('.sec-video').addClass('vidply');
+            $('.sec-video .container').addClass('hidden');
+            $("#video1")[0].src += "&autoplay=1";
+        });
+        $('#stop-vid').on('click', function () {
+            $('#video1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            $('.sec-video').removeClass('vidply');
+            $('.sec-video .container').removeClass('hidden');
+        });
+
+
+
+
+        $("#mentor_registration").validate({
+            ignore: "",
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 8,
+                    regx_pass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]{8,}$/
+                },
+                confirm_password: {
+                    required: true,
+                    minlength: 8,
+                    equalTo: "#password"
+                },
+
+                profile_image: {
+                    required: true
+                },
+                phone: {
+                    required: true,
+                    regx: /^[0-9]{9,15}$/,
+                    minlength: 10,
+                    maxlength: 15,
+                }
+            },
+            messages: {
+                name: {
+                    required: "The Name field is required.",
+                    minlength: "The Name field must be at least 2 characters in length."
+                },
+                phone: {
+                    required: "The Contact No. field is required.",
+                    minlength: "A 10 digits number is required.",
+                    maxlength: "A 15 digits number only."
+                },
+                password: {
+                    required: "The Password field is required.",
+                    minlength: "The Password field must be at least 8 characters in length."
+                },
+                confirm_password: {
+                    required: "The Confirm Password field is required.",
+                    equalTo: "The Confirm Password field does not match the Password field."
+                },
+                profile_image: {
+                    required: "The Profile Image field is required."
+                },
+                email: "The Email field must contain a valid email address."
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+
+        });
+        //phone validation function
+        $.validator.addMethod("regx", function (value, element, regexpr) {
+            return regexpr.test(value);
+        }, "Please enter minimum 10 digits number only.");
+        //password validation function
+        $.validator.addMethod("regx_pass", function (value, element, regexpr) {
+            return regexpr.test(value);
+        }, "Please enter valid password.");
+
+
+    });
+</script>
