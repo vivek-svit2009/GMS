@@ -24,5 +24,10 @@ namespace GMS.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public string Registration()
+        {
+            return profile_thumb_image;
+        }
     }
 }
