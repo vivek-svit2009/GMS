@@ -123,6 +123,7 @@
     <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\meet_our_mentorsController.cs" />
     <Compile Include="Controllers\mentorController.cs" />
     <Compile Include="Controllers\startupController.cs" />
     <Compile Include="Controllers\userController.cs" />
@@ -222,6 +223,7 @@
     <Content Include="Views\startup\profile.cshtml" />
     <Content Include="Views\mentor\registration.cshtml" />
     <Content Include="Views\startup\Registration.cshtml" />
+    <Content Include="Views\meet_our_mentors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

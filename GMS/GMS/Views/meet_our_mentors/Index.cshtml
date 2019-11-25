@@ -1,0 +1,849 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="inner-banner" style="background-image:url(/assets/images/mentor-inner-Banner.jpg)">
+
+    <div class="banner-header">
+        <div class="container">
+            <header class="banner-header-title">
+                <h1 class="title">Meet Our <span>Mentors</span></h1>
+                <p>Over 100 mentors from various domains and expertise. Get personalized incubation support from our handpicked angel investors. The engagement would be a blend of emails, live chats, scheduled calls & face-to-face sessions</p>
+            </header>
+        </div>
+    </div>
+</section>
+<!--[/Banner]-->
+<!--[Mentor-Listing]-->
+<section class="section mtr-listing bg-grey">
+    <div class="filter-bar" id="filter-bar">
+        <div class="container">
+            <div class="filter-form">
+                <h4 class="filter-trigger hidden visible-xs visible-sm">Filter</h4>
+                <div class="data-table">
+                    <div class="data-cell col-xs-3">
+                        <div class="form-group">
+                            <select class="form-control selectpicker" name="area_of_expertise" id="area_of_expertise" data-width="100%" data-size="8" data-live-search="true">
+
+                                <option value=''>Select Area of expertise</option>
+                                <optgroup label="Select Category">
+                                    <!--
+                                               data-max-options="2"
+                                    -->
+                                </optgroup>
+                                <optgroup label="Business">
+                                    <!--
+                                               data-max-options="2"
+                                    -->
+                                    <option value="Business Plan/Model">Business Plan/Model</option>
+                                    <option value="Branding">Branding</option>
+                                    <option value="Legal">Legal</option>
+                                    <option value="Financial Consulting">Financial Consulting</option>
+                                    <option value="Customer Engagement">Customer Engagement</option>
+                                    <option value="Go to Market Strategy">Go to Market Strategy</option>
+                                </optgroup>
+                                <optgroup label="Sales & Marketing">
+                                    <!--
+                                               data-max-options="2"
+                                    -->
+                                    <option value="Sales & Lead Generation">Sales & Lead Generation</option>
+                                    <option value="Growth Strategy">Growth Strategy</option>
+                                    <option value="Online Promotion">Online Promotion</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="Branding">Branding</option>
+                                </optgroup>
+                                <optgroup label="Technology">
+                                    <!--
+                                               data-max-options="2"
+                                    -->
+                                    <option value="Innovation">Innovation</option>
+                                    <option value="AI">AI</option>
+                                    <option value="CRM">CRM</option>
+                                    <option value="Cloud">Cloud</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Software Development">Software Development</option>
+                                </optgroup>
+                                <optgroup label="Product & Design">
+                                    <!--
+                                               data-max-options="2"
+                                    -->
+                                    <option value="Word Press">Word Press</option>
+                                    <option value="Testing/Beta">Testing/Beta</option>
+                                    <option value="Metrics">Metrics</option>
+                                    <option value="Product Management">Product Management</option>
+                                    <option value="Identity">Identity</option>
+                                    <option value="UI/UX">UI/UX</option>
+                                </optgroup>
+                                <optgroup label="Funding">
+                                    <!--
+                                               data-max-options="2"
+                                    -->
+                                    <option value="NonProfit">NonProfit</option>
+                                    <option value="BootStrapping">BootStrapping</option>
+                                    <option value="Venture Capital">Venture Capital</option>
+                                    <option value="Crowdfunding">Crowdfunding</option>
+                                    <option value="Angel Funding">Angel Funding</option>
+                                </optgroup>
+                                <optgroup label="Skill & Leadership">
+                                    <!--
+                                               data-max-options="2"
+                                    -->
+                                    <option value="Media & PR">Media & PR</option>
+                                    <option value="Public Speaking">Public Speaking</option>
+                                    <option value="Team Building">Team Building</option>
+                                    <option value="Productivity">Productivity</option>
+                                </optgroup>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="data-cell col-xs-3">
+                        <div class="form-group">
+                            <select name="primary_industry" class="form-control selectpicker" id="primary_industry" data-width="100%" data-size="8" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Industry&lt;/span&gt;'>Select Industry</option>
+                                <option value="Legal" data-content='&lt;span class=&#039;chips&#039;&gt;Legal&lt;/span&gt;'>Legal</option>
+                                <option value="FINTECH" data-content='&lt;span class=&#039;chips&#039;&gt;FINTECH&lt;/span&gt;'>FINTECH</option>
+                                <option value="Travel, Hospitality &amp; Leisure" data-content='&lt;span class=&#039;chips&#039;&gt;Travel, Hospitality &amp; Leisure&lt;/span&gt;'>Travel, Hospitality & Leisure</option>
+                                <option value="Telecommunications" data-content='&lt;span class=&#039;chips&#039;&gt;Telecommunications&lt;/span&gt;'>Telecommunications</option>
+                                <option value="Retail &amp; Distribution" data-content='&lt;span class=&#039;chips&#039;&gt;Retail &amp; Distribution&lt;/span&gt;'>Retail & Distribution</option>
+                                <option value="Public Sector" data-content='&lt;span class=&#039;chips&#039;&gt;Public Sector&lt;/span&gt;'>Public Sector</option>
+                                <option value="Media and Entertainment" data-content='&lt;span class=&#039;chips&#039;&gt;Media and Entertainment&lt;/span&gt;'>Media and Entertainment</option>
+                                <option value="Manufacturing &amp; Industrial" data-content='&lt;span class=&#039;chips&#039;&gt;Manufacturing &amp; Industrial&lt;/span&gt;'>Manufacturing & Industrial</option>
+                                <option value="Life Sciences &amp; Health Care" data-content='&lt;span class=&#039;chips&#039;&gt;Life Sciences &amp; Health Care&lt;/span&gt;'>Life Sciences & Health Care</option>
+                                <option value="Advertising &amp; Communication" data-content='&lt;span class=&#039;chips&#039;&gt;Advertising &amp; Communication&lt;/span&gt;'>Advertising & Communication</option>
+                                <option value="Internet , E Commerce" data-content='&lt;span class=&#039;chips&#039;&gt;Internet , E Commerce&lt;/span&gt;'>Internet , E Commerce</option>
+                                <option value="Information Technology (IT)" data-content='&lt;span class=&#039;chips&#039;&gt;Information Technology (IT)&lt;/span&gt;'>Information Technology (IT)</option>
+                                <option value="Financial Services" data-content='&lt;span class=&#039;chips&#039;&gt;Financial Services&lt;/span&gt;'>Financial Services</option>
+                                <option value="Energy &amp; Resources" data-content='&lt;span class=&#039;chips&#039;&gt;Energy &amp; Resources&lt;/span&gt;'>Energy & Resources</option>
+                                <option value="Design" data-content='&lt;span class=&#039;chips&#039;&gt;Design&lt;/span&gt;'>Design</option>
+                                <option value="Consumer Products" data-content='&lt;span class=&#039;chips&#039;&gt;Consumer Products&lt;/span&gt;'>Consumer Products</option>
+                                <option value="Automobiles" data-content='&lt;span class=&#039;chips&#039;&gt;Automobiles&lt;/span&gt;'>Automobiles</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="data-cell col-xs-3">
+                        <div class="form-group">
+                            <select name="business_experience" class="form-control selectpicker" data-size="8" data-live-search="true" id="business_experience">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Business Ex.&lt;/span&gt;'>Select Business Ex.</option>
+                                <option value="1-2" data-content='&lt;span class=&#039;chips&#039;&gt;1-2 Years&lt;/span&gt;'>1-2 Years</option>
+                                <option value="3-5" data-content='&lt;span class=&#039;chips&#039;&gt;3-5 Years&lt;/span&gt;'>3-5 Years</option>
+                                <option value="6-10" data-content='&lt;span class=&#039;chips&#039;&gt;6-10 Years&lt;/span&gt;'>6-10 Years</option>
+                                <option value="11-15" data-content='&lt;span class=&#039;chips&#039;&gt;11-15 Years&lt;/span&gt;'>11-15 Years</option>
+                                <option value="16-50" data-content='&lt;span class=&#039;chips&#039;&gt;Above 15 Years&lt;/span&gt;'>Above 15 Years</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="data-cell col-xs-3">
+                        <div class="form-group">
+                            <select name="countries" class="form-control selectpicker" id="countries" data-size="8" data-width="100%" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Country&lt;/span&gt;'>Select Country</option>
+                                <option value="Afghanistan" data-content='&lt;span class=&#039;chips&#039;&gt;Afghanistan&lt;/span&gt;'>Afghanistan</option>
+                                <option value="Albania" data-content='&lt;span class=&#039;chips&#039;&gt;Albania&lt;/span&gt;'>Albania</option>
+                                <option value="Algeria" data-content='&lt;span class=&#039;chips&#039;&gt;Algeria&lt;/span&gt;'>Algeria</option>
+                                <option value="American Samoa" data-content='&lt;span class=&#039;chips&#039;&gt;American Samoa&lt;/span&gt;'>American Samoa</option>
+                                <option value="Andorra" data-content='&lt;span class=&#039;chips&#039;&gt;Andorra&lt;/span&gt;'>Andorra</option>
+                                <option value="Angola" data-content='&lt;span class=&#039;chips&#039;&gt;Angola&lt;/span&gt;'>Angola</option>
+                                <option value="Anguilla" data-content='&lt;span class=&#039;chips&#039;&gt;Anguilla&lt;/span&gt;'>Anguilla</option>
+                                <option value="Antarctica" data-content='&lt;span class=&#039;chips&#039;&gt;Antarctica&lt;/span&gt;'>Antarctica</option>
+                                <option value="Antigua and Barbuda" data-content='&lt;span class=&#039;chips&#039;&gt;Antigua and Barbuda&lt;/span&gt;'>Antigua and Barbuda</option>
+                                <option value="Argentina" data-content='&lt;span class=&#039;chips&#039;&gt;Argentina&lt;/span&gt;'>Argentina</option>
+                                <option value="Armenia" data-content='&lt;span class=&#039;chips&#039;&gt;Armenia&lt;/span&gt;'>Armenia</option>
+                                <option value="Aruba" data-content='&lt;span class=&#039;chips&#039;&gt;Aruba&lt;/span&gt;'>Aruba</option>
+                                <option value="Australia" data-content='&lt;span class=&#039;chips&#039;&gt;Australia&lt;/span&gt;'>Australia</option>
+                                <option value="Austria" data-content='&lt;span class=&#039;chips&#039;&gt;Austria&lt;/span&gt;'>Austria</option>
+                                <option value="Azerbaijan" data-content='&lt;span class=&#039;chips&#039;&gt;Azerbaijan&lt;/span&gt;'>Azerbaijan</option>
+                                <option value="Bahamas" data-content='&lt;span class=&#039;chips&#039;&gt;Bahamas&lt;/span&gt;'>Bahamas</option>
+                                <option value="Bahrain" data-content='&lt;span class=&#039;chips&#039;&gt;Bahrain&lt;/span&gt;'>Bahrain</option>
+                                <option value="Bangladesh" data-content='&lt;span class=&#039;chips&#039;&gt;Bangladesh&lt;/span&gt;'>Bangladesh</option>
+                                <option value="Barbados" data-content='&lt;span class=&#039;chips&#039;&gt;Barbados&lt;/span&gt;'>Barbados</option>
+                                <option value="Belarus" data-content='&lt;span class=&#039;chips&#039;&gt;Belarus&lt;/span&gt;'>Belarus</option>
+                                <option value="Belgium" data-content='&lt;span class=&#039;chips&#039;&gt;Belgium&lt;/span&gt;'>Belgium</option>
+                                <option value="Belize" data-content='&lt;span class=&#039;chips&#039;&gt;Belize&lt;/span&gt;'>Belize</option>
+                                <option value="Benin" data-content='&lt;span class=&#039;chips&#039;&gt;Benin&lt;/span&gt;'>Benin</option>
+                                <option value="Bermuda" data-content='&lt;span class=&#039;chips&#039;&gt;Bermuda&lt;/span&gt;'>Bermuda</option>
+                                <option value="Bhutan" data-content='&lt;span class=&#039;chips&#039;&gt;Bhutan&lt;/span&gt;'>Bhutan</option>
+                                <option value="Bolivia" data-content='&lt;span class=&#039;chips&#039;&gt;Bolivia&lt;/span&gt;'>Bolivia</option>
+                                <option value="Bosnia and Herzegovina" data-content='&lt;span class=&#039;chips&#039;&gt;Bosnia and Herzegovina&lt;/span&gt;'>Bosnia and Herzegovina</option>
+                                <option value="Botswana" data-content='&lt;span class=&#039;chips&#039;&gt;Botswana&lt;/span&gt;'>Botswana</option>
+                                <option value="Bouvet Island" data-content='&lt;span class=&#039;chips&#039;&gt;Bouvet Island&lt;/span&gt;'>Bouvet Island</option>
+                                <option value="Brazil" data-content='&lt;span class=&#039;chips&#039;&gt;Brazil&lt;/span&gt;'>Brazil</option>
+                                <option value="British Indian Ocean Territory" data-content='&lt;span class=&#039;chips&#039;&gt;British Indian Ocean Territory&lt;/span&gt;'>British Indian Ocean Territory</option>
+                                <option value="Brunei Darussalam" data-content='&lt;span class=&#039;chips&#039;&gt;Brunei Darussalam&lt;/span&gt;'>Brunei Darussalam</option>
+                                <option value="Bulgaria" data-content='&lt;span class=&#039;chips&#039;&gt;Bulgaria&lt;/span&gt;'>Bulgaria</option>
+                                <option value="Burkina Faso" data-content='&lt;span class=&#039;chips&#039;&gt;Burkina Faso&lt;/span&gt;'>Burkina Faso</option>
+                                <option value="Burundi" data-content='&lt;span class=&#039;chips&#039;&gt;Burundi&lt;/span&gt;'>Burundi</option>
+                                <option value="Cambodia" data-content='&lt;span class=&#039;chips&#039;&gt;Cambodia&lt;/span&gt;'>Cambodia</option>
+                                <option value="Cameroon" data-content='&lt;span class=&#039;chips&#039;&gt;Cameroon&lt;/span&gt;'>Cameroon</option>
+                                <option value="Canada" data-content='&lt;span class=&#039;chips&#039;&gt;Canada&lt;/span&gt;'>Canada</option>
+                                <option value="Cape Verde" data-content='&lt;span class=&#039;chips&#039;&gt;Cape Verde&lt;/span&gt;'>Cape Verde</option>
+                                <option value="Cayman Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Cayman Islands&lt;/span&gt;'>Cayman Islands</option>
+                                <option value="Central African Republic" data-content='&lt;span class=&#039;chips&#039;&gt;Central African Republic&lt;/span&gt;'>Central African Republic</option>
+                                <option value="Chad" data-content='&lt;span class=&#039;chips&#039;&gt;Chad&lt;/span&gt;'>Chad</option>
+                                <option value="Chile" data-content='&lt;span class=&#039;chips&#039;&gt;Chile&lt;/span&gt;'>Chile</option>
+                                <option value="China" data-content='&lt;span class=&#039;chips&#039;&gt;China&lt;/span&gt;'>China</option>
+                                <option value="Christmas Island" data-content='&lt;span class=&#039;chips&#039;&gt;Christmas Island&lt;/span&gt;'>Christmas Island</option>
+                                <option value="Cocos (Keeling) Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Cocos (Keeling) Islands&lt;/span&gt;'>Cocos (Keeling) Islands</option>
+                                <option value="Colombia" data-content='&lt;span class=&#039;chips&#039;&gt;Colombia&lt;/span&gt;'>Colombia</option>
+                                <option value="Comoros" data-content='&lt;span class=&#039;chips&#039;&gt;Comoros&lt;/span&gt;'>Comoros</option>
+                                <option value="Congo" data-content='&lt;span class=&#039;chips&#039;&gt;Congo&lt;/span&gt;'>Congo</option>
+                                <option value="Cook Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Cook Islands&lt;/span&gt;'>Cook Islands</option>
+                                <option value="Costa Rica" data-content='&lt;span class=&#039;chips&#039;&gt;Costa Rica&lt;/span&gt;'>Costa Rica</option>
+                                <option value="Croatia (Hrvatska)" data-content='&lt;span class=&#039;chips&#039;&gt;Croatia (Hrvatska)&lt;/span&gt;'>Croatia (Hrvatska)</option>
+                                <option value="Cuba" data-content='&lt;span class=&#039;chips&#039;&gt;Cuba&lt;/span&gt;'>Cuba</option>
+                                <option value="Cyprus" data-content='&lt;span class=&#039;chips&#039;&gt;Cyprus&lt;/span&gt;'>Cyprus</option>
+                                <option value="Czech Republic" data-content='&lt;span class=&#039;chips&#039;&gt;Czech Republic&lt;/span&gt;'>Czech Republic</option>
+                                <option value="Denmark" data-content='&lt;span class=&#039;chips&#039;&gt;Denmark&lt;/span&gt;'>Denmark</option>
+                                <option value="Djibouti" data-content='&lt;span class=&#039;chips&#039;&gt;Djibouti&lt;/span&gt;'>Djibouti</option>
+                                <option value="Dominica" data-content='&lt;span class=&#039;chips&#039;&gt;Dominica&lt;/span&gt;'>Dominica</option>
+                                <option value="Dominican Republic" data-content='&lt;span class=&#039;chips&#039;&gt;Dominican Republic&lt;/span&gt;'>Dominican Republic</option>
+                                <option value="East Timor" data-content='&lt;span class=&#039;chips&#039;&gt;East Timor&lt;/span&gt;'>East Timor</option>
+                                <option value="Ecuador" data-content='&lt;span class=&#039;chips&#039;&gt;Ecuador&lt;/span&gt;'>Ecuador</option>
+                                <option value="Egypt" data-content='&lt;span class=&#039;chips&#039;&gt;Egypt&lt;/span&gt;'>Egypt</option>
+                                <option value="El Salvador" data-content='&lt;span class=&#039;chips&#039;&gt;El Salvador&lt;/span&gt;'>El Salvador</option>
+                                <option value="Equatorial Guinea" data-content='&lt;span class=&#039;chips&#039;&gt;Equatorial Guinea&lt;/span&gt;'>Equatorial Guinea</option>
+                                <option value="Eritrea" data-content='&lt;span class=&#039;chips&#039;&gt;Eritrea&lt;/span&gt;'>Eritrea</option>
+                                <option value="Estonia" data-content='&lt;span class=&#039;chips&#039;&gt;Estonia&lt;/span&gt;'>Estonia</option>
+                                <option value="Ethiopia" data-content='&lt;span class=&#039;chips&#039;&gt;Ethiopia&lt;/span&gt;'>Ethiopia</option>
+                                <option value="Falkland Islands (Malvinas)" data-content='&lt;span class=&#039;chips&#039;&gt;Falkland Islands (Malvinas)&lt;/span&gt;'>Falkland Islands (Malvinas)</option>
+                                <option value="Faroe Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Faroe Islands&lt;/span&gt;'>Faroe Islands</option>
+                                <option value="Fiji" data-content='&lt;span class=&#039;chips&#039;&gt;Fiji&lt;/span&gt;'>Fiji</option>
+                                <option value="Finland" data-content='&lt;span class=&#039;chips&#039;&gt;Finland&lt;/span&gt;'>Finland</option>
+                                <option value="France" data-content='&lt;span class=&#039;chips&#039;&gt;France&lt;/span&gt;'>France</option>
+                                <option value="France, Metropolitan" data-content='&lt;span class=&#039;chips&#039;&gt;France, Metropolitan&lt;/span&gt;'>France, Metropolitan</option>
+                                <option value="French Guiana" data-content='&lt;span class=&#039;chips&#039;&gt;French Guiana&lt;/span&gt;'>French Guiana</option>
+                                <option value="French Polynesia" data-content='&lt;span class=&#039;chips&#039;&gt;French Polynesia&lt;/span&gt;'>French Polynesia</option>
+                                <option value="French Southern Territories" data-content='&lt;span class=&#039;chips&#039;&gt;French Southern Territories&lt;/span&gt;'>French Southern Territories</option>
+                                <option value="Gabon" data-content='&lt;span class=&#039;chips&#039;&gt;Gabon&lt;/span&gt;'>Gabon</option>
+                                <option value="Gambia" data-content='&lt;span class=&#039;chips&#039;&gt;Gambia&lt;/span&gt;'>Gambia</option>
+                                <option value="Georgia" data-content='&lt;span class=&#039;chips&#039;&gt;Georgia&lt;/span&gt;'>Georgia</option>
+                                <option value="Germany" data-content='&lt;span class=&#039;chips&#039;&gt;Germany&lt;/span&gt;'>Germany</option>
+                                <option value="Ghana" data-content='&lt;span class=&#039;chips&#039;&gt;Ghana&lt;/span&gt;'>Ghana</option>
+                                <option value="Gibraltar" data-content='&lt;span class=&#039;chips&#039;&gt;Gibraltar&lt;/span&gt;'>Gibraltar</option>
+                                <option value="Guernsey" data-content='&lt;span class=&#039;chips&#039;&gt;Guernsey&lt;/span&gt;'>Guernsey</option>
+                                <option value="Greece" data-content='&lt;span class=&#039;chips&#039;&gt;Greece&lt;/span&gt;'>Greece</option>
+                                <option value="Greenland" data-content='&lt;span class=&#039;chips&#039;&gt;Greenland&lt;/span&gt;'>Greenland</option>
+                                <option value="Grenada" data-content='&lt;span class=&#039;chips&#039;&gt;Grenada&lt;/span&gt;'>Grenada</option>
+                                <option value="Guadeloupe" data-content='&lt;span class=&#039;chips&#039;&gt;Guadeloupe&lt;/span&gt;'>Guadeloupe</option>
+                                <option value="Guam" data-content='&lt;span class=&#039;chips&#039;&gt;Guam&lt;/span&gt;'>Guam</option>
+                                <option value="Guatemala" data-content='&lt;span class=&#039;chips&#039;&gt;Guatemala&lt;/span&gt;'>Guatemala</option>
+                                <option value="Guinea" data-content='&lt;span class=&#039;chips&#039;&gt;Guinea&lt;/span&gt;'>Guinea</option>
+                                <option value="Guinea-Bissau" data-content='&lt;span class=&#039;chips&#039;&gt;Guinea-Bissau&lt;/span&gt;'>Guinea-Bissau</option>
+                                <option value="Guyana" data-content='&lt;span class=&#039;chips&#039;&gt;Guyana&lt;/span&gt;'>Guyana</option>
+                                <option value="Haiti" data-content='&lt;span class=&#039;chips&#039;&gt;Haiti&lt;/span&gt;'>Haiti</option>
+                                <option value="Heard and Mc Donald Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Heard and Mc Donald Islands&lt;/span&gt;'>Heard and Mc Donald Islands</option>
+                                <option value="Honduras" data-content='&lt;span class=&#039;chips&#039;&gt;Honduras&lt;/span&gt;'>Honduras</option>
+                                <option value="Hong Kong" data-content='&lt;span class=&#039;chips&#039;&gt;Hong Kong&lt;/span&gt;'>Hong Kong</option>
+                                <option value="Hungary" data-content='&lt;span class=&#039;chips&#039;&gt;Hungary&lt;/span&gt;'>Hungary</option>
+                                <option value="Iceland" data-content='&lt;span class=&#039;chips&#039;&gt;Iceland&lt;/span&gt;'>Iceland</option>
+                                <option value="India" data-content='&lt;span class=&#039;chips&#039;&gt;India&lt;/span&gt;'>India</option>
+                                <option value="Isle of Man" data-content='&lt;span class=&#039;chips&#039;&gt;Isle of Man&lt;/span&gt;'>Isle of Man</option>
+                                <option value="Indonesia" data-content='&lt;span class=&#039;chips&#039;&gt;Indonesia&lt;/span&gt;'>Indonesia</option>
+                                <option value="Iran (Islamic Republic of)" data-content='&lt;span class=&#039;chips&#039;&gt;Iran (Islamic Republic of)&lt;/span&gt;'>Iran (Islamic Republic of)</option>
+                                <option value="Iraq" data-content='&lt;span class=&#039;chips&#039;&gt;Iraq&lt;/span&gt;'>Iraq</option>
+                                <option value="Ireland" data-content='&lt;span class=&#039;chips&#039;&gt;Ireland&lt;/span&gt;'>Ireland</option>
+                                <option value="Israel" data-content='&lt;span class=&#039;chips&#039;&gt;Israel&lt;/span&gt;'>Israel</option>
+                                <option value="Italy" data-content='&lt;span class=&#039;chips&#039;&gt;Italy&lt;/span&gt;'>Italy</option>
+                                <option value="Ivory Coast" data-content='&lt;span class=&#039;chips&#039;&gt;Ivory Coast&lt;/span&gt;'>Ivory Coast</option>
+                                <option value="Jersey" data-content='&lt;span class=&#039;chips&#039;&gt;Jersey&lt;/span&gt;'>Jersey</option>
+                                <option value="Jamaica" data-content='&lt;span class=&#039;chips&#039;&gt;Jamaica&lt;/span&gt;'>Jamaica</option>
+                                <option value="Japan" data-content='&lt;span class=&#039;chips&#039;&gt;Japan&lt;/span&gt;'>Japan</option>
+                                <option value="Jordan" data-content='&lt;span class=&#039;chips&#039;&gt;Jordan&lt;/span&gt;'>Jordan</option>
+                                <option value="Kazakhstan" data-content='&lt;span class=&#039;chips&#039;&gt;Kazakhstan&lt;/span&gt;'>Kazakhstan</option>
+                                <option value="Kenya" data-content='&lt;span class=&#039;chips&#039;&gt;Kenya&lt;/span&gt;'>Kenya</option>
+                                <option value="Kiribati" data-content='&lt;span class=&#039;chips&#039;&gt;Kiribati&lt;/span&gt;'>Kiribati</option>
+                                <option value="Korea, Democratic People&#039;s Republic of" data-content='&lt;span class=&#039;chips&#039;&gt;Korea, Democratic People&#039;s Republic of&lt;/span&gt;'>Korea, Democratic People's Republic of</option>
+                                <option value="Korea, Republic of" data-content='&lt;span class=&#039;chips&#039;&gt;Korea, Republic of&lt;/span&gt;'>Korea, Republic of</option>
+                                <option value="Kosovo" data-content='&lt;span class=&#039;chips&#039;&gt;Kosovo&lt;/span&gt;'>Kosovo</option>
+                                <option value="Kuwait" data-content='&lt;span class=&#039;chips&#039;&gt;Kuwait&lt;/span&gt;'>Kuwait</option>
+                                <option value="Kyrgyzstan" data-content='&lt;span class=&#039;chips&#039;&gt;Kyrgyzstan&lt;/span&gt;'>Kyrgyzstan</option>
+                                <option value="Lao People&#039;s Democratic Republic" data-content='&lt;span class=&#039;chips&#039;&gt;Lao People&#039;s Democratic Republic&lt;/span&gt;'>Lao People's Democratic Republic</option>
+                                <option value="Latvia" data-content='&lt;span class=&#039;chips&#039;&gt;Latvia&lt;/span&gt;'>Latvia</option>
+                                <option value="Lebanon" data-content='&lt;span class=&#039;chips&#039;&gt;Lebanon&lt;/span&gt;'>Lebanon</option>
+                                <option value="Lesotho" data-content='&lt;span class=&#039;chips&#039;&gt;Lesotho&lt;/span&gt;'>Lesotho</option>
+                                <option value="Liberia" data-content='&lt;span class=&#039;chips&#039;&gt;Liberia&lt;/span&gt;'>Liberia</option>
+                                <option value="Libyan Arab Jamahiriya" data-content='&lt;span class=&#039;chips&#039;&gt;Libyan Arab Jamahiriya&lt;/span&gt;'>Libyan Arab Jamahiriya</option>
+                                <option value="Liechtenstein" data-content='&lt;span class=&#039;chips&#039;&gt;Liechtenstein&lt;/span&gt;'>Liechtenstein</option>
+                                <option value="Lithuania" data-content='&lt;span class=&#039;chips&#039;&gt;Lithuania&lt;/span&gt;'>Lithuania</option>
+                                <option value="Luxembourg" data-content='&lt;span class=&#039;chips&#039;&gt;Luxembourg&lt;/span&gt;'>Luxembourg</option>
+                                <option value="Macau" data-content='&lt;span class=&#039;chips&#039;&gt;Macau&lt;/span&gt;'>Macau</option>
+                                <option value="Macedonia" data-content='&lt;span class=&#039;chips&#039;&gt;Macedonia&lt;/span&gt;'>Macedonia</option>
+                                <option value="Madagascar" data-content='&lt;span class=&#039;chips&#039;&gt;Madagascar&lt;/span&gt;'>Madagascar</option>
+                                <option value="Malawi" data-content='&lt;span class=&#039;chips&#039;&gt;Malawi&lt;/span&gt;'>Malawi</option>
+                                <option value="Malaysia" data-content='&lt;span class=&#039;chips&#039;&gt;Malaysia&lt;/span&gt;'>Malaysia</option>
+                                <option value="Maldives" data-content='&lt;span class=&#039;chips&#039;&gt;Maldives&lt;/span&gt;'>Maldives</option>
+                                <option value="Mali" data-content='&lt;span class=&#039;chips&#039;&gt;Mali&lt;/span&gt;'>Mali</option>
+                                <option value="Malta" data-content='&lt;span class=&#039;chips&#039;&gt;Malta&lt;/span&gt;'>Malta</option>
+                                <option value="Marshall Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Marshall Islands&lt;/span&gt;'>Marshall Islands</option>
+                                <option value="Martinique" data-content='&lt;span class=&#039;chips&#039;&gt;Martinique&lt;/span&gt;'>Martinique</option>
+                                <option value="Mauritania" data-content='&lt;span class=&#039;chips&#039;&gt;Mauritania&lt;/span&gt;'>Mauritania</option>
+                                <option value="Mauritius" data-content='&lt;span class=&#039;chips&#039;&gt;Mauritius&lt;/span&gt;'>Mauritius</option>
+                                <option value="Mayotte" data-content='&lt;span class=&#039;chips&#039;&gt;Mayotte&lt;/span&gt;'>Mayotte</option>
+                                <option value="Mexico" data-content='&lt;span class=&#039;chips&#039;&gt;Mexico&lt;/span&gt;'>Mexico</option>
+                                <option value="Micronesia, Federated States of" data-content='&lt;span class=&#039;chips&#039;&gt;Micronesia, Federated States of&lt;/span&gt;'>Micronesia, Federated States of</option>
+                                <option value="Moldova, Republic of" data-content='&lt;span class=&#039;chips&#039;&gt;Moldova, Republic of&lt;/span&gt;'>Moldova, Republic of</option>
+                                <option value="Monaco" data-content='&lt;span class=&#039;chips&#039;&gt;Monaco&lt;/span&gt;'>Monaco</option>
+                                <option value="Mongolia" data-content='&lt;span class=&#039;chips&#039;&gt;Mongolia&lt;/span&gt;'>Mongolia</option>
+                                <option value="Montenegro" data-content='&lt;span class=&#039;chips&#039;&gt;Montenegro&lt;/span&gt;'>Montenegro</option>
+                                <option value="Montserrat" data-content='&lt;span class=&#039;chips&#039;&gt;Montserrat&lt;/span&gt;'>Montserrat</option>
+                                <option value="Morocco" data-content='&lt;span class=&#039;chips&#039;&gt;Morocco&lt;/span&gt;'>Morocco</option>
+                                <option value="Mozambique" data-content='&lt;span class=&#039;chips&#039;&gt;Mozambique&lt;/span&gt;'>Mozambique</option>
+                                <option value="Myanmar" data-content='&lt;span class=&#039;chips&#039;&gt;Myanmar&lt;/span&gt;'>Myanmar</option>
+                                <option value="Namibia" data-content='&lt;span class=&#039;chips&#039;&gt;Namibia&lt;/span&gt;'>Namibia</option>
+                                <option value="Nauru" data-content='&lt;span class=&#039;chips&#039;&gt;Nauru&lt;/span&gt;'>Nauru</option>
+                                <option value="Nepal" data-content='&lt;span class=&#039;chips&#039;&gt;Nepal&lt;/span&gt;'>Nepal</option>
+                                <option value="Netherlands" data-content='&lt;span class=&#039;chips&#039;&gt;Netherlands&lt;/span&gt;'>Netherlands</option>
+                                <option value="Netherlands Antilles" data-content='&lt;span class=&#039;chips&#039;&gt;Netherlands Antilles&lt;/span&gt;'>Netherlands Antilles</option>
+                                <option value="New Caledonia" data-content='&lt;span class=&#039;chips&#039;&gt;New Caledonia&lt;/span&gt;'>New Caledonia</option>
+                                <option value="New Zealand" data-content='&lt;span class=&#039;chips&#039;&gt;New Zealand&lt;/span&gt;'>New Zealand</option>
+                                <option value="Nicaragua" data-content='&lt;span class=&#039;chips&#039;&gt;Nicaragua&lt;/span&gt;'>Nicaragua</option>
+                                <option value="Niger" data-content='&lt;span class=&#039;chips&#039;&gt;Niger&lt;/span&gt;'>Niger</option>
+                                <option value="Nigeria" data-content='&lt;span class=&#039;chips&#039;&gt;Nigeria&lt;/span&gt;'>Nigeria</option>
+                                <option value="Niue" data-content='&lt;span class=&#039;chips&#039;&gt;Niue&lt;/span&gt;'>Niue</option>
+                                <option value="Norfolk Island" data-content='&lt;span class=&#039;chips&#039;&gt;Norfolk Island&lt;/span&gt;'>Norfolk Island</option>
+                                <option value="Northern Mariana Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Northern Mariana Islands&lt;/span&gt;'>Northern Mariana Islands</option>
+                                <option value="Norway" data-content='&lt;span class=&#039;chips&#039;&gt;Norway&lt;/span&gt;'>Norway</option>
+                                <option value="Oman" data-content='&lt;span class=&#039;chips&#039;&gt;Oman&lt;/span&gt;'>Oman</option>
+                                <option value="Pakistan" data-content='&lt;span class=&#039;chips&#039;&gt;Pakistan&lt;/span&gt;'>Pakistan</option>
+                                <option value="Palau" data-content='&lt;span class=&#039;chips&#039;&gt;Palau&lt;/span&gt;'>Palau</option>
+                                <option value="Palestine" data-content='&lt;span class=&#039;chips&#039;&gt;Palestine&lt;/span&gt;'>Palestine</option>
+                                <option value="Panama" data-content='&lt;span class=&#039;chips&#039;&gt;Panama&lt;/span&gt;'>Panama</option>
+                                <option value="Papua New Guinea" data-content='&lt;span class=&#039;chips&#039;&gt;Papua New Guinea&lt;/span&gt;'>Papua New Guinea</option>
+                                <option value="Paraguay" data-content='&lt;span class=&#039;chips&#039;&gt;Paraguay&lt;/span&gt;'>Paraguay</option>
+                                <option value="Peru" data-content='&lt;span class=&#039;chips&#039;&gt;Peru&lt;/span&gt;'>Peru</option>
+                                <option value="Philippines" data-content='&lt;span class=&#039;chips&#039;&gt;Philippines&lt;/span&gt;'>Philippines</option>
+                                <option value="Pitcairn" data-content='&lt;span class=&#039;chips&#039;&gt;Pitcairn&lt;/span&gt;'>Pitcairn</option>
+                                <option value="Poland" data-content='&lt;span class=&#039;chips&#039;&gt;Poland&lt;/span&gt;'>Poland</option>
+                                <option value="Portugal" data-content='&lt;span class=&#039;chips&#039;&gt;Portugal&lt;/span&gt;'>Portugal</option>
+                                <option value="Puerto Rico" data-content='&lt;span class=&#039;chips&#039;&gt;Puerto Rico&lt;/span&gt;'>Puerto Rico</option>
+                                <option value="Qatar" data-content='&lt;span class=&#039;chips&#039;&gt;Qatar&lt;/span&gt;'>Qatar</option>
+                                <option value="Reunion" data-content='&lt;span class=&#039;chips&#039;&gt;Reunion&lt;/span&gt;'>Reunion</option>
+                                <option value="Romania" data-content='&lt;span class=&#039;chips&#039;&gt;Romania&lt;/span&gt;'>Romania</option>
+                                <option value="Russian Federation" data-content='&lt;span class=&#039;chips&#039;&gt;Russian Federation&lt;/span&gt;'>Russian Federation</option>
+                                <option value="Rwanda" data-content='&lt;span class=&#039;chips&#039;&gt;Rwanda&lt;/span&gt;'>Rwanda</option>
+                                <option value="Saint Kitts and Nevis" data-content='&lt;span class=&#039;chips&#039;&gt;Saint Kitts and Nevis&lt;/span&gt;'>Saint Kitts and Nevis</option>
+                                <option value="Saint Lucia" data-content='&lt;span class=&#039;chips&#039;&gt;Saint Lucia&lt;/span&gt;'>Saint Lucia</option>
+                                <option value="Saint Vincent and the Grenadines" data-content='&lt;span class=&#039;chips&#039;&gt;Saint Vincent and the Grenadines&lt;/span&gt;'>Saint Vincent and the Grenadines</option>
+                                <option value="Samoa" data-content='&lt;span class=&#039;chips&#039;&gt;Samoa&lt;/span&gt;'>Samoa</option>
+                                <option value="San Marino" data-content='&lt;span class=&#039;chips&#039;&gt;San Marino&lt;/span&gt;'>San Marino</option>
+                                <option value="Sao Tome and Principe" data-content='&lt;span class=&#039;chips&#039;&gt;Sao Tome and Principe&lt;/span&gt;'>Sao Tome and Principe</option>
+                                <option value="Saudi Arabia" data-content='&lt;span class=&#039;chips&#039;&gt;Saudi Arabia&lt;/span&gt;'>Saudi Arabia</option>
+                                <option value="Senegal" data-content='&lt;span class=&#039;chips&#039;&gt;Senegal&lt;/span&gt;'>Senegal</option>
+                                <option value="Serbia" data-content='&lt;span class=&#039;chips&#039;&gt;Serbia&lt;/span&gt;'>Serbia</option>
+                                <option value="Seychelles" data-content='&lt;span class=&#039;chips&#039;&gt;Seychelles&lt;/span&gt;'>Seychelles</option>
+                                <option value="Sierra Leone" data-content='&lt;span class=&#039;chips&#039;&gt;Sierra Leone&lt;/span&gt;'>Sierra Leone</option>
+                                <option value="Singapore" data-content='&lt;span class=&#039;chips&#039;&gt;Singapore&lt;/span&gt;'>Singapore</option>
+                                <option value="Slovakia" data-content='&lt;span class=&#039;chips&#039;&gt;Slovakia&lt;/span&gt;'>Slovakia</option>
+                                <option value="Slovenia" data-content='&lt;span class=&#039;chips&#039;&gt;Slovenia&lt;/span&gt;'>Slovenia</option>
+                                <option value="Solomon Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Solomon Islands&lt;/span&gt;'>Solomon Islands</option>
+                                <option value="Somalia" data-content='&lt;span class=&#039;chips&#039;&gt;Somalia&lt;/span&gt;'>Somalia</option>
+                                <option value="South Africa" data-content='&lt;span class=&#039;chips&#039;&gt;South Africa&lt;/span&gt;'>South Africa</option>
+                                <option value="South Georgia South Sandwich Islands" data-content='&lt;span class=&#039;chips&#039;&gt;South Georgia South Sandwich Islands&lt;/span&gt;'>South Georgia South Sandwich Islands</option>
+                                <option value="Spain" data-content='&lt;span class=&#039;chips&#039;&gt;Spain&lt;/span&gt;'>Spain</option>
+                                <option value="Sri Lanka" data-content='&lt;span class=&#039;chips&#039;&gt;Sri Lanka&lt;/span&gt;'>Sri Lanka</option>
+                                <option value="St. Helena" data-content='&lt;span class=&#039;chips&#039;&gt;St. Helena&lt;/span&gt;'>St. Helena</option>
+                                <option value="St. Pierre and Miquelon" data-content='&lt;span class=&#039;chips&#039;&gt;St. Pierre and Miquelon&lt;/span&gt;'>St. Pierre and Miquelon</option>
+                                <option value="Sudan" data-content='&lt;span class=&#039;chips&#039;&gt;Sudan&lt;/span&gt;'>Sudan</option>
+                                <option value="Suriname" data-content='&lt;span class=&#039;chips&#039;&gt;Suriname&lt;/span&gt;'>Suriname</option>
+                                <option value="Svalbard and Jan Mayen Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Svalbard and Jan Mayen Islands&lt;/span&gt;'>Svalbard and Jan Mayen Islands</option>
+                                <option value="Swaziland" data-content='&lt;span class=&#039;chips&#039;&gt;Swaziland&lt;/span&gt;'>Swaziland</option>
+                                <option value="Sweden" data-content='&lt;span class=&#039;chips&#039;&gt;Sweden&lt;/span&gt;'>Sweden</option>
+                                <option value="Switzerland" data-content='&lt;span class=&#039;chips&#039;&gt;Switzerland&lt;/span&gt;'>Switzerland</option>
+                                <option value="Syrian Arab Republic" data-content='&lt;span class=&#039;chips&#039;&gt;Syrian Arab Republic&lt;/span&gt;'>Syrian Arab Republic</option>
+                                <option value="Taiwan" data-content='&lt;span class=&#039;chips&#039;&gt;Taiwan&lt;/span&gt;'>Taiwan</option>
+                                <option value="Tajikistan" data-content='&lt;span class=&#039;chips&#039;&gt;Tajikistan&lt;/span&gt;'>Tajikistan</option>
+                                <option value="Tanzania, United Republic of" data-content='&lt;span class=&#039;chips&#039;&gt;Tanzania, United Republic of&lt;/span&gt;'>Tanzania, United Republic of</option>
+                                <option value="Thailand" data-content='&lt;span class=&#039;chips&#039;&gt;Thailand&lt;/span&gt;'>Thailand</option>
+                                <option value="Togo" data-content='&lt;span class=&#039;chips&#039;&gt;Togo&lt;/span&gt;'>Togo</option>
+                                <option value="Tokelau" data-content='&lt;span class=&#039;chips&#039;&gt;Tokelau&lt;/span&gt;'>Tokelau</option>
+                                <option value="Tonga" data-content='&lt;span class=&#039;chips&#039;&gt;Tonga&lt;/span&gt;'>Tonga</option>
+                                <option value="Trinidad and Tobago" data-content='&lt;span class=&#039;chips&#039;&gt;Trinidad and Tobago&lt;/span&gt;'>Trinidad and Tobago</option>
+                                <option value="Tunisia" data-content='&lt;span class=&#039;chips&#039;&gt;Tunisia&lt;/span&gt;'>Tunisia</option>
+                                <option value="Turkey" data-content='&lt;span class=&#039;chips&#039;&gt;Turkey&lt;/span&gt;'>Turkey</option>
+                                <option value="Turkmenistan" data-content='&lt;span class=&#039;chips&#039;&gt;Turkmenistan&lt;/span&gt;'>Turkmenistan</option>
+                                <option value="Turks and Caicos Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Turks and Caicos Islands&lt;/span&gt;'>Turks and Caicos Islands</option>
+                                <option value="Tuvalu" data-content='&lt;span class=&#039;chips&#039;&gt;Tuvalu&lt;/span&gt;'>Tuvalu</option>
+                                <option value="Uganda" data-content='&lt;span class=&#039;chips&#039;&gt;Uganda&lt;/span&gt;'>Uganda</option>
+                                <option value="Ukraine" data-content='&lt;span class=&#039;chips&#039;&gt;Ukraine&lt;/span&gt;'>Ukraine</option>
+                                <option value="United Arab Emirates" data-content='&lt;span class=&#039;chips&#039;&gt;United Arab Emirates&lt;/span&gt;'>United Arab Emirates</option>
+                                <option value="United Kingdom" data-content='&lt;span class=&#039;chips&#039;&gt;United Kingdom&lt;/span&gt;'>United Kingdom</option>
+                                <option value="United States" data-content='&lt;span class=&#039;chips&#039;&gt;United States&lt;/span&gt;'>United States</option>
+                                <option value="United States minor outlying islands" data-content='&lt;span class=&#039;chips&#039;&gt;United States minor outlying islands&lt;/span&gt;'>United States minor outlying islands</option>
+                                <option value="Uruguay" data-content='&lt;span class=&#039;chips&#039;&gt;Uruguay&lt;/span&gt;'>Uruguay</option>
+                                <option value="Uzbekistan" data-content='&lt;span class=&#039;chips&#039;&gt;Uzbekistan&lt;/span&gt;'>Uzbekistan</option>
+                                <option value="Vanuatu" data-content='&lt;span class=&#039;chips&#039;&gt;Vanuatu&lt;/span&gt;'>Vanuatu</option>
+                                <option value="Vatican City State" data-content='&lt;span class=&#039;chips&#039;&gt;Vatican City State&lt;/span&gt;'>Vatican City State</option>
+                                <option value="Venezuela" data-content='&lt;span class=&#039;chips&#039;&gt;Venezuela&lt;/span&gt;'>Venezuela</option>
+                                <option value="Vietnam" data-content='&lt;span class=&#039;chips&#039;&gt;Vietnam&lt;/span&gt;'>Vietnam</option>
+                                <option value="Virgin Islands (British)" data-content='&lt;span class=&#039;chips&#039;&gt;Virgin Islands (British)&lt;/span&gt;'>Virgin Islands (British)</option>
+                                <option value="Virgin Islands (U.S.)" data-content='&lt;span class=&#039;chips&#039;&gt;Virgin Islands (U.S.)&lt;/span&gt;'>Virgin Islands (U.S.)</option>
+                                <option value="Wallis and Futuna Islands" data-content='&lt;span class=&#039;chips&#039;&gt;Wallis and Futuna Islands&lt;/span&gt;'>Wallis and Futuna Islands</option>
+                                <option value="Western Sahara" data-content='&lt;span class=&#039;chips&#039;&gt;Western Sahara&lt;/span&gt;'>Western Sahara</option>
+                                <option value="Yemen" data-content='&lt;span class=&#039;chips&#039;&gt;Yemen&lt;/span&gt;'>Yemen</option>
+                                <option value="Zaire" data-content='&lt;span class=&#039;chips&#039;&gt;Zaire&lt;/span&gt;'>Zaire</option>
+                                <option value="Zambia" data-content='&lt;span class=&#039;chips&#039;&gt;Zambia&lt;/span&gt;'>Zambia</option>
+                                <option value="Zimbabwe" data-content='&lt;span class=&#039;chips&#039;&gt;Zimbabwe&lt;/span&gt;'>Zimbabwe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="data-cell cell-submit">
+                        <div class="form-group">
+                            <button type="submit" id="Search" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="sticky-placeholder"></div>
+
+    <div class="container">
+        <div class="row row-gap mentor-row" id="Divlist">
+
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/neerajtyagi"><img src="/assets/uploads/frontuser/a7546a1259135c83ec2efb6367103d59.jpeg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Neeraj Tyagi</h4>
+                        <p><h5>Managing Partner</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Delhi, Delhi, India</p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/neerajtyagi" class="btn-vw">View Details</a>
+                        <a href="/user/connect/neerajtyagi" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/haritn"><img src="/assets/uploads/frontuser/fbd50486a18291fc8e19fab843bdea56.jpeg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Hari TN</h4>
+                        <p><h5>Strategic Advisor and Head of HR</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Bangalore, Karnataka, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/haritn" class="btn-vw">View Details</a>
+                        <a href="/user/connect/haritn" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/suneelhegde"><img src="/assets/uploads/frontuser/72d6fc68e97d3b3512f2425731c661cf.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Suneel Hegde</h4>
+                        <p><h5>CEO and Co-Founder</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Bangalore, Karnataka, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/suneelhegde" class="btn-vw">View Details</a>
+                        <a href="/user/connect/suneelhegde" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/bharatkapoor"><img src="/assets/uploads/frontuser/2cdd04d98943049f5aad3d8732bd9657.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Bharat Kapoor</h4>
+                        <p><h5>Chennai Head</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Chennai, Tamil Nadu, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/bharatkapoor" class="btn-vw">View Details</a>
+                        <a href="/user/connect/bharatkapoor" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/sangeetashankaransumesh"><img src="/assets/uploads/frontuser/8fd8a911a43fe67773b6842d1a6297fd.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Sangeeta Shankaran Sumesh</h4>
+                        <p> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        CHENNAI, Tamil Nadu, India</p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/sangeetashankaransumesh" class="btn-vw">View Details</a>
+                        <a href="/user/connect/sangeetashankaransumesh" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/rangarajansriraman"><img src="/assets/uploads/frontuser/7d1ed88f867bea4436ddc4021eedd89f.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Rangarajan Sriraman</h4>
+                        <p> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        chennai, Tamil Nadu, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/rangarajansriraman" class="btn-vw">View Details</a>
+                        <a href="/user/connect/rangarajansriraman" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/shyamsekars"><img src="/assets/uploads/frontuser/007d0086e1e6b444bf1d5d38eb746d67.JPG" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Shyam   Sekar S</h4>
+                        <p><h5>Founder, Chief Mentor & Strategist</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Chennai, Tamil Nadu, India</p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/shyamsekars" class="btn-vw">View Details</a>
+                        <a href="/user/connect/shyamsekars" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/chandrashekarkupperi"><img src="/assets/uploads/frontuser/ed4daa5c416cd0d5c4df3c095ddda774.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Chandrashekar Kupperi</h4>
+                        <p><h5>Founder Director</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Chennai, Tamil Nadu, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/chandrashekarkupperi" class="btn-vw">View Details</a>
+                        <a href="/user/connect/chandrashekarkupperi" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/bhoovarahanthirumalai"><img src="/assets/uploads/frontuser/5ce29fb912224ad372da5035441ecbce.png" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>BHOOVARAHAN THIRUMALAI</h4>
+                        <p><h5>Co-founder, board member. CEO</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        chennai, Tamil Nadu, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/bhoovarahanthirumalai" class="btn-vw">View Details</a>
+                        <a href="/user/connect/bhoovarahanthirumalai" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/pavanverma"><img src="/assets/uploads/frontuser/181e548dc93f819d944be5fc6091d56e.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+                                <img src="/assets/frontend/images/star-on.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Pavan Verma</h4>
+                        <p><h5>Founder & CEO</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Noida, Uttar Pradesh, India</p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/pavanverma" class="btn-vw">View Details</a>
+                        <a href="/user/connect/pavanverma" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 shadow">
+                <div class="mentors">
+                    <figure><a href="/mentor_profile/aniruddhamalpani"><img src="/assets/uploads/frontuser/869e3803f151fa645b34e0ac509b7206.jpg" alt=""></a></figure>
+
+                    <div class="mid-body">
+                        <div class="user-rating">
+                            <div class="rating-count">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+
+                                <img src="/assets/frontend/images/star-off.png" alt="">
+                            </div>
+                        </div>
+                        <h4>Aniruddha Malpani</h4>
+                        <p><h5>Founder</h5> </p>
+                        <!--
+                                    <p><br>
+                        -->
+                        Mumbai, Maharashtra, India</p>
+                        <p class="invest-type"><small>Also an investor</small></p>
+                    </div>
+                    <div class="p-cta">
+                        <a href="/mentor_profile/aniruddhamalpani" class="btn-vw">View Details</a>
+                        <a href="/user/connect/aniruddhamalpani" class="btn-cn">Connect</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+<!--[/Mentor-Listing]-->
+<script>
+
+	$(document).ready(function(){
+	$('#Search').click(function(e){
+			$('#view_more').show();
+			var $area_of_expertise = $('#area_of_expertise').val();
+			var $primary_industry = $('#primary_industry').val();
+			var $business_experience = $('#business_experience').val();
+			var $countries = $('#countries').val();
+			var initLimit = 16
+			var post_data = { countries: $countries, area_of_expertise:$area_of_expertise,business_experience:$business_experience,primary_industry:$primary_industry}
+			$.ajax({
+				type: "GET",
+				url:base_url+ 'home/ajax_update_mentor_list',
+				data:post_data,
+				async : false,
+				dataType:"json",//return type expected as json
+				success: function(data){
+					$('#Divlist').html(data.msg);
+					var loadedProducts = $("#Divlist").find('.shadow').length;
+
+				    if(data.count<=loadedProducts)
+				    $('#view_more').hide()
+				},
+			});
+		});
+
+
+		$('#view_more').click(function(e){
+			var $area_of_expertise = $('#area_of_expertise').val();
+			var $primary_industry = $('#primary_industry').val();
+			var $business_experience = $('#business_experience').val();
+			var $countries = $('#countries').val();
+			 $(this).show();
+			var totalCollections =	11;
+			var limit         = 16;
+			var loadedProducts = $("#Divlist").find('.shadow').length;
+			var offset = loadedProducts;
+			var post_data = { countries: $countries, area_of_expertise:$area_of_expertise,business_experience:$business_experience,primary_industry:$primary_industry,offset:offset,limit:limit}
+			if(loadedProducts < totalCollections){
+				var urlCheck = base_url+ 'home/loadMoreCollect';
+				if(typeof ajax_request !== 'undefined')
+                ajax_request.abort();
+				ajax_request = $.ajax({
+				type: "GET",
+				url:urlCheck,
+				data:post_data,
+				dataType: "json",
+				async : false,
+
+				beforeSend: function(){
+					   $('.loading_more').show();
+
+					},
+				success: function(data){
+
+					 $('.loading_more').hide();
+
+				   if(data.status=='0')
+				   {
+
+					 $('#view_more').hide()
+
+
+					  }
+
+					  $('#Divlist').append(data.msg);
+					  var loadedProducts = $("#Divlist").find('.shadow').length;
+				   if(data.count==loadedProducts)
+				    $('#view_more').hide()
+				},
+
+			});
+
+			}
+
+		});
+		});
+
+</script>
+<script type="text/javascript" src="/assets/js/common.js"></script>
