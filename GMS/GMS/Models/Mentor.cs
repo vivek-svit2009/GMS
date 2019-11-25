@@ -13,5 +13,6 @@ namespace GMS.Models
         public string Address { get; set; }
         public string AreaOfInterest { get; set; }
         public string Image { get; set; }
+        public string IsInvestor { get; set; }
     }
 }

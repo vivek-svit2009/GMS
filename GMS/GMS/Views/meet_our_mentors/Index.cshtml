@@ -2,7 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
+@model IEnumerable<GMS.Models.Mentor>
+@using GMS.Models
 <section class="inner-banner" style="background-image:url(/assets/images/mentor-inner-Banner.jpg)">
 
     <div class="banner-header">
@@ -400,10 +401,10 @@
 
     <div class="container">
         <div class="row row-gap mentor-row" id="Divlist">
-
+            @foreach (var item in Model) {
             <div class="col-sm-4 col-md-3 shadow">
                 <div class="mentors">
-                    <figure><a href="/mentor_profile/neerajtyagi"><img src="/assets/uploads/frontuser/a7546a1259135c83ec2efb6367103d59.jpeg" alt=""></a></figure>
+                    <figure><a href="/mentor_profile/@item.Id"><img src="/assets/uploads/frontuser/@item.Image" alt=""></a></figure>
 
                     <div class="mid-body">
                         <div class="user-rating">
@@ -420,345 +421,25 @@
                                 <img src="/assets/frontend/images/star-off.png" alt="">
                             </div>
                         </div>
-                        <h4>Neeraj Tyagi</h4>
-                        <p><h5>Managing Partner</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Delhi, Delhi, India</p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/neerajtyagi" class="btn-vw">View Details</a>
-                        <a href="/user/connect/neerajtyagi" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/haritn"><img src="/assets/uploads/frontuser/fbd50486a18291fc8e19fab843bdea56.jpeg" alt=""></a></figure>
+                        <h4>@item.Name</h4>
+                        <p><h5>@item.Designation</h5> </p>
 
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
+                        <p>
 
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Hari TN</h4>
-                        <p><h5>Strategic Advisor and Head of HR</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Bangalore, Karnataka, India</p>
+                            @item.Address
+                        </p>
+                        @if (item.IsInvestor == "Yes")
+                        {
                         <p class="invest-type"><small>Also an investor</small></p>
+                        }
                     </div>
                     <div class="p-cta">
-                        <a href="/mentor_profile/haritn" class="btn-vw">View Details</a>
-                        <a href="/user/connect/haritn" class="btn-cn">Connect</a>
+                        <a href="/mentor_profile/@item.Id" class="btn-vw">View Details</a>
+                        <a href="/user/connect/@item.Id" class="btn-cn">Connect</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/suneelhegde"><img src="/assets/uploads/frontuser/72d6fc68e97d3b3512f2425731c661cf.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Suneel Hegde</h4>
-                        <p><h5>CEO and Co-Founder</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Bangalore, Karnataka, India</p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/suneelhegde" class="btn-vw">View Details</a>
-                        <a href="/user/connect/suneelhegde" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/bharatkapoor"><img src="/assets/uploads/frontuser/2cdd04d98943049f5aad3d8732bd9657.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Bharat Kapoor</h4>
-                        <p><h5>Chennai Head</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Chennai, Tamil Nadu, India</p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/bharatkapoor" class="btn-vw">View Details</a>
-                        <a href="/user/connect/bharatkapoor" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/sangeetashankaransumesh"><img src="/assets/uploads/frontuser/8fd8a911a43fe67773b6842d1a6297fd.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Sangeeta Shankaran Sumesh</h4>
-                        <p> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        CHENNAI, Tamil Nadu, India</p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/sangeetashankaransumesh" class="btn-vw">View Details</a>
-                        <a href="/user/connect/sangeetashankaransumesh" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/rangarajansriraman"><img src="/assets/uploads/frontuser/7d1ed88f867bea4436ddc4021eedd89f.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Rangarajan Sriraman</h4>
-                        <p> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        chennai, Tamil Nadu, India</p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/rangarajansriraman" class="btn-vw">View Details</a>
-                        <a href="/user/connect/rangarajansriraman" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/shyamsekars"><img src="/assets/uploads/frontuser/007d0086e1e6b444bf1d5d38eb746d67.JPG" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Shyam   Sekar S</h4>
-                        <p><h5>Founder, Chief Mentor & Strategist</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Chennai, Tamil Nadu, India</p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/shyamsekars" class="btn-vw">View Details</a>
-                        <a href="/user/connect/shyamsekars" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/chandrashekarkupperi"><img src="/assets/uploads/frontuser/ed4daa5c416cd0d5c4df3c095ddda774.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Chandrashekar Kupperi</h4>
-                        <p><h5>Founder Director</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Chennai, Tamil Nadu, India</p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/chandrashekarkupperi" class="btn-vw">View Details</a>
-                        <a href="/user/connect/chandrashekarkupperi" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/bhoovarahanthirumalai"><img src="/assets/uploads/frontuser/5ce29fb912224ad372da5035441ecbce.png" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>BHOOVARAHAN THIRUMALAI</h4>
-                        <p><h5>Co-founder, board member. CEO</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        chennai, Tamil Nadu, India</p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/bhoovarahanthirumalai" class="btn-vw">View Details</a>
-                        <a href="/user/connect/bhoovarahanthirumalai" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/pavanverma"><img src="/assets/uploads/frontuser/181e548dc93f819d944be5fc6091d56e.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-                                <img src="/assets/frontend/images/star-on.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Pavan Verma</h4>
-                        <p><h5>Founder & CEO</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Noida, Uttar Pradesh, India</p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/pavanverma" class="btn-vw">View Details</a>
-                        <a href="/user/connect/pavanverma" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3 shadow">
-                <div class="mentors">
-                    <figure><a href="/mentor_profile/aniruddhamalpani"><img src="/assets/uploads/frontuser/869e3803f151fa645b34e0ac509b7206.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Aniruddha Malpani</h4>
-                        <p><h5>Founder</h5> </p>
-                        <!--
-                                    <p><br>
-                        -->
-                        Mumbai, Maharashtra, India</p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="p-cta">
-                        <a href="/mentor_profile/aniruddhamalpani" class="btn-vw">View Details</a>
-                        <a href="/user/connect/aniruddhamalpani" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
+            }
 
         </div>
 
