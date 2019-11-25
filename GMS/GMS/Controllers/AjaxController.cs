@@ -12,7 +12,7 @@ namespace GMS.Controllers
     public class AjaxController : Controller
     {
         [HttpPost]
-        public JsonResult upload_tempProfile_image(int crop_x,int crop_y,int crop_w,int crop_h)
+        public JsonResult upload_tempProfile_image(int crop_x, int crop_y, int crop_w, int crop_h)
         {
             if (Request.Files.Count > 0)
             {
@@ -28,7 +28,7 @@ namespace GMS.Controllers
 
                         HttpPostedFileBase file = files[i];
                         string fname;
-                        
+
                         // Checking for Internet Explorer  
                         if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
                         {
@@ -38,14 +38,14 @@ namespace GMS.Controllers
                         else
                         {
                             fname = file.FileName;
-                           
+
                         }
-                       
-                       
+
+
                         ff = fname;
                         // Get the complete folder path and store the file inside it.  
                         fname = Path.Combine(Server.MapPath("~/assets/Uploads/temp_upload"), fname);
-                        
+
                         file.SaveAs(fname);
                         Bitmap croppedImage;
                         using (var originalImage = new Bitmap(fname))
@@ -61,7 +61,7 @@ namespace GMS.Controllers
                         // It is desirable release this resource too.
                         croppedImage.Dispose();
                     }
-                    ppp p = new ppp
+                    respo p = new respo
                     {
                         status = "True",
                         image = ff
@@ -71,13 +71,30 @@ namespace GMS.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return Json(new { success = false});
+                    respo p = new respo
+                    {
+                        status = "False",
+                        message = ex.ToString()
+                    };
+                    return Json(p);
                 }
             }
             else
             {
-                return Json(new { success = false });
+                respo p = new respo
+                {
+                    status = "False",
+                    message = "Image Not Selected"
+                };
+                return Json(p);
             }
         }
+        public class respo
+        {
+            public string status { get; set; }
+            public string image { get; set; }
+            public string message { get; set; }
+        }
     }
+
 }

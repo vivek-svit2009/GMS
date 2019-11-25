@@ -2,8 +2,15 @@
 @{
     ViewBag.Title = "registration";
 }
-
-<section class="sec-about inner-banner" style="background-image:url(https://www.mentorally.com/assets/frontend/images/Mentor-Regitration.jpg)">
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}
+<section class="sec-about inner-banner" style="background-image:url(/assets/images/Mentor-Regitration.jpg)">
     <div class="banner-header">
         <div class="container">
             <header class="banner-header-title">
@@ -21,7 +28,7 @@
         </header>
 
 
-        <form action="https://www.mentorally.com/mentor/registration" id="mentor_registration" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <form action="/mentor/registration" id="mentor_registration" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 
             <div class="data-table">
                 <div class="data-cell per_info">
@@ -52,7 +59,7 @@
 
                         <div class="profile-pic" data-toggle="modal" data-target="#profileModal">
                             <label for="prof-pic">
-                                <img src="https://www.mentorally.com/assets/frontend/images/placeholder.jpg" alt="Profile Img" id="profile_thumb_image">
+                                <img src="/assets/images/placeholder.jpg" alt="Profile Img" id="profile_thumb_image">
 
                                 <div class="placeholder-label">
                                     <span>Upload Image</span>
@@ -82,8 +89,8 @@
     </div>
 </section>
 
-<link href="https://www.mentorally.com/assets/frontend/css/cropper.min.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="https://www.mentorally.com/assets/frontend/js/cropper.min.js"></script>
+<link href="/assets/css/cropper.min.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/assets/js/cropper.min.js"></script>
 <div class="modal fade modal-upload" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="mapServicesLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -100,7 +107,7 @@
                             <div id="preview"></div>
                             <div class="clearfix upload-pro-btn mt20">
                                 <p class="text-help">Upload your photo here.<br />The photo can be a GIF, PNG or JPG type file.</p>
-                                <form action="https://www.mentorally.com/mentor/registration" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                <form action="/mentor/registration" class="" name="Requestacallform" autocomplete="off" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                                     <input type="file" data-buttonText="Edit Photo" class="filestyle  inputfile-1" name="image" data-input="false" data-buttonName="btn-black btn-sm" data-icon="false" id="o_file" data-badge="false" data-target="#aImgShow">
 
                                     <input type="hidden" name="crop_x" id="crop_x" value="" />
@@ -128,203 +135,300 @@
 
 
 
+
+
 <script type="text/javascript">
-	$(document).ready(function(){
+    $(document).ready(function () {
 
-	  // image preview
-      $('input[name="image"]').on('change', function () {
-        if (typeof (FileReader) != "undefined") {
-          var image_holder = $("#preview");
-          image_holder.empty();
-          var file = this.files[0];
-          var imagefile = file.type;
-          var file_size = file.size;
-          var match= ["image/jpeg","image/png","image/jpg","image/gif","video/mov","video/avi","video/mp4","video/mp3","video/wmv"];
-          if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]) || (imagefile==match[3]) || (imagefile==match[4]) || (imagefile==match[5])|| (imagefile==match[6]) || (imagefile==match[7]) || (imagefile==match[8]))) {
-            $("#image").val('');
-            $("#image").replaceWith($("#image").clone(true));
-            $("<p />", {
-                    "class" : "text-danger",
-                    "text" : "Upload only jpeg/jpg, png or gif image."
-                }).appendTo(image_holder);
-            return false;
-          }
-          else if (file_size > 2097152) { // 2MB = 2097152 kB = 1024 * 1024 * 2
-            $("#image").val('');
-            //$("#image").replaceWith($("#image").clone(true));
-            $("<p />", {
-                    "class" : "text-danger",
-                    "text" : "Uploaded image exceeds the maximum allowed size of 2MB."
-                }).appendTo(image_holder);
-            return false;
-          }
-          else {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $("<img />", {
-                    "src": e.target.result,
-                    "class": "img-responsive",
-                    "id": "img_preview"
+        // image preview
+        $('input[name="image"]').on('change', function () {
+            if (typeof (FileReader) != "undefined") {
+                var image_holder = $("#preview");
+                image_holder.empty();
+                var file = this.files[0];
+                var imagefile = file.type;
+                var file_size = file.size;
+                var match = ["image/jpeg", "image/png", "image/jpg", "image/gif", "video/mov", "video/avi", "video/mp4", "video/mp3", "video/wmv"];
+                if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]) || (imagefile == match[3]) || (imagefile == match[4]) || (imagefile == match[5]) || (imagefile == match[6]) || (imagefile == match[7]) || (imagefile == match[8]))) {
+                    $("#image").val('');
+                    $("#image").replaceWith($("#image").clone(true));
+                    $("<p />", {
+                        "class": "text-danger",
+                        "text": "Upload only jpeg/jpg, png or gif image."
+                    }).appendTo(image_holder);
+                    return false;
+                }
+                else if (file_size > 2097152) { // 2MB = 2097152 kB = 1024 * 1024 * 2
+                    $("#image").val('');
+                    //$("#image").replaceWith($("#image").clone(true));
+                    $("<p />", {
+                        "class": "text-danger",
+                        "text": "Uploaded image exceeds the maximum allowed size of 2MB."
+                    }).appendTo(image_holder);
+                    return false;
+                }
+                else {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $("<img />", {
+                            "src": e.target.result,
+                            "class": "img-responsive",
+                            "id": "img_preview"
 
-                }).appendTo(image_holder);
+                        }).appendTo(image_holder);
 
-             }
-            image_holder.show();
-            reader.readAsDataURL($(this)[0].files[0]);
-             $('#upload').show();
-          }
-        } else {
-          alert("This browser does not support FileReader.");
+                    }
+                    image_holder.show();
+                    reader.readAsDataURL($(this)[0].files[0]);
+                    $('#upload').show();
+                }
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+
+            var id = $(this).data('target');
+            var src = this;
+            showImage(src);
+        });
+        function showImage(src) {
+            var fr = new FileReader();
+            fr.onload = function (e) {
+                setTimeout(function () {
+                    var image = document.querySelector('#img_preview');
+
+                    cropper = new Cropper(image, {
+                        cropBoxResizable: true,
+                        dragMode: 'none',
+                        zoomable: false,
+                        built: function () {
+                            var cropper = this.cropper;
+                            cropper.setCropBoxData({ "left": 0, "top": 0, "width": 100, "height": 100 });
+                            var cropped = cropper.getData();
+
+                            $('#crop_x').val(Math.round(cropped.x));
+                            $('#crop_y').val(Math.round(cropped.y));
+                            $('#crop_w').val(Math.round(cropped.width));
+                            $('#crop_h').val(Math.round(cropped.height));
+                            //~ $('#cropperModal').modal('hide');
+
+                            //~ $('#cropper_msg').html('Cropped image changes will be reflected once you submit this form.');
+                            //~ $('#cropper_msg').removeClass('hidden');
+
+                        },
+                        cropstart: function (data) {
+                            var cropper = this.cropper;
+                            var cropbox = cropper.getCropBoxData();
+                            start_cropbox_w = Math.round(cropbox.width);
+                            start_cropbox_h = Math.round(cropbox.height);
+                            start_cropbox_l = Math.round(cropbox.left);
+                            start_cropbox_t = Math.round(cropbox.top);
+                        },
+                        cropend: function (data) {
+                            var cropper = this.cropper;
+                            var cropbox = cropper.getCropBoxData();
+                            var cropbox_w = Math.round(cropbox.width);
+                            var cropbox_h = Math.round(cropbox.height);
+                            var cropbox_l = Math.round(cropbox.left);
+                            var cropbox_t = Math.round(cropbox.top);
+                            var container_w = $('#img-container').width();
+                            var container_h = $('#img-container').height();
+                            if (start_cropbox_w != cropbox_w) {
+                                if (container_h < cropbox_w)
+                                    cropbox_w = cropbox_h;
+                                else
+                                    cropbox_h = cropbox_w;
+                            }
+                            else if (start_cropbox_h != cropbox_h) {
+                                if (container_w < cropbox_h)
+                                    cropbox_h = cropbox_w;
+                                else
+                                    cropbox_w = cropbox_h;
+                            }
+                            cropper.setCropBoxData({ "left": cropbox_l, "top": cropbox_t, "width": cropbox_w, "height": cropbox_h });
+                            var cropped = cropper.getData();
+
+
+                            $('#crop_x').val(Math.round(cropped.x));
+                            $('#crop_y').val(Math.round(cropped.y));
+                            $('#crop_w').val(Math.round(cropped.width));
+                            $('#crop_h').val(Math.round(cropped.height));
+
+                        }
+                    });
+                }, 500);
+            };
+            fr.readAsDataURL(src.files[0]);
         }
+        $("#upload").click(function (evt) {
 
-         var id = $(this).data('target');
-		var src = this;
-		showImage(src);
-      });
-		function showImage(src)
-							{
-							var fr = new FileReader();
-							fr.onload = function(e)
-							{
-							setTimeout(function(){
-								var image = document.querySelector('#img_preview');
+            var crop_xaxis = parseInt($('#crop_x').val());
+            var crop_width = parseInt($('#crop_w').val());
+            var myImg = document.querySelector("#img_preview");
+            var realWidth = myImg.naturalWidth;
+            var realHeight = myImg.naturalHeight;
 
-								cropper = new Cropper(image, {
-									cropBoxResizable: true,
-									dragMode: 'none',
-									zoomable: false,
-									built: function () {
-										var cropper = this.cropper;
-										cropper.setCropBoxData({ "left":0,"top":0,"width":100,"height":100 });
-							var cropped = cropper.getData();
+            if ((crop_xaxis <= -1) || (crop_width >= realWidth)) {
+                alert('Please select a crop region inside image area then press upload.'); return false;
+            }
+            else {
 
-								$('#crop_x').val(Math.round(cropped.x));
-								$('#crop_y').val(Math.round(cropped.y));
-								$('#crop_w').val(Math.round(cropped.width));
-								$('#crop_h').val(Math.round(cropped.height));
-							//~ $('#cropperModal').modal('hide');
+                evt.preventDefault();
+                var fd = new FormData();
+                fd.append('file', $('#o_file')[0].files[0]);
+                fd.append('crop_x', $('#crop_x').val());
+                fd.append('crop_y', $('#crop_y').val());
+                fd.append('crop_w', $('#crop_w').val());
+                fd.append('crop_h', $('#crop_h').val());
 
-							//~ $('#cropper_msg').html('Cropped image changes will be reflected once you submit this form.');
-							//~ $('#cropper_msg').removeClass('hidden');
+                $.ajax({
+                    url: '/Ajax/upload_tempProfile_image',
+                    type: 'POST',
+                    data: fd,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    enctype: 'multipart/form-data',
+                    processData: false,
+                    //dataType:'json',
+                    success: function (response) {
 
-					},
-					cropstart: function (data) {
-						var cropper = this.cropper;
-						var cropbox = cropper.getCropBoxData();
-						start_cropbox_w = Math.round(cropbox.width);
-						start_cropbox_h = Math.round(cropbox.height);
-						start_cropbox_l = Math.round(cropbox.left);
-						start_cropbox_t = Math.round(cropbox.top);
-					},
-					cropend: function (data) {
-						var cropper = this.cropper;
-						var cropbox = cropper.getCropBoxData();
-						var cropbox_w = Math.round(cropbox.width);
-						var cropbox_h = Math.round(cropbox.height);
-						var cropbox_l = Math.round(cropbox.left);
-						var cropbox_t = Math.round(cropbox.top);
-						var container_w = $('#img-container').width();
-						var container_h = $('#img-container').height();
-						if(start_cropbox_w!=cropbox_w){
-							if(container_h < cropbox_w)
-							cropbox_w = cropbox_h;
-							else
-								cropbox_h = cropbox_w;
-							}
-							else if(start_cropbox_h!=cropbox_h){
-								if(container_w < cropbox_h)
-									cropbox_h = cropbox_w;
-								else
-								cropbox_w = cropbox_h;
-							}
-							cropper.setCropBoxData({ "left":cropbox_l,"top":cropbox_t,"width":cropbox_w,"height":cropbox_h });
-							var cropped = cropper.getData();
+                        if (response.status) {
+                            var url = base_url + 'assets/uploads/temp_upload/' + response.image;
+                            $('#profile_thumb_image').attr('src', url);
+                            $('#profile_image').val(response.image);
+                            $('#profileModal').modal('hide');
+                            //~ location.reload();
+                        }
+                        else {
+                            alert(res.msg);
+                            return false;
+
+                        }
+                    }
+                });
+                return false;
+            }
+
+        });
 
 
-								$('#crop_x').val(Math.round(cropped.x));
-								$('#crop_y').val(Math.round(cropped.y));
-								$('#crop_w').val(Math.round(cropped.width));
-								$('#crop_h').val(Math.round(cropped.height));
+        $('.sumit_button').click(function () {
+            var x = $(this);
+            var $dialog = $('#startup_getInTuch');
+            var data = $dialog.serialize();
+            $.ajax({
+                type: "post",
+                url: "/Ajax/startup_getInTuch",
+                data: $('#startup_getInTuch').serialize(),
+                datatype: 'json',
+                cache: false,
+                beforeSend: function () {
+                    $('.loading_more').show();
+                    $('body').addClass('loader-active');
 
-						}
-					});
-				}, 500);
-			};
-			fr.readAsDataURL(src.files[0]);
-			}
-	
-	  $("#mentor_registration").validate({
-		  ignore: "",
-		rules: {
-		name: {
-        required: true,
-			minlength: 2
-		  },
-		  email: {
-			required: true,
-			email: true
-		  },
-		  password: {
-			required: true,
-			minlength: 8,
-			regx_pass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]{8,}$/
-		  },
-		   confirm_password: {
-			required: true,
-			minlength: 8,
-			equalTo : "#password"
-		  },
+                },
+                success: function (data) {
+                    $('.loading_more').fadeOut(500);
+                    $('body').removeClass('loader-active');
+                    var dataar = jQuery.parseJSON(data);
+                    if (dataar.type == 'success') {
+                        $('.er').html('');
 
-		  profile_image: {
-			required: true
-		  },
-		   phone: {
-					required:true,
-					regx: /^[0-9]{9,15}$/,
-					minlength: 10,
-					maxlength: 15,
-				}
-		},
-		messages: {
-		   name: {
-			required: "The Name field is required.",
-			minlength: "The Name field must be at least 2 characters in length."
-		  },
-		  phone: {
-			required: "The Contact No. field is required.",
-			minlength: "A 10 digits number is required.",
-			maxlength: "A 15 digits number only."
-		  },
-		  password: {
-			required: "The Password field is required.",
-			minlength: "The Password field must be at least 8 characters in length."
-		  },
-		   confirm_password: {
-			required: "The Confirm Password field is required.",
-			equalTo: "The Confirm Password field does not match the Password field."
-		  },
-		   profile_image: {
-			required: "The Profile Image field is required."
-		  },
-		  email: "The Email field must contain a valid email address."
-		},
-		submitHandler: function(form) {
-		  form.submit();
-		}
-
-	  });
-
-	   $.validator.addMethod("regx", function(value, element, regexpr) {
-		return regexpr.test(value);
-	}, "Please enter minimum 10 digits number only.");
-	//password validation function
-	  $.validator.addMethod("regx_pass", function(value, element, regexpr) {
-		return regexpr.test(value);
-	}, "Please enter valid password.");
+                        $('#success_msg').addClass('text-success').html(dataar.msg);
+                        $("#startup_getInTuch")[0].reset();
+                        setTimeout(function () {
+                            $('#get_touch').modal('hide');
+                            $('#success_msg').html('');
+                        }, 4000);
+                    } else {
+                        $('#startup_getInTuch').find('.er').html('');
+                        var obj = JSON.parse(data);
+                        $.each(obj.msg, function (key, value) {
+                            key = key.replace(/[[\]]/g, '')
+                            $('#startup_getInTuch').find('#err_' + key).addClass('text-danger').html(value);
+                        });
+                    }
 
 
-	});
+                }
+            });
+        });
+
+
+
+        $("#mentor_registration").validate({
+            ignore: "",
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 8,
+                    regx_pass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]{8,}$/
+                },
+                confirm_password: {
+                    required: true,
+                    minlength: 8,
+                    equalTo: "#password"
+                },
+
+                profile_image: {
+                    required: true
+                },
+                phone: {
+                    required: true,
+                    regx: /^[0-9]{9,15}$/,
+                    minlength: 10,
+                    maxlength: 15,
+                }
+            },
+            messages: {
+                name: {
+                    required: "The Name field is required.",
+                    minlength: "The Name field must be at least 2 characters in length."
+                },
+                phone: {
+                    required: "The Contact No. field is required.",
+                    minlength: "A 10 digits number is required.",
+                    maxlength: "A 15 digits number only."
+                },
+                password: {
+                    required: "The Password field is required.",
+                    minlength: "The Password field must be at least 8 characters in length."
+                },
+                confirm_password: {
+                    required: "The Confirm Password field is required.",
+                    equalTo: "The Confirm Password field does not match the Password field."
+                },
+                profile_image: {
+                    required: "The Profile Image field is required."
+                },
+                email: "The Email field must contain a valid email address."
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+
+        });
+
+        $.validator.addMethod("regx", function (value, element, regexpr) {
+            return regexpr.test(value);
+        }, "Please enter minimum 10 digits number only.");
+        //password validation function
+        $.validator.addMethod("regx_pass", function (value, element, regexpr) {
+            return regexpr.test(value);
+        }, "Please enter valid password.");
+
+
+    });
 </script>
+
 
 
 

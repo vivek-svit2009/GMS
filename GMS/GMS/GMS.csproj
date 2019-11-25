@@ -130,7 +130,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginUser.cs" />
+    <Compile Include="Models\Mentor.cs" />
     <Compile Include="Models\RightSideLayout.cs" />
+    <Compile Include="Models\Startup.cs" />
     <Compile Include="Models\TopMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,9 +153,12 @@
     <Content Include="Assets\images\3.jpg" />
     <Content Include="Assets\images\4.png" />
     <Content Include="Assets\images\angel-meetup.png" />
+    <Content Include="Assets\images\clock-icon.png" />
     <Content Include="Assets\images\cover.jpg" />
+    <Content Include="Assets\images\get-touch.jpg" />
     <Content Include="Assets\images\logo.png" />
     <Content Include="Assets\images\m1.jpg" />
+    <Content Include="Assets\images\placeholder.jpg" />
     <Content Include="Assets\images\virtual-incubation.png" />
     <Content Include="Assets\js\bootstrap-clockpicker.min.js" />
     <Content Include="Assets\js\bootstrap-datetimepicker.js" />
@@ -220,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\uploads\frontuser\" />
     <Folder Include="Assets\uploads\temp_upload\" />
     <Folder Include="Views\Ajax\" />
   </ItemGroup>

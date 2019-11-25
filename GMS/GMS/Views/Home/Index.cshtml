@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@model IEnumerable<GMS.Models.Mentor>
+@using GMS.Models
 <section id="home-slider" class="relative owl-carousel">
     <!---<div class="item text-center" style="background-image:url(/Startup_funding2.jpg);"></div>-->
     <div class="item text-center" style="background-image:url(../assets/images/4.png);"></div>
@@ -39,10 +40,11 @@
         </header>
 
         <div class="mentor-carousel owl-carousel">
-
+            @foreach (var item in Model)
+            {
             <div class="item">
                 <div class="mentors">
-                    <figure><a href="/mentor-profile/aniruddhamalpani"><img src="/assets/uploads/frontuser/869e3803f151fa645b34e0ac509b7206.jpg" alt=""></a></figure>
+                    <figure><a href="/mentor-profile/@item.Id"><img src="/assets/uploads/frontuser/@item.Image" alt=""></a></figure>
 
                     <div class="mid-body">
                         <div class="user-rating">
@@ -59,127 +61,32 @@
                                 <img src="/assets/frontend/images/star-off.png" alt="">
                             </div>
                         </div>
-                        <h4>Aniruddha Malpani</h4>
-                        <p><h5>Founder</h5> </p>
+                        <h4>@item.Name</h4>
+                        <p><h5>@item.Designation</h5> </p>
                         <p>
-                            Mumbai, Maharashtra, India
+                            @item.Address
                         </p>
                         <p class="invest-type"><small>Also an investor</small></p>
                     </div>
-                    <div class="chips-view text-sm"></div>                                <div class="p-cta">
-                        <a href="/mentor-profile/aniruddhamalpani" class="btn-vw">View Details</a>
-                        <a href="/user/connect/aniruddhamalpani" class="btn-cn">Connect</a>
+                    @{
+                        string[] aoe = item.AreaOfInterest.Remove(item.AreaOfInterest.Length - 1, 1).Split(',');
+
+                    }
+                    <div class="chips-view text-sm">
+                        @{
+                            foreach (var a in aoe)
+                            {
+                                <span>@a</span>
+                            }
+                        }
                     </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="mentors">
-                    <figure><a href="/mentor-profile/pavanverma"><img src="/assets/uploads/frontuser/181e548dc93f819d944be5fc6091d56e.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-                                <img src="/assets/frontend/images/star-on.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Pavan Verma</h4>
-                        <p><h5>Founder & CEO</h5> </p>
-
-                        <p>
-                            Noida, Uttar Pradesh, India
-                        </p>
-                    </div>
-                    <div class="chips-view text-sm"><span>Growth Strategy</span><span>CRM</span><span>Software Development</span><span>BootStrapping</span><span>Angel Funding</span><span>Public Speaking</span><span>Productivity</span></div>
-
-
-
                     <div class="p-cta">
-                        <a href="/mentor-profile/pavanverma" class="btn-vw">View Details</a>
-                        <a href="/user/connect/pavanverma" class="btn-cn">Connect</a>
+                        <a href="/mentor-profile/@item.Id" class="btn-vw">View Details</a>
+                        <a href="/user/connect/@item.Id" class="btn-cn">Connect</a>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="mentors">
-                    <figure><a href="/mentor-profile/bhoovarahanthirumalai"><img src="/assets/uploads/frontuser/5ce29fb912224ad372da5035441ecbce.png" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>BHOOVARAHAN THIRUMALAI</h4>
-                        <p><h5>Co-founder, board member. CEO</h5> </p>
-
-                        <p>
-                            chennai, Tamil Nadu, India
-                        </p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="chips-view text-sm"><span>Business Plan/Model</span><span>Customer Engagement</span><span>Go to Market Strategy</span><span>Sales & Lead Generation</span><span>Growth Strategy</span><span>Innovation</span><span>BootStrapping</span><span>Angel Funding</span><span>Team Building</span></div>
-
-
-
-                    <div class="p-cta">
-                        <a href="/mentor-profile/bhoovarahanthirumalai" class="btn-vw">View Details</a>
-                        <a href="/user/connect/bhoovarahanthirumalai" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="mentors">
-                    <figure><a href="/mentor-profile/chandrashekarkupperi"><img src="/assets/uploads/frontuser/ed4daa5c416cd0d5c4df3c095ddda774.jpg" alt=""></a></figure>
-
-                    <div class="mid-body">
-                        <div class="user-rating">
-                            <div class="rating-count">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-
-                                <img src="/assets/frontend/images/star-off.png" alt="">
-                            </div>
-                        </div>
-                        <h4>Chandrashekar Kupperi</h4>
-                        <p><h5>Founder Director</h5> </p>
-
-                        <p> Chennai, Tamil Nadu, India</p>
-                        <p class="invest-type"><small>Also an investor</small></p>
-                    </div>
-                    <div class="chips-view text-sm"><span>Business Plan/Model</span><span>Financial Consulting</span><span>Venture Capital</span><span>Angel Funding</span></div>
-
-
-
-
-                    <div class="p-cta">
-                        <a href="/mentor-profile/chandrashekarkupperi" class="btn-vw">View Details</a>
-                        <a href="/user/connect/chandrashekarkupperi" class="btn-cn">Connect</a>
-                    </div>
-                </div>
-            </div>
+            }
 
         </div>
 

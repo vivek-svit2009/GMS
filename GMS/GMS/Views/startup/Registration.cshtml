@@ -2,7 +2,14 @@
 @{
     ViewBag.Title = "Registration";
 }
-
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}
 <section class="sec-video inner-banner">
     <div class="mtr-intro-vdo hidden-xs">
         <a id="stop-vid" href="javascript:void();"><img src="/assets/frontend/images/close-icon.png" alt=""></a>
@@ -80,7 +87,7 @@
                         <label>Profile Image*</label>
                         <div class="profile-pic" data-toggle="modal" data-target="#profileModal">
                             <label for="prof-pic">
-                                <img src="/assets/frontend/images/placeholder.jpg" alt="Profile Img" id="profile_thumb_image">
+                                <img src="/assets/images/placeholder.jpg" alt="Profile Img" id="profile_thumb_image">
 
                                 <div class="placeholder-label">
                                     <span>Upload Image</span>
@@ -100,7 +107,7 @@
             </div>
             <div class="data-cell">
                 <div class="text-center reg_start">
-                    <img src="/assets/frontend/images/clock-icon.png" alt="">
+                    <img src="/assets/images/clock-icon.png" alt="">
                     <h3 class="register-title">Not sure about registering <br />for your startup?</h3>
                     <p>but would still need some advise for your startup? We understand... just share your immediate challenge or problem and we will get in touch</p>
                     <a href="javascript:void();" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#get_touch">Get In Touch</a>
@@ -117,7 +124,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="modal-body">
                 <div class="data-table">
-                    <div class="data-cell" style="background-image:url(/assets/frontend/images/get-touch.jpg);"></div>
+                    <div class="data-cell" style="background-image:url(/assets/images/get-touch.jpg);"></div>
                     <div class="data-cell">
                         <div class="modal_form" id="startup_getInTuch_form">
                             <p>Fill out this short form below and share your immediate concerns and challenges.</p>
@@ -367,6 +374,7 @@
                             var url = 'http://localhost:52585/assets/uploads/temp_upload/' + response.image;
                             $('#profile_thumb_image').attr('src', url);
                             $('#profile_image').val(response.image);
+                            alert(response.image);
                             $('#profileModal').modal('hide');
                             //~ location.reload();
                         }
