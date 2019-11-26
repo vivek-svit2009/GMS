@@ -147,7 +147,7 @@ namespace GMS.Controllers
             {
                 if (Session["UserType"].ToString()=="Mentor")
                 {
-                    SqlCommand cmd = new SqlCommand("SelectMentorProfile", con);
+                    SqlCommand cmd = new SqlCommand("SelectMentorTop", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@email", Session["UserEmail"].ToString());
@@ -178,7 +178,7 @@ namespace GMS.Controllers
                 }
                 else if (Session["UserType"].ToString()=="User")
                 {
-                    SqlCommand cmd = new SqlCommand("SelectUsersProfile", con);
+                    SqlCommand cmd = new SqlCommand("SelectUserTop", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@email", Session["UserEmail"].ToString());

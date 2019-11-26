@@ -224,11 +224,14 @@
     <Content Include="Views\mentor\registration.cshtml" />
     <Content Include="Views\startup\Registration.cshtml" />
     <Content Include="Views\meet_our_mentors\Index.cshtml" />
+    <Content Include="Views\mentor\register_info.cshtml" />
+    <Content Include="Views\startup\register_info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\uploads\frontuser\" />
     <Folder Include="Assets\uploads\temp_upload\" />
+    <Folder Include="StartupLogo\" />
     <Folder Include="Views\Ajax\" />
   </ItemGroup>
   <ItemGroup>

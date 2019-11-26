@@ -1,0 +1,1034 @@
+﻿
+@{
+    ViewBag.Title = "register_info";
+}
+@if (ViewBag.response != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.response");
+            };
+    </script>
+}
+
+<section class="sec-register inner-banner">
+
+    <div class="banner-header">
+        <div class="container">
+            <header class="banner-header-title">
+                <h1 class="title"><strong>StartUp</strong> Register</h1>
+            </header>
+        </div>
+    </div>
+</section>
+<!--[/Banner]-->
+
+
+<section class="section light-blue-bg register-sec gradient">
+    <div class="container">
+        <header class="header-title text-left">
+            <h2 class="title">Tell us More</h2>
+        </header>
+
+
+        <form action="/startup/register_info" id="startup_registration_info" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="panel-form">
+                <h4 class="panel-form-title"><span>Stage of the venture</span></h4>
+
+                <div class="panel-form-body">
+
+
+                    <div class="select-stage">
+                        <div class="stage-checkbox">
+                            <input type="checkbox" name="stages[]" value="Ideation" class="checkbox" id="checkbox1" />
+
+                            <label for="checkbox1">
+                                <i class="icon icon-stage1"></i>
+                                <span>Ideation</span>
+                            </label>
+                        </div>
+                        <div class="stage-checkbox">
+                            <input type="checkbox" name="stages[]" value="POC" class="checkbox" id="checkbox2" />
+
+                            <label for="checkbox2">
+                                <i class="icon icon-stage2"></i>
+                                <span>POC</span>
+                            </label>
+                        </div>
+                        <div class="stage-checkbox">
+                            <input type="checkbox" name="stages[]" value="Early Growth" class="checkbox" id="checkbox3" />
+
+                            <label for="checkbox3">
+                                <i class="icon icon-stage3"></i>
+                                <span>Early Growth</span>
+                            </label>
+                        </div>
+                        <div class="stage-checkbox">
+                            <input type="checkbox" name="stages[]" value="Growth" class="checkbox" id="checkbox4" />
+
+                            <label for="checkbox4">
+                                <i class="icon icon-stage4"></i>
+                                <span>Growth</span>
+                            </label>
+                        </div>
+                        <div class="stage-checkbox">
+                            <input type="checkbox" name="stages[]" value="Mature" class="checkbox" id="checkbox5" />
+
+                            <label for="checkbox5">
+                                <i class="icon icon-stage5"></i>
+                                <span>Mature</span>
+                            </label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Company Name*</label>
+                            <input type="text" name="startup_name" value="" class="form-control" id="startup_name" placeholder="Company Name" />
+                        </div>
+
+
+
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">What are you looking for*</label>
+                            <select name="look_for" class="form-control selectpicker" id="look_for" data-size="8" data-width="100%" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Please Select&lt;/span&gt;'>Please Select</option>
+                                <option value="Mentor" data-content='&lt;span class=&#039;chips&#039;&gt;Mentor&lt;/span&gt;'>Mentor</option>
+                                <option value="Funding" data-content='&lt;span class=&#039;chips&#039;&gt;Funding&lt;/span&gt;'>Funding</option>
+                                <option value="Mentor + Funding" data-content='&lt;span class=&#039;chips&#039;&gt;Mentor + Funding&lt;/span&gt;'>Mentor + Funding</option>
+                                <option value="Partnering with Startups" data-content='&lt;span class=&#039;chips&#039;&gt;Partnering with Startups&lt;/span&gt;'>Partnering with Startups</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Short highlight of your Startup*</label>
+                            <textarea name="short_highlight" cols="40" rows="2" class="form-control" id="short_highlight" placeholder="Short Highlights" style="height:90px"></textarea>
+                        </div>
+                        <!--
+                                        <div class="col-sm-6 form-group">
+                                          <label class="form-label">Type of Business*</label>
+                                                          </div>
+                        -->
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Product/Service Summary*</label>
+                            <textarea name="service_summary" cols="40" rows="4" class="form-control" id="service_summary" placeholder="Service Summary" style="height:90px"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Website</label>
+                            <input type="text" name="website_link" value="" class="form-control" id="website_link" placeholder="Website Link" maxlength="100" />
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Industry</label>
+                            <select name="industry" class="form-control selectpicker" id="industry" data-size="8" data-width="100%" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Industry&lt;/span&gt;'>Select Industry</option>
+                                <option value="Legal" data-content='&lt;span class=&#039;chips&#039;&gt;Legal&lt;/span&gt;'>Legal</option>
+                                <option value="FINTECH" data-content='&lt;span class=&#039;chips&#039;&gt;FINTECH&lt;/span&gt;'>FINTECH</option>
+                                <option value="Travel, Hospitality &amp; Leisure" data-content='&lt;span class=&#039;chips&#039;&gt;Travel, Hospitality &amp; Leisure&lt;/span&gt;'>Travel, Hospitality & Leisure</option>
+                                <option value="Telecommunications" data-content='&lt;span class=&#039;chips&#039;&gt;Telecommunications&lt;/span&gt;'>Telecommunications</option>
+                                <option value="Retail &amp; Distribution" data-content='&lt;span class=&#039;chips&#039;&gt;Retail &amp; Distribution&lt;/span&gt;'>Retail & Distribution</option>
+                                <option value="Public Sector" data-content='&lt;span class=&#039;chips&#039;&gt;Public Sector&lt;/span&gt;'>Public Sector</option>
+                                <option value="Media and Entertainment" data-content='&lt;span class=&#039;chips&#039;&gt;Media and Entertainment&lt;/span&gt;'>Media and Entertainment</option>
+                                <option value="Manufacturing &amp; Industrial" data-content='&lt;span class=&#039;chips&#039;&gt;Manufacturing &amp; Industrial&lt;/span&gt;'>Manufacturing & Industrial</option>
+                                <option value="Life Sciences &amp; Health Care" data-content='&lt;span class=&#039;chips&#039;&gt;Life Sciences &amp; Health Care&lt;/span&gt;'>Life Sciences & Health Care</option>
+                                <option value="Advertising &amp; Communication" data-content='&lt;span class=&#039;chips&#039;&gt;Advertising &amp; Communication&lt;/span&gt;'>Advertising & Communication</option>
+                                <option value="Internet , E Commerce" data-content='&lt;span class=&#039;chips&#039;&gt;Internet , E Commerce&lt;/span&gt;'>Internet , E Commerce</option>
+                                <option value="Information Technology (IT)" data-content='&lt;span class=&#039;chips&#039;&gt;Information Technology (IT)&lt;/span&gt;'>Information Technology (IT)</option>
+                                <option value="Financial Services" data-content='&lt;span class=&#039;chips&#039;&gt;Financial Services&lt;/span&gt;'>Financial Services</option>
+                                <option value="Energy &amp; Resources" data-content='&lt;span class=&#039;chips&#039;&gt;Energy &amp; Resources&lt;/span&gt;'>Energy & Resources</option>
+                                <option value="Design" data-content='&lt;span class=&#039;chips&#039;&gt;Design&lt;/span&gt;'>Design</option>
+                                <option value="Consumer Products" data-content='&lt;span class=&#039;chips&#039;&gt;Consumer Products&lt;/span&gt;'>Consumer Products</option>
+                                <option value="Automobiles" data-content='&lt;span class=&#039;chips&#039;&gt;Automobiles&lt;/span&gt;'>Automobiles</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Company Logo</label>
+                            <input type="file" name="company_logo" value="" class="form-control" id="company_logo" placeholder="Company Logo" />
+                            <p class="text-help">(minimum dimension 300x360 &amp; maximum size 2 Mb)</p>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <div id="preview"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel-form">
+                <h4 class="panel-form-title"><span>More information about your Startup</span></h4>
+                <div class="panel-form-body">
+
+
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Year of Incorporation</label>
+                            <script>
+
+                                $(document).ready(function () {
+                                    var date = new Date();
+                                    var currentMonth = date.getMonth();
+                                    var currentDate = date.getDate();
+                                    var currentYear = date.getFullYear();
+                                    $('#year,#year_found').datetimepicker({
+                                        format: "YYYY-MM-DD",
+                                        maxDate: new Date(currentYear, currentMonth, currentDate)
+                                    });
+                                });
+                            </script>
+                            <input type="text" name="year" value="" class="form-control date" id="year" placeholder="Year of Incorporation" />
+                        </div>
+                        <div class="col-sm-3 form-group">
+                            <label class="form-label">Annual Revenue</label>
+                            <select name="revenue" class="form-control selectpicker" id="revenue" data-size="8" data-width="100%" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Revenue&lt;/span&gt;'>Select Revenue</option>
+                                <option value="0-10 lakhs" data-content='&lt;span class=&#039;chips&#039;&gt;0-10 lakhs&lt;/span&gt;'>0-10 lakhs</option>
+                                <option value="10-25 lakhs" data-content='&lt;span class=&#039;chips&#039;&gt;10-25 lakhs&lt;/span&gt;'>10-25 lakhs</option>
+                                <option value="26-50 lakhs" data-content='&lt;span class=&#039;chips&#039;&gt;26-50 lakhs&lt;/span&gt;'>26-50 lakhs</option>
+                                <option value="51 lakhs to 1 Cr" data-content='&lt;span class=&#039;chips&#039;&gt;51 lakhs to 1 Cr&lt;/span&gt;'>51 lakhs to 1 Cr</option>
+                                <option value="1 Cr +" data-content='&lt;span class=&#039;chips&#039;&gt;1 Cr +&lt;/span&gt;'>1 Cr +</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 form-group">
+                            <label class="form-label">&nbsp;</label>
+                            <select name="currency" class="form-control selectpicker" id="currency" data-size="8" data-width="100%" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Currency&lt;/span&gt;'>Select Currency</option>
+                                <option value="AED" data-content='&lt;span class=&#039;chips&#039;&gt;AED&lt;/span&gt;'>AED</option>
+                                <option value="AFN" data-content='&lt;span class=&#039;chips&#039;&gt;AFN&lt;/span&gt;'>AFN</option>
+                                <option value="ALL" data-content='&lt;span class=&#039;chips&#039;&gt;ALL&lt;/span&gt;'>ALL</option>
+                                <option value="AMD" data-content='&lt;span class=&#039;chips&#039;&gt;AMD&lt;/span&gt;'>AMD</option>
+                                <option value="ANG" data-content='&lt;span class=&#039;chips&#039;&gt;ANG&lt;/span&gt;'>ANG</option>
+                                <option value="AOA" data-content='&lt;span class=&#039;chips&#039;&gt;AOA&lt;/span&gt;'>AOA</option>
+                                <option value="ARS" data-content='&lt;span class=&#039;chips&#039;&gt;ARS&lt;/span&gt;'>ARS</option>
+                                <option value="AUD" data-content='&lt;span class=&#039;chips&#039;&gt;AUD&lt;/span&gt;'>AUD</option>
+                                <option value="AWG" data-content='&lt;span class=&#039;chips&#039;&gt;AWG&lt;/span&gt;'>AWG</option>
+                                <option value="AZN" data-content='&lt;span class=&#039;chips&#039;&gt;AZN&lt;/span&gt;'>AZN</option>
+                                <option value="BAM" data-content='&lt;span class=&#039;chips&#039;&gt;BAM&lt;/span&gt;'>BAM</option>
+                                <option value="BBD" data-content='&lt;span class=&#039;chips&#039;&gt;BBD&lt;/span&gt;'>BBD</option>
+                                <option value="BDT" data-content='&lt;span class=&#039;chips&#039;&gt;BDT&lt;/span&gt;'>BDT</option>
+                                <option value="BGN" data-content='&lt;span class=&#039;chips&#039;&gt;BGN&lt;/span&gt;'>BGN</option>
+                                <option value="BHD" data-content='&lt;span class=&#039;chips&#039;&gt;BHD&lt;/span&gt;'>BHD</option>
+                                <option value="BIF" data-content='&lt;span class=&#039;chips&#039;&gt;BIF&lt;/span&gt;'>BIF</option>
+                                <option value="BMD" data-content='&lt;span class=&#039;chips&#039;&gt;BMD&lt;/span&gt;'>BMD</option>
+                                <option value="BND" data-content='&lt;span class=&#039;chips&#039;&gt;BND&lt;/span&gt;'>BND</option>
+                                <option value="BOB" data-content='&lt;span class=&#039;chips&#039;&gt;BOB&lt;/span&gt;'>BOB</option>
+                                <option value="BOV" data-content='&lt;span class=&#039;chips&#039;&gt;BOV&lt;/span&gt;'>BOV</option>
+                                <option value="BRL" data-content='&lt;span class=&#039;chips&#039;&gt;BRL&lt;/span&gt;'>BRL</option>
+                                <option value="BSD" data-content='&lt;span class=&#039;chips&#039;&gt;BSD&lt;/span&gt;'>BSD</option>
+                                <option value="BTN" data-content='&lt;span class=&#039;chips&#039;&gt;BTN&lt;/span&gt;'>BTN</option>
+                                <option value="BWP" data-content='&lt;span class=&#039;chips&#039;&gt;BWP&lt;/span&gt;'>BWP</option>
+                                <option value="BYR" data-content='&lt;span class=&#039;chips&#039;&gt;BYR&lt;/span&gt;'>BYR</option>
+                                <option value="BZD" data-content='&lt;span class=&#039;chips&#039;&gt;BZD&lt;/span&gt;'>BZD</option>
+                                <option value="CAD" data-content='&lt;span class=&#039;chips&#039;&gt;CAD&lt;/span&gt;'>CAD</option>
+                                <option value="CDF" data-content='&lt;span class=&#039;chips&#039;&gt;CDF&lt;/span&gt;'>CDF</option>
+                                <option value="CHE" data-content='&lt;span class=&#039;chips&#039;&gt;CHE&lt;/span&gt;'>CHE</option>
+                                <option value="CHF" data-content='&lt;span class=&#039;chips&#039;&gt;CHF&lt;/span&gt;'>CHF</option>
+                                <option value="CHW" data-content='&lt;span class=&#039;chips&#039;&gt;CHW&lt;/span&gt;'>CHW</option>
+                                <option value="CLF" data-content='&lt;span class=&#039;chips&#039;&gt;CLF&lt;/span&gt;'>CLF</option>
+                                <option value="CLP" data-content='&lt;span class=&#039;chips&#039;&gt;CLP&lt;/span&gt;'>CLP</option>
+                                <option value="CNY" data-content='&lt;span class=&#039;chips&#039;&gt;CNY&lt;/span&gt;'>CNY</option>
+                                <option value="COP" data-content='&lt;span class=&#039;chips&#039;&gt;COP&lt;/span&gt;'>COP</option>
+                                <option value="COU" data-content='&lt;span class=&#039;chips&#039;&gt;COU&lt;/span&gt;'>COU</option>
+                                <option value="CRC" data-content='&lt;span class=&#039;chips&#039;&gt;CRC&lt;/span&gt;'>CRC</option>
+                                <option value="CUP" data-content='&lt;span class=&#039;chips&#039;&gt;CUP&lt;/span&gt;'>CUP</option>
+                                <option value="CVE" data-content='&lt;span class=&#039;chips&#039;&gt;CVE&lt;/span&gt;'>CVE</option>
+                                <option value="CYP" data-content='&lt;span class=&#039;chips&#039;&gt;CYP&lt;/span&gt;'>CYP</option>
+                                <option value="CZK" data-content='&lt;span class=&#039;chips&#039;&gt;CZK&lt;/span&gt;'>CZK</option>
+                                <option value="DJF" data-content='&lt;span class=&#039;chips&#039;&gt;DJF&lt;/span&gt;'>DJF</option>
+                                <option value="DKK" data-content='&lt;span class=&#039;chips&#039;&gt;DKK&lt;/span&gt;'>DKK</option>
+                                <option value="DOP" data-content='&lt;span class=&#039;chips&#039;&gt;DOP&lt;/span&gt;'>DOP</option>
+                                <option value="DZD" data-content='&lt;span class=&#039;chips&#039;&gt;DZD&lt;/span&gt;'>DZD</option>
+                                <option value="EEK" data-content='&lt;span class=&#039;chips&#039;&gt;EEK&lt;/span&gt;'>EEK</option>
+                                <option value="EGP" data-content='&lt;span class=&#039;chips&#039;&gt;EGP&lt;/span&gt;'>EGP</option>
+                                <option value="ERN" data-content='&lt;span class=&#039;chips&#039;&gt;ERN&lt;/span&gt;'>ERN</option>
+                                <option value="ETB" data-content='&lt;span class=&#039;chips&#039;&gt;ETB&lt;/span&gt;'>ETB</option>
+                                <option value="EUR" data-content='&lt;span class=&#039;chips&#039;&gt;EUR&lt;/span&gt;'>EUR</option>
+                                <option value="FJD" data-content='&lt;span class=&#039;chips&#039;&gt;FJD&lt;/span&gt;'>FJD</option>
+                                <option value="FKP" data-content='&lt;span class=&#039;chips&#039;&gt;FKP&lt;/span&gt;'>FKP</option>
+                                <option value="GBP" data-content='&lt;span class=&#039;chips&#039;&gt;GBP&lt;/span&gt;'>GBP</option>
+                                <option value="GEL" data-content='&lt;span class=&#039;chips&#039;&gt;GEL&lt;/span&gt;'>GEL</option>
+                                <option value="GHS" data-content='&lt;span class=&#039;chips&#039;&gt;GHS&lt;/span&gt;'>GHS</option>
+                                <option value="GIP" data-content='&lt;span class=&#039;chips&#039;&gt;GIP&lt;/span&gt;'>GIP</option>
+                                <option value="GMD" data-content='&lt;span class=&#039;chips&#039;&gt;GMD&lt;/span&gt;'>GMD</option>
+                                <option value="GNF" data-content='&lt;span class=&#039;chips&#039;&gt;GNF&lt;/span&gt;'>GNF</option>
+                                <option value="GTQ" data-content='&lt;span class=&#039;chips&#039;&gt;GTQ&lt;/span&gt;'>GTQ</option>
+                                <option value="GYD" data-content='&lt;span class=&#039;chips&#039;&gt;GYD&lt;/span&gt;'>GYD</option>
+                                <option value="HKD" data-content='&lt;span class=&#039;chips&#039;&gt;HKD&lt;/span&gt;'>HKD</option>
+                                <option value="HNL" data-content='&lt;span class=&#039;chips&#039;&gt;HNL&lt;/span&gt;'>HNL</option>
+                                <option value="HRK" data-content='&lt;span class=&#039;chips&#039;&gt;HRK&lt;/span&gt;'>HRK</option>
+                                <option value="HTG" data-content='&lt;span class=&#039;chips&#039;&gt;HTG&lt;/span&gt;'>HTG</option>
+                                <option value="HUF" data-content='&lt;span class=&#039;chips&#039;&gt;HUF&lt;/span&gt;'>HUF</option>
+                                <option value="IDR" data-content='&lt;span class=&#039;chips&#039;&gt;IDR&lt;/span&gt;'>IDR</option>
+                                <option value="ILS" data-content='&lt;span class=&#039;chips&#039;&gt;ILS&lt;/span&gt;'>ILS</option>
+                                <option value="INR" data-content='&lt;span class=&#039;chips&#039;&gt;INR&lt;/span&gt;'>INR</option>
+                                <option value="IQD" data-content='&lt;span class=&#039;chips&#039;&gt;IQD&lt;/span&gt;'>IQD</option>
+                                <option value="IRR" data-content='&lt;span class=&#039;chips&#039;&gt;IRR&lt;/span&gt;'>IRR</option>
+                                <option value="ISK" data-content='&lt;span class=&#039;chips&#039;&gt;ISK&lt;/span&gt;'>ISK</option>
+                                <option value="JMD" data-content='&lt;span class=&#039;chips&#039;&gt;JMD&lt;/span&gt;'>JMD</option>
+                                <option value="JOD" data-content='&lt;span class=&#039;chips&#039;&gt;JOD&lt;/span&gt;'>JOD</option>
+                                <option value="JPY" data-content='&lt;span class=&#039;chips&#039;&gt;JPY&lt;/span&gt;'>JPY</option>
+                                <option value="KES" data-content='&lt;span class=&#039;chips&#039;&gt;KES&lt;/span&gt;'>KES</option>
+                                <option value="KGS" data-content='&lt;span class=&#039;chips&#039;&gt;KGS&lt;/span&gt;'>KGS</option>
+                                <option value="KHR" data-content='&lt;span class=&#039;chips&#039;&gt;KHR&lt;/span&gt;'>KHR</option>
+                                <option value="KMF" data-content='&lt;span class=&#039;chips&#039;&gt;KMF&lt;/span&gt;'>KMF</option>
+                                <option value="KPW" data-content='&lt;span class=&#039;chips&#039;&gt;KPW&lt;/span&gt;'>KPW</option>
+                                <option value="KRW" data-content='&lt;span class=&#039;chips&#039;&gt;KRW&lt;/span&gt;'>KRW</option>
+                                <option value="KWD" data-content='&lt;span class=&#039;chips&#039;&gt;KWD&lt;/span&gt;'>KWD</option>
+                                <option value="KYD" data-content='&lt;span class=&#039;chips&#039;&gt;KYD&lt;/span&gt;'>KYD</option>
+                                <option value="KZT" data-content='&lt;span class=&#039;chips&#039;&gt;KZT&lt;/span&gt;'>KZT</option>
+                                <option value="LAK" data-content='&lt;span class=&#039;chips&#039;&gt;LAK&lt;/span&gt;'>LAK</option>
+                                <option value="LBP" data-content='&lt;span class=&#039;chips&#039;&gt;LBP&lt;/span&gt;'>LBP</option>
+                                <option value="LKR" data-content='&lt;span class=&#039;chips&#039;&gt;LKR&lt;/span&gt;'>LKR</option>
+                                <option value="LRD" data-content='&lt;span class=&#039;chips&#039;&gt;LRD&lt;/span&gt;'>LRD</option>
+                                <option value="LSL" data-content='&lt;span class=&#039;chips&#039;&gt;LSL&lt;/span&gt;'>LSL</option>
+                                <option value="LTL" data-content='&lt;span class=&#039;chips&#039;&gt;LTL&lt;/span&gt;'>LTL</option>
+                                <option value="LVL" data-content='&lt;span class=&#039;chips&#039;&gt;LVL&lt;/span&gt;'>LVL</option>
+                                <option value="LYD" data-content='&lt;span class=&#039;chips&#039;&gt;LYD&lt;/span&gt;'>LYD</option>
+                                <option value="MAD" data-content='&lt;span class=&#039;chips&#039;&gt;MAD&lt;/span&gt;'>MAD</option>
+                                <option value="MDL" data-content='&lt;span class=&#039;chips&#039;&gt;MDL&lt;/span&gt;'>MDL</option>
+                                <option value="MGA" data-content='&lt;span class=&#039;chips&#039;&gt;MGA&lt;/span&gt;'>MGA</option>
+                                <option value="MKD" data-content='&lt;span class=&#039;chips&#039;&gt;MKD&lt;/span&gt;'>MKD</option>
+                                <option value="MMK" data-content='&lt;span class=&#039;chips&#039;&gt;MMK&lt;/span&gt;'>MMK</option>
+                                <option value="MNT" data-content='&lt;span class=&#039;chips&#039;&gt;MNT&lt;/span&gt;'>MNT</option>
+                                <option value="MOP" data-content='&lt;span class=&#039;chips&#039;&gt;MOP&lt;/span&gt;'>MOP</option>
+                                <option value="MRO" data-content='&lt;span class=&#039;chips&#039;&gt;MRO&lt;/span&gt;'>MRO</option>
+                                <option value="MTL" data-content='&lt;span class=&#039;chips&#039;&gt;MTL&lt;/span&gt;'>MTL</option>
+                                <option value="MUR" data-content='&lt;span class=&#039;chips&#039;&gt;MUR&lt;/span&gt;'>MUR</option>
+                                <option value="MVR" data-content='&lt;span class=&#039;chips&#039;&gt;MVR&lt;/span&gt;'>MVR</option>
+                                <option value="MWK" data-content='&lt;span class=&#039;chips&#039;&gt;MWK&lt;/span&gt;'>MWK</option>
+                                <option value="MXN" data-content='&lt;span class=&#039;chips&#039;&gt;MXN&lt;/span&gt;'>MXN</option>
+                                <option value="MXV" data-content='&lt;span class=&#039;chips&#039;&gt;MXV&lt;/span&gt;'>MXV</option>
+                                <option value="MYR" data-content='&lt;span class=&#039;chips&#039;&gt;MYR&lt;/span&gt;'>MYR</option>
+                                <option value="MZN" data-content='&lt;span class=&#039;chips&#039;&gt;MZN&lt;/span&gt;'>MZN</option>
+                                <option value="NAD" data-content='&lt;span class=&#039;chips&#039;&gt;NAD&lt;/span&gt;'>NAD</option>
+                                <option value="NGN" data-content='&lt;span class=&#039;chips&#039;&gt;NGN&lt;/span&gt;'>NGN</option>
+                                <option value="NIO" data-content='&lt;span class=&#039;chips&#039;&gt;NIO&lt;/span&gt;'>NIO</option>
+                                <option value="NOK" data-content='&lt;span class=&#039;chips&#039;&gt;NOK&lt;/span&gt;'>NOK</option>
+                                <option value="NPR" data-content='&lt;span class=&#039;chips&#039;&gt;NPR&lt;/span&gt;'>NPR</option>
+                                <option value="NZD" data-content='&lt;span class=&#039;chips&#039;&gt;NZD&lt;/span&gt;'>NZD</option>
+                                <option value="OMR" data-content='&lt;span class=&#039;chips&#039;&gt;OMR&lt;/span&gt;'>OMR</option>
+                                <option value="PAB" data-content='&lt;span class=&#039;chips&#039;&gt;PAB&lt;/span&gt;'>PAB</option>
+                                <option value="PEN" data-content='&lt;span class=&#039;chips&#039;&gt;PEN&lt;/span&gt;'>PEN</option>
+                                <option value="PGK" data-content='&lt;span class=&#039;chips&#039;&gt;PGK&lt;/span&gt;'>PGK</option>
+                                <option value="PHP" data-content='&lt;span class=&#039;chips&#039;&gt;PHP&lt;/span&gt;'>PHP</option>
+                                <option value="PKR" data-content='&lt;span class=&#039;chips&#039;&gt;PKR&lt;/span&gt;'>PKR</option>
+                                <option value="PLN" data-content='&lt;span class=&#039;chips&#039;&gt;PLN&lt;/span&gt;'>PLN</option>
+                                <option value="PYG" data-content='&lt;span class=&#039;chips&#039;&gt;PYG&lt;/span&gt;'>PYG</option>
+                                <option value="QAR" data-content='&lt;span class=&#039;chips&#039;&gt;QAR&lt;/span&gt;'>QAR</option>
+                                <option value="RON" data-content='&lt;span class=&#039;chips&#039;&gt;RON&lt;/span&gt;'>RON</option>
+                                <option value="RSD" data-content='&lt;span class=&#039;chips&#039;&gt;RSD&lt;/span&gt;'>RSD</option>
+                                <option value="RUB" data-content='&lt;span class=&#039;chips&#039;&gt;RUB&lt;/span&gt;'>RUB</option>
+                                <option value="RWF" data-content='&lt;span class=&#039;chips&#039;&gt;RWF&lt;/span&gt;'>RWF</option>
+                                <option value="SAR" data-content='&lt;span class=&#039;chips&#039;&gt;SAR&lt;/span&gt;'>SAR</option>
+                                <option value="SBD" data-content='&lt;span class=&#039;chips&#039;&gt;SBD&lt;/span&gt;'>SBD</option>
+                                <option value="SCR" data-content='&lt;span class=&#039;chips&#039;&gt;SCR&lt;/span&gt;'>SCR</option>
+                                <option value="SDG" data-content='&lt;span class=&#039;chips&#039;&gt;SDG&lt;/span&gt;'>SDG</option>
+                                <option value="SEK" data-content='&lt;span class=&#039;chips&#039;&gt;SEK&lt;/span&gt;'>SEK</option>
+                                <option value="SGD" data-content='&lt;span class=&#039;chips&#039;&gt;SGD&lt;/span&gt;'>SGD</option>
+                                <option value="SHP" data-content='&lt;span class=&#039;chips&#039;&gt;SHP&lt;/span&gt;'>SHP</option>
+                                <option value="SKK" data-content='&lt;span class=&#039;chips&#039;&gt;SKK&lt;/span&gt;'>SKK</option>
+                                <option value="SLL" data-content='&lt;span class=&#039;chips&#039;&gt;SLL&lt;/span&gt;'>SLL</option>
+                                <option value="SOS" data-content='&lt;span class=&#039;chips&#039;&gt;SOS&lt;/span&gt;'>SOS</option>
+                                <option value="SRD" data-content='&lt;span class=&#039;chips&#039;&gt;SRD&lt;/span&gt;'>SRD</option>
+                                <option value="STD" data-content='&lt;span class=&#039;chips&#039;&gt;STD&lt;/span&gt;'>STD</option>
+                                <option value="SYP" data-content='&lt;span class=&#039;chips&#039;&gt;SYP&lt;/span&gt;'>SYP</option>
+                                <option value="SZL" data-content='&lt;span class=&#039;chips&#039;&gt;SZL&lt;/span&gt;'>SZL</option>
+                                <option value="THB" data-content='&lt;span class=&#039;chips&#039;&gt;THB&lt;/span&gt;'>THB</option>
+                                <option value="TJS" data-content='&lt;span class=&#039;chips&#039;&gt;TJS&lt;/span&gt;'>TJS</option>
+                                <option value="TMM" data-content='&lt;span class=&#039;chips&#039;&gt;TMM&lt;/span&gt;'>TMM</option>
+                                <option value="TND" data-content='&lt;span class=&#039;chips&#039;&gt;TND&lt;/span&gt;'>TND</option>
+                                <option value="TOP" data-content='&lt;span class=&#039;chips&#039;&gt;TOP&lt;/span&gt;'>TOP</option>
+                                <option value="TRY" data-content='&lt;span class=&#039;chips&#039;&gt;TRY&lt;/span&gt;'>TRY</option>
+                                <option value="TTD" data-content='&lt;span class=&#039;chips&#039;&gt;TTD&lt;/span&gt;'>TTD</option>
+                                <option value="TWD" data-content='&lt;span class=&#039;chips&#039;&gt;TWD&lt;/span&gt;'>TWD</option>
+                                <option value="TZS" data-content='&lt;span class=&#039;chips&#039;&gt;TZS&lt;/span&gt;'>TZS</option>
+                                <option value="UAH" data-content='&lt;span class=&#039;chips&#039;&gt;UAH&lt;/span&gt;'>UAH</option>
+                                <option value="UGX" data-content='&lt;span class=&#039;chips&#039;&gt;UGX&lt;/span&gt;'>UGX</option>
+                                <option value="USD" data-content='&lt;span class=&#039;chips&#039;&gt;USD&lt;/span&gt;'>USD</option>
+                                <option value="USN" data-content='&lt;span class=&#039;chips&#039;&gt;USN&lt;/span&gt;'>USN</option>
+                                <option value="USS" data-content='&lt;span class=&#039;chips&#039;&gt;USS&lt;/span&gt;'>USS</option>
+                                <option value="UYU" data-content='&lt;span class=&#039;chips&#039;&gt;UYU&lt;/span&gt;'>UYU</option>
+                                <option value="UZS" data-content='&lt;span class=&#039;chips&#039;&gt;UZS&lt;/span&gt;'>UZS</option>
+                                <option value="VEB" data-content='&lt;span class=&#039;chips&#039;&gt;VEB&lt;/span&gt;'>VEB</option>
+                                <option value="VND" data-content='&lt;span class=&#039;chips&#039;&gt;VND&lt;/span&gt;'>VND</option>
+                                <option value="VUV" data-content='&lt;span class=&#039;chips&#039;&gt;VUV&lt;/span&gt;'>VUV</option>
+                                <option value="WST" data-content='&lt;span class=&#039;chips&#039;&gt;WST&lt;/span&gt;'>WST</option>
+                                <option value="XAF" data-content='&lt;span class=&#039;chips&#039;&gt;XAF&lt;/span&gt;'>XAF</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Team Size <small>(excluding founders)</small></label>
+                            <select name="team_size" class="form-control selectpicker" data-size="8" id="team_size">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Team Size&lt;/span&gt;'>Select Team Size</option>
+                                <option value="1-5 people" data-content='&lt;span class=&#039;chips&#039;&gt;1-5 people&lt;/span&gt;'>1-5 people</option>
+                                <option value="6-10 people" data-content='&lt;span class=&#039;chips&#039;&gt;6-10 people&lt;/span&gt;'>6-10 people</option>
+                                <option value="11-20 people" data-content='&lt;span class=&#039;chips&#039;&gt;11-20 people&lt;/span&gt;'>11-20 people</option>
+                                <option value="20-50 people" data-content='&lt;span class=&#039;chips&#039;&gt;20-50 people&lt;/span&gt;'>20-50 people</option>
+                                <option value="50+ people" data-content='&lt;span class=&#039;chips&#039;&gt;50+ people&lt;/span&gt;'>50+ people</option>
+                            </select>
+                        </div>
+                        <!--
+                                        <div class="col-sm-6 form-group">
+                                          <label class="form-label">Need For Mentoring</label>
+                                          <div class="form-group">
+                                             <span class="btn-radio btn-radio">
+                                                                             <label for="need_mentoryes">Yes</label>
+                                              </span>
+
+                                              <span class="btn-radio btn-radio">
+                                                                            <label for="need_mentorno">No</label>
+                                              </span>
+
+                                          </div>
+                                        </div>
+
+
+                        -->
+
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Areas Where You Want a Mentor To Come In</label>
+
+                            <select class="form-control selectpicker" title="Select one or more Areas" multiple name="specific_area[]" data-size="8" data-width="100%">
+                                <optgroup label="Select Category">
+                                    <!--
+                                                       data-max-options="2"
+                                    -->
+                                </optgroup>
+                                <optgroup label="Business">
+                                    <!--
+                                                       data-max-options="2"
+                                    -->
+                                    <option value="Business Plan/Model">Business Plan/Model</option>
+                                    <option value="Branding">Branding</option>
+                                    <option value="Legal">Legal</option>
+                                    <option value="Financial Consulting">Financial Consulting</option>
+                                    <option value="Customer Engagement">Customer Engagement</option>
+                                    <option value="Go to Market Strategy">Go to Market Strategy</option>
+                                </optgroup>
+                                <optgroup label="Sales & Marketing">
+                                    <!--
+                                                       data-max-options="2"
+                                    -->
+                                    <option value="Sales & Lead Generation">Sales & Lead Generation</option>
+                                    <option value="Growth Strategy">Growth Strategy</option>
+                                    <option value="Online Promotion">Online Promotion</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="Branding">Branding</option>
+                                </optgroup>
+                                <optgroup label="Technology">
+                                    <!--
+                                                       data-max-options="2"
+                                    -->
+                                    <option value="Innovation">Innovation</option>
+                                    <option value="AI">AI</option>
+                                    <option value="CRM">CRM</option>
+                                    <option value="Cloud">Cloud</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Software Development">Software Development</option>
+                                </optgroup>
+                                <optgroup label="Product & Design">
+                                    <!--
+                                                       data-max-options="2"
+                                    -->
+                                    <option value="Word Press">Word Press</option>
+                                    <option value="Testing/Beta">Testing/Beta</option>
+                                    <option value="Metrics">Metrics</option>
+                                    <option value="Product Management">Product Management</option>
+                                    <option value="Identity">Identity</option>
+                                    <option value="UI/UX">UI/UX</option>
+                                </optgroup>
+                                <optgroup label="Funding">
+                                    <!--
+                                                       data-max-options="2"
+                                    -->
+                                    <option value="NonProfit">NonProfit</option>
+                                    <option value="BootStrapping">BootStrapping</option>
+                                    <option value="Venture Capital">Venture Capital</option>
+                                    <option value="Crowdfunding">Crowdfunding</option>
+                                    <option value="Angel Funding">Angel Funding</option>
+                                </optgroup>
+                                <optgroup label="Skill & Leadership">
+                                    <!--
+                                                       data-max-options="2"
+                                    -->
+                                    <option value="Media & PR">Media & PR</option>
+                                    <option value="Public Speaking">Public Speaking</option>
+                                    <option value="Team Building">Team Building</option>
+                                    <option value="Productivity">Productivity</option>
+                                </optgroup>
+                            </select>
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+
+
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Detailed breakup/segmentation</label>
+                            <textarea name="breakup" cols="40" rows="2" class="form-control" id="breakup" placeholder="Detailed breakup/segmentation" style="height:90px"></textarea>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Mentoring Engagement</label>
+                            <select name="engagement" class="form-control selectpicker" id="engagement" data-size="8" data-width="100%">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Engagement&lt;/span&gt;'>Select Engagement</option>
+                                <option value="Phone Call" data-content='&lt;span class=&#039;chips&#039;&gt;Phone Call&lt;/span&gt;'>Phone Call</option>
+                                <option value="Live Chat" data-content='&lt;span class=&#039;chips&#039;&gt;Live Chat&lt;/span&gt;'>Live Chat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-form">
+                <h4 class="panel-form-title"><span>Tell us about the founders</span></h4>
+                <div class="panel-form-body">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Your Roles in the Startup</label>
+                            <select name="industry_roles" class="form-control selectpicker" id="industry_roles" data-width="100%" data-size="8" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Role&lt;/span&gt;'>Select Role</option>
+                                <option value="Founder" data-content='&lt;span class=&#039;chips&#039;&gt;Founder&lt;/span&gt;'>Founder</option>
+                                <option value="CEO" data-content='&lt;span class=&#039;chips&#039;&gt;CEO&lt;/span&gt;'>CEO</option>
+                                <option value="Tech Head" data-content='&lt;span class=&#039;chips&#039;&gt;Tech Head&lt;/span&gt;'>Tech Head</option>
+                                <option value="Business Head" data-content='&lt;span class=&#039;chips&#039;&gt;Business Head&lt;/span&gt;'>Business Head</option>
+                                <option value="Marketing Head" data-content='&lt;span class=&#039;chips&#039;&gt;Marketing Head&lt;/span&gt;'>Marketing Head</option>
+                                <option value="Others" data-content='&lt;span class=&#039;chips&#039;&gt;Others&lt;/span&gt;'>Others</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Your Professional Experience</label>
+                            <select name="professional_experience" class="form-control selectpicker" data-size="8" data-width="100%" id="professional_experience">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Experience&lt;/span&gt;'>Select Experience</option>
+                                <option value="1-5 years" data-content='&lt;span class=&#039;chips&#039;&gt;1-5 years&lt;/span&gt;'>1-5 years</option>
+                                <option value="6-10 years" data-content='&lt;span class=&#039;chips&#039;&gt;6-10 years&lt;/span&gt;'>6-10 years</option>
+                                <option value="11-15 years" data-content='&lt;span class=&#039;chips&#039;&gt;11-15 years&lt;/span&gt;'>11-15 years</option>
+                                <option value="15+ years" data-content='&lt;span class=&#039;chips&#039;&gt;15+ years&lt;/span&gt;'>15+ years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row" id="other_role_div" style="display:none;">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Other Role</label>
+                            <input type="text" name="other_role" value="" class="form-control" id="other_role" placeholder="Please Enter Other Role" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Positions last held</label>
+                            <select name="last_position" class="form-control selectpicker" id="positions" data-size="8" data-width="100%" data-live-search="true">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Role&lt;/span&gt;'>Select Role</option>
+                                <option value="Founder" data-content='&lt;span class=&#039;chips&#039;&gt;Founder&lt;/span&gt;'>Founder</option>
+                                <option value="CEO" data-content='&lt;span class=&#039;chips&#039;&gt;CEO&lt;/span&gt;'>CEO</option>
+                                <option value="Tech Head" data-content='&lt;span class=&#039;chips&#039;&gt;Tech Head&lt;/span&gt;'>Tech Head</option>
+                                <option value="Business Head" data-content='&lt;span class=&#039;chips&#039;&gt;Business Head&lt;/span&gt;'>Business Head</option>
+                                <option value="Marketing Head" data-content='&lt;span class=&#039;chips&#039;&gt;Marketing Head&lt;/span&gt;'>Marketing Head</option>
+                                <option value="Others" data-content='&lt;span class=&#039;chips&#039;&gt;Others&lt;/span&gt;'>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Members of the founding team <small>(Except registered startup)</small></label>
+                            <select name="members_count" class="form-control selectpicker" data-size="8" data-width="100%" id="members_count">
+                                <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Members&lt;/span&gt;'>Select Members</option>
+                                <option value="1" data-content='&lt;span class=&#039;chips&#039;&gt;1&lt;/span&gt;'>1</option>
+                                <option value="2" data-content='&lt;span class=&#039;chips&#039;&gt;2&lt;/span&gt;'>2</option>
+                                <option value="3" data-content='&lt;span class=&#039;chips&#039;&gt;3&lt;/span&gt;'>3</option>
+                                <option value="4" data-content='&lt;span class=&#039;chips&#039;&gt;4&lt;/span&gt;'>4</option>
+                                <option value="5" data-content='&lt;span class=&#039;chips&#039;&gt;5&lt;/span&gt;'>5</option>
+                                <option value="6" data-content='&lt;span class=&#039;chips&#039;&gt;6&lt;/span&gt;'>6</option>
+                                <option value="7" data-content='&lt;span class=&#039;chips&#039;&gt;7&lt;/span&gt;'>7</option>
+                                <option value="8" data-content='&lt;span class=&#039;chips&#039;&gt;8&lt;/span&gt;'>8</option>
+                                <option value="9" data-content='&lt;span class=&#039;chips&#039;&gt;9&lt;/span&gt;'>9</option>
+                                <option value="10" data-content='&lt;span class=&#039;chips&#039;&gt;10&lt;/span&gt;'>10</option>
+                                <option value="11" data-content='&lt;span class=&#039;chips&#039;&gt;11&lt;/span&gt;'>11</option>
+                                <option value="12" data-content='&lt;span class=&#039;chips&#039;&gt;12&lt;/span&gt;'>12</option>
+                                <option value="13" data-content='&lt;span class=&#039;chips&#039;&gt;13&lt;/span&gt;'>13</option>
+                                <option value="14" data-content='&lt;span class=&#039;chips&#039;&gt;14&lt;/span&gt;'>14</option>
+                                <option value="15" data-content='&lt;span class=&#039;chips&#039;&gt;15&lt;/span&gt;'>15</option>
+                                <option value="16" data-content='&lt;span class=&#039;chips&#039;&gt;16&lt;/span&gt;'>16</option>
+                                <option value="17" data-content='&lt;span class=&#039;chips&#039;&gt;17&lt;/span&gt;'>17</option>
+                                <option value="18" data-content='&lt;span class=&#039;chips&#039;&gt;18&lt;/span&gt;'>18</option>
+                                <option value="19" data-content='&lt;span class=&#039;chips&#039;&gt;19&lt;/span&gt;'>19</option>
+                                <option value="20" data-content='&lt;span class=&#039;chips&#039;&gt;20&lt;/span&gt;'>20</option>
+                                <option value="21" data-content='&lt;span class=&#039;chips&#039;&gt;21&lt;/span&gt;'>21</option>
+                                <option value="22" data-content='&lt;span class=&#039;chips&#039;&gt;22&lt;/span&gt;'>22</option>
+                                <option value="23" data-content='&lt;span class=&#039;chips&#039;&gt;23&lt;/span&gt;'>23</option>
+                                <option value="24" data-content='&lt;span class=&#039;chips&#039;&gt;24&lt;/span&gt;'>24</option>
+                                <option value="25" data-content='&lt;span class=&#039;chips&#039;&gt;25&lt;/span&gt;'>25</option>
+                                <option value="26" data-content='&lt;span class=&#039;chips&#039;&gt;26&lt;/span&gt;'>26</option>
+                                <option value="27" data-content='&lt;span class=&#039;chips&#039;&gt;27&lt;/span&gt;'>27</option>
+                                <option value="28" data-content='&lt;span class=&#039;chips&#039;&gt;28&lt;/span&gt;'>28</option>
+                                <option value="29" data-content='&lt;span class=&#039;chips&#039;&gt;29&lt;/span&gt;'>29</option>
+                                <option value="30" data-content='&lt;span class=&#039;chips&#039;&gt;30&lt;/span&gt;'>30</option>
+                                <option value="31" data-content='&lt;span class=&#039;chips&#039;&gt;31&lt;/span&gt;'>31</option>
+                                <option value="32" data-content='&lt;span class=&#039;chips&#039;&gt;32&lt;/span&gt;'>32</option>
+                                <option value="33" data-content='&lt;span class=&#039;chips&#039;&gt;33&lt;/span&gt;'>33</option>
+                                <option value="34" data-content='&lt;span class=&#039;chips&#039;&gt;34&lt;/span&gt;'>34</option>
+                                <option value="35" data-content='&lt;span class=&#039;chips&#039;&gt;35&lt;/span&gt;'>35</option>
+                                <option value="36" data-content='&lt;span class=&#039;chips&#039;&gt;36&lt;/span&gt;'>36</option>
+                                <option value="37" data-content='&lt;span class=&#039;chips&#039;&gt;37&lt;/span&gt;'>37</option>
+                                <option value="38" data-content='&lt;span class=&#039;chips&#039;&gt;38&lt;/span&gt;'>38</option>
+                                <option value="39" data-content='&lt;span class=&#039;chips&#039;&gt;39&lt;/span&gt;'>39</option>
+                                <option value="40" data-content='&lt;span class=&#039;chips&#039;&gt;40&lt;/span&gt;'>40</option>
+                                <option value="41" data-content='&lt;span class=&#039;chips&#039;&gt;41&lt;/span&gt;'>41</option>
+                                <option value="42" data-content='&lt;span class=&#039;chips&#039;&gt;42&lt;/span&gt;'>42</option>
+                                <option value="43" data-content='&lt;span class=&#039;chips&#039;&gt;43&lt;/span&gt;'>43</option>
+                                <option value="44" data-content='&lt;span class=&#039;chips&#039;&gt;44&lt;/span&gt;'>44</option>
+                                <option value="45" data-content='&lt;span class=&#039;chips&#039;&gt;45&lt;/span&gt;'>45</option>
+                                <option value="46" data-content='&lt;span class=&#039;chips&#039;&gt;46&lt;/span&gt;'>46</option>
+                                <option value="47" data-content='&lt;span class=&#039;chips&#039;&gt;47&lt;/span&gt;'>47</option>
+                                <option value="48" data-content='&lt;span class=&#039;chips&#039;&gt;48&lt;/span&gt;'>48</option>
+                                <option value="49" data-content='&lt;span class=&#039;chips&#039;&gt;49&lt;/span&gt;'>49</option>
+                                <option value="50" data-content='&lt;span class=&#039;chips&#039;&gt;50&lt;/span&gt;'>50</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row" id="other_role_lastheld_div" style="display:none;">
+                        <div class="col-sm-6 form-group">
+                            <label class="form-label">Other Role</label>
+                            <input type="text" name="other_role_lastheld" value="" class="form-control" id="other_role_lastheld" placeholder="Other Role Last Held" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <!--
+                                        <div class="col-sm-6 form-group">
+                                          <label>Members of the founding team</label>
+                                                          </div>
+                        -->
+                        <!--
+                                        <div class="col-sm-6 form-group">
+                                          <label>&nbsp;</label>
+                                          <a href="javascript:void();" id="founder_info" class="btn btn-lg btn-block btn-primary">Little information about the founders</a>
+                                        </div>
+
+                        -->
+                    </div>
+
+
+
+                    <div class="well t-member">
+                        <div class="form-group">
+                            <label class="form-label">Founder Name</label>
+
+                            <input type="text" name="founder_name[]" value="xyz" class="form-control" placeholder="Founder Name" />
+                        </div>
+                        <div class="clearfix">
+                            <label class="form-label">Description</label>
+                            <textarea name="founder_desc[]" cols="40" rows="2" class="form-control" placeholder="Founder Description"></textarea>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div id="foundersDiv">
+
+
+
+                    </div>
+
+
+                    <div class="clearfix">
+                        <label class="form-label">Will you be open to partnering with other startups for mutual benefits</label>
+                        <div class="form-group">
+                            <span class="btn-radio btn-radio">
+                                <input type="radio" name="other_startup_link" value="yes" id="other_startup_linkyes" />
+                                <label for="other_startup_linkyes">Yes</label>
+                            </span>
+
+                            <span class="btn-radio btn-radio">
+                                <input type="radio" name="other_startup_link" value="no" id="other_startup_linkno" />
+                                <label for="other_startup_linkno">No</label>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel-form">
+                <h4 class="panel-form-title"><span>Education Details </span></h4>
+                <div class="panel-form-body">
+
+                    <div id="eduDiv">
+
+                        <div class="row">
+                            <div class="col-sm-3 form-group">
+                                <label class="form-label">Education</label>
+                                <select name="education[]" class="form-control selectpicker" data-size="8" data-width="100%" data-live-search="true">
+                                    <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Education&lt;/span&gt;'>Select Education</option>
+                                    <option value="Graduate" data-content='&lt;span class=&#039;chips&#039;&gt;Graduate&lt;/span&gt;'>Graduate</option>
+                                    <option value="Masters" data-content='&lt;span class=&#039;chips&#039;&gt;Masters&lt;/span&gt;'>Masters</option>
+                                    <option value="Phd" data-content='&lt;span class=&#039;chips&#039;&gt;Phd&lt;/span&gt;'>Phd</option>
+                                    <option value="Professional Certification" data-content='&lt;span class=&#039;chips&#039;&gt;Professional Certification&lt;/span&gt;'>Professional Certification</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-5 form-group">
+                                <label class="form-label">Institute</label>
+                                <input type="text" name="institute[]" value="" class="form-control" placeholder="Institute" />
+                            </div>
+
+                            <div class="col-sm-3 form-group">
+                                <label class="form-label">Year</label>
+                                <select name="edu_year[]" class="form-control selectpicker" data-size="8" data-width="100%" data-live-search="true">
+                                    <option value="" selected="selected" data-content='&lt;span class=&#039;chips&#039;&gt;Select Year&lt;/span&gt;'>Select Year</option>
+                                    <option value="1969" data-content='&lt;span class=&#039;chips&#039;&gt;1969&lt;/span&gt;'>1969</option>
+                                    <option value="1970" data-content='&lt;span class=&#039;chips&#039;&gt;1970&lt;/span&gt;'>1970</option>
+                                    <option value="1971" data-content='&lt;span class=&#039;chips&#039;&gt;1971&lt;/span&gt;'>1971</option>
+                                    <option value="1972" data-content='&lt;span class=&#039;chips&#039;&gt;1972&lt;/span&gt;'>1972</option>
+                                    <option value="1973" data-content='&lt;span class=&#039;chips&#039;&gt;1973&lt;/span&gt;'>1973</option>
+                                    <option value="1974" data-content='&lt;span class=&#039;chips&#039;&gt;1974&lt;/span&gt;'>1974</option>
+                                    <option value="1975" data-content='&lt;span class=&#039;chips&#039;&gt;1975&lt;/span&gt;'>1975</option>
+                                    <option value="1976" data-content='&lt;span class=&#039;chips&#039;&gt;1976&lt;/span&gt;'>1976</option>
+                                    <option value="1977" data-content='&lt;span class=&#039;chips&#039;&gt;1977&lt;/span&gt;'>1977</option>
+                                    <option value="1978" data-content='&lt;span class=&#039;chips&#039;&gt;1978&lt;/span&gt;'>1978</option>
+                                    <option value="1979" data-content='&lt;span class=&#039;chips&#039;&gt;1979&lt;/span&gt;'>1979</option>
+                                    <option value="1980" data-content='&lt;span class=&#039;chips&#039;&gt;1980&lt;/span&gt;'>1980</option>
+                                    <option value="1981" data-content='&lt;span class=&#039;chips&#039;&gt;1981&lt;/span&gt;'>1981</option>
+                                    <option value="1982" data-content='&lt;span class=&#039;chips&#039;&gt;1982&lt;/span&gt;'>1982</option>
+                                    <option value="1983" data-content='&lt;span class=&#039;chips&#039;&gt;1983&lt;/span&gt;'>1983</option>
+                                    <option value="1984" data-content='&lt;span class=&#039;chips&#039;&gt;1984&lt;/span&gt;'>1984</option>
+                                    <option value="1985" data-content='&lt;span class=&#039;chips&#039;&gt;1985&lt;/span&gt;'>1985</option>
+                                    <option value="1986" data-content='&lt;span class=&#039;chips&#039;&gt;1986&lt;/span&gt;'>1986</option>
+                                    <option value="1987" data-content='&lt;span class=&#039;chips&#039;&gt;1987&lt;/span&gt;'>1987</option>
+                                    <option value="1988" data-content='&lt;span class=&#039;chips&#039;&gt;1988&lt;/span&gt;'>1988</option>
+                                    <option value="1989" data-content='&lt;span class=&#039;chips&#039;&gt;1989&lt;/span&gt;'>1989</option>
+                                    <option value="1990" data-content='&lt;span class=&#039;chips&#039;&gt;1990&lt;/span&gt;'>1990</option>
+                                    <option value="1991" data-content='&lt;span class=&#039;chips&#039;&gt;1991&lt;/span&gt;'>1991</option>
+                                    <option value="1992" data-content='&lt;span class=&#039;chips&#039;&gt;1992&lt;/span&gt;'>1992</option>
+                                    <option value="1993" data-content='&lt;span class=&#039;chips&#039;&gt;1993&lt;/span&gt;'>1993</option>
+                                    <option value="1994" data-content='&lt;span class=&#039;chips&#039;&gt;1994&lt;/span&gt;'>1994</option>
+                                    <option value="1995" data-content='&lt;span class=&#039;chips&#039;&gt;1995&lt;/span&gt;'>1995</option>
+                                    <option value="1996" data-content='&lt;span class=&#039;chips&#039;&gt;1996&lt;/span&gt;'>1996</option>
+                                    <option value="1997" data-content='&lt;span class=&#039;chips&#039;&gt;1997&lt;/span&gt;'>1997</option>
+                                    <option value="1998" data-content='&lt;span class=&#039;chips&#039;&gt;1998&lt;/span&gt;'>1998</option>
+                                    <option value="1999" data-content='&lt;span class=&#039;chips&#039;&gt;1999&lt;/span&gt;'>1999</option>
+                                    <option value="2000" data-content='&lt;span class=&#039;chips&#039;&gt;2000&lt;/span&gt;'>2000</option>
+                                    <option value="2001" data-content='&lt;span class=&#039;chips&#039;&gt;2001&lt;/span&gt;'>2001</option>
+                                    <option value="2002" data-content='&lt;span class=&#039;chips&#039;&gt;2002&lt;/span&gt;'>2002</option>
+                                    <option value="2003" data-content='&lt;span class=&#039;chips&#039;&gt;2003&lt;/span&gt;'>2003</option>
+                                    <option value="2004" data-content='&lt;span class=&#039;chips&#039;&gt;2004&lt;/span&gt;'>2004</option>
+                                    <option value="2005" data-content='&lt;span class=&#039;chips&#039;&gt;2005&lt;/span&gt;'>2005</option>
+                                    <option value="2006" data-content='&lt;span class=&#039;chips&#039;&gt;2006&lt;/span&gt;'>2006</option>
+                                    <option value="2007" data-content='&lt;span class=&#039;chips&#039;&gt;2007&lt;/span&gt;'>2007</option>
+                                    <option value="2008" data-content='&lt;span class=&#039;chips&#039;&gt;2008&lt;/span&gt;'>2008</option>
+                                    <option value="2009" data-content='&lt;span class=&#039;chips&#039;&gt;2009&lt;/span&gt;'>2009</option>
+                                    <option value="2010" data-content='&lt;span class=&#039;chips&#039;&gt;2010&lt;/span&gt;'>2010</option>
+                                    <option value="2011" data-content='&lt;span class=&#039;chips&#039;&gt;2011&lt;/span&gt;'>2011</option>
+                                    <option value="2012" data-content='&lt;span class=&#039;chips&#039;&gt;2012&lt;/span&gt;'>2012</option>
+                                    <option value="2013" data-content='&lt;span class=&#039;chips&#039;&gt;2013&lt;/span&gt;'>2013</option>
+                                    <option value="2014" data-content='&lt;span class=&#039;chips&#039;&gt;2014&lt;/span&gt;'>2014</option>
+                                    <option value="2015" data-content='&lt;span class=&#039;chips&#039;&gt;2015&lt;/span&gt;'>2015</option>
+                                    <option value="2016" data-content='&lt;span class=&#039;chips&#039;&gt;2016&lt;/span&gt;'>2016</option>
+                                    <option value="2017" data-content='&lt;span class=&#039;chips&#039;&gt;2017&lt;/span&gt;'>2017</option>
+                                    <option value="2018" data-content='&lt;span class=&#039;chips&#039;&gt;2018&lt;/span&gt;'>2018</option>
+                                    <option value="2019" data-content='&lt;span class=&#039;chips&#039;&gt;2019&lt;/span&gt;'>2019</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-1 form-group"> <label class="form-label">&nbsp;</label><button type="button" class="btn btn-blue delete_row"><i class="fa fa-trash-o"></i></button></div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3 form-group">
+                            <button type="button" id="add_more" class="btn btn-default"><i class="fa fa-plus"></i> Add More</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+            <span class="btn-checkbox terms btn-checkbox">
+                <input type="checkbox" name="acceptence_of_term" value="1" id="terms" />
+
+                <label for="terms">I am good with the <a href="/terms-of-service">nitty-grittys</a></label>
+            </span>
+            <div class="clearfix mt30">
+                <button type="submit" value="Submit" name="register" onclick="return testcheck();" class="btn btn-lg btn-primary btn-register">Submit</button>
+
+            </div>
+        </form>
+
+    </div>
+</section>
+
+
+<!--[Form]-->
+<!--<div class="section sec-steps text-center bg-grey">
+    <div class="container">
+    <a href="#" class="step-block ">
+      <img src="/assets/images/icon-step1.png" alt="Step 1">
+      <h5>Step 1</h5>
+    </a>
+    <a href="#" class="step-block success">
+      <img src="/assets/images/icon-step2.png" alt="Step 2">
+      <h5>Step 2</h5>
+    </a>
+  </div>
+</div>-->
+
+
+
+<div id="founderData" style="display:none;">
+    <div class="well t-member">
+        <div class="form-group">
+            <label class="form-label">Founder Name</label>
+            <input type="text" name="founder_name[]" value="" class="form-control" placeholder="Founder Name" />
+        </div>
+        <div class="clearfix">
+            <label class="form-label">Description</label>
+            <textarea name="founder_desc[]" cols="40" rows="2" class="form-control" placeholder="Founder Description"></textarea>
+        </div>
+    </div>
+</div>
+
+
+<!--[/Form]
+<script>
+    function testcheck()
+    {
+        if (!$("#terms").is(":checked")) {
+            alert("I am good with the nitty-grittys field is required.");
+            return false;
+        }
+        return true;
+    }
+
+
+$(document).ready(function(){
+
+
+      // image preview
+      $('input[name="company_logo"]').on('change', function () {
+        if (typeof (FileReader) != "undefined") {
+          var image_holder = $("#preview");
+          image_holder.empty();
+          var file = this.files[0];
+          var imagefile = file.type;
+          var file_size = file.size;
+          var match= ["image/jpeg","image/png","image/jpg","image/gif"];
+          if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]) || (imagefile==match[3]) )) {
+            $("#company_logo").val('');
+            $("#company_logo").replaceWith($("#company_logo").clone(true));
+            $("<p />", {
+                    "class" : "text-danger",
+                    "text" : "Upload only jpeg/jpg, png or gif image."
+                }).appendTo(image_holder);
+            return false;
+          }
+          else if (file_size > 2097152) { // 2MB = 2097152 kB = 1024 * 1024 * 2
+            $("#company_logo").val('');
+            //$("#image").replaceWith($("#image").clone(true));
+            $("<p />", {
+                    "class" : "text-danger",
+                    "text" : "Uploaded image exceeds the maximum allowed size of 2MB."
+                }).appendTo(image_holder);
+            return false;
+          }
+          else {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("<img />", {
+                    "src": e.target.result,
+                    "class": "img-responsive",
+                    "id": "img_preview"
+
+                }).appendTo(image_holder);
+
+             }
+            image_holder.show();
+            reader.readAsDataURL($(this)[0].files[0]);
+             $('#upload').show();
+          }
+        } else {
+          alert("This browser does not support FileReader.");
+        }
+
+      });
+
+
+
+
+
+    $('#industry_roles').change(function(){
+        if($(this).val()=='Others')
+        {
+            $('#other_role_div').show();
+        }
+        else
+        {
+            $('#other_role').val('');
+            $('#other_role_div').hide();
+
+        }
+    })
+
+
+
+    $('#positions').change(function(){
+        if($(this).val()=='Others')
+        {
+            $('#other_role_lastheld_div').show();
+        }
+        else
+        {
+            $('#other_role_last_held').val('');
+            $('#other_role_lastheld_div').hide();
+        }
+    })
+
+
+    $('#members_count').change(function(){
+            var $val = $(this).val();
+            if($val=='')
+            {
+                $('#foundersDiv').html('');
+                alert('Please select members of founding team first.');
+                return false;
+            }
+            else{
+
+
+                // grab a clone of the aside
+                $clone= $('#founderData').find('.t-member').clone();
+
+                //loop through and append a clone with modified JSON information for each item in the cart array
+                if($val>0)
+                {
+                    $('#foundersDiv').html('');
+                    for(i=1; i<=$val; i++){
+
+                        // create a copy of the clone
+                        $copy = $clone.clone();
+                        $copy.appendTo($('#foundersDiv'));
+                    }
+                }
+                else
+                 $('#foundersDiv').html('');
+
+            }
+
+        });
+
+     var frm_mentor_registration_info = $('#startup_registration_info');
+        if(typeof $.fn.formValidation != 'undefined') {
+        // form validation
+        frm_mentor_registration_info.formValidation({
+          framework: 'bootstrap',
+          live: 'disabled',
+          verbose: false,
+          fields: {
+            startup_name: {
+              validators: {
+               notEmpty: {
+                message: 'Company name is required.'
+                },
+              regexp: {
+              regexp: /^([a-zA-Z0-9,.@@&_ -]+)$/,
+                message: 'Special characters are not allowed.'
+              },
+              stringLength: {
+              max: 100,
+              message: 'name maximum 100 characters long.'
+              }
+            }
+            },
+
+            short_highlight: {
+                validators: {
+                  notEmpty: {
+                   message: 'Short highlight is required.'
+                  },
+                  stringLength: {
+                  min: 5,
+                  message: 'Name minimum 5 characters long.'
+                  }
+                },
+            },
+
+
+            look_for: {
+              validators: {
+                notEmpty: {
+                  message: 'What are you looking for.'
+                }
+              }
+            },
+            service_summary: {
+              validators: {
+                notEmpty: {
+                  message: 'Service summary required.'
+                }
+              }
+            },
+            //~ 'stages[]': {
+                //~ validators: {
+                    //~ choice: {
+                        //~ min: 2,
+                        //~ max: 4,
+                        //~ message: 'Please choose 2 - 4 programming languages you are good at'
+                    //~ }
+                //~ }
+            //~ },
+            terms: {
+              validators: {
+                notEmpty: {
+                  message: 'Acceptence of terms and conditions.'
+                }
+              }
+            }
+        }
+    }) .on('success.form.fv', function(e) {
+
+             // Prevent form submission
+            e.preventDefault();
+
+            var $form = $(e.target),
+                fv    = $(e.target).data('formValidation');
+
+            // Do whatever you want here ...
+
+            // Then submit the form as usual
+            fv.defaultSubmit();
+
+            });
+
+        }
+
+    })
+
+
+</script>-->
+<script type="text/javascript" src="/assets/js/common.js"></script>

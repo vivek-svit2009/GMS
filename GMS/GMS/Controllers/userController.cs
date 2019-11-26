@@ -16,7 +16,22 @@ namespace GMS.Controllers
         // GET: user
         public ActionResult login()
         {
-            return View();
+
+            if (Session["UserEmail"] != null)
+            {
+                if (Session["UserType"].ToString() == "Mentor")
+                {
+                    return RedirectToAction("profile", "mentor");
+                }
+                else
+                {
+                    return RedirectToAction("profile", "startup");
+                }
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult login(LoginUser form)
@@ -36,6 +51,9 @@ namespace GMS.Controllers
                 }
                 else
                 {
+                    Session["UserType"] = "User";
+                    Session["UserEmail"] = form.email;
+                    Response.Cookies.Add(new HttpCookie("StartupEmail", form.email));
                     return RedirectToAction("register_info", "startup");
                 }
             }
@@ -56,6 +74,9 @@ namespace GMS.Controllers
                     }
                     else
                     {
+                        Session["UserType"] = "Mentor";
+                        Session["UserEmail"] = form.email;
+                        Response.Cookies.Add(new HttpCookie("MentorEmail", form.email));
                         return RedirectToAction("register_info", "mentor");
                        
                     }

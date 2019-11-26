@@ -15,4 +15,28 @@ namespace GMS.Models
         public string Image { get; set; }
         public string IsInvestor { get; set; }
     }
+    public class profileRegMentor
+    {
+        public string primary_industry { get; set; }
+        public string business_experience { get; set; }
+        public List<string> countries { get; set; }
+        public string ownership_experience { get; set; }
+        public string[] industry_roles { get; set; }
+        public List<string> your_company { get; set; }
+        public List<string> contribution { get; set; }
+        public string achievements { get; set; }
+        public List<string> area_of_expertise { get; set; }
+        public string business_problems { get; set; }
+        public List<string> advising_activities { get; set; }
+        public List<string> stages { get; set; }
+        public string website_link { get; set; }
+        public string company { get; set; }
+        public string role_at_company { get; set; }
+        public List<string> languages { get; set; }
+        public string residence_country { get; set; }
+        public string residence_state { get; set; }
+        public string residence_city { get; set; }
+        public string postal_code { get; set; }
+        public string invest_opportunity { get; set; }
+    }
 }
