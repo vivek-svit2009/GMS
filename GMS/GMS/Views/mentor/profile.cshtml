@@ -2,6 +2,10 @@
     ViewBag.Title = "profile";
     Layout = "~/Views/Shared/_LayoutMentor.cshtml";
 }
+@{
+    GMS.Models.MentorProfile MyMP = (GMS.Models.MentorProfile)
+        ViewData["MyMP"];
+}
 <div class="dashboard-center data-cell">
     <header class="dashboard-header clearfix">
         <h2 class="dash-title">Profile Info</h2>
@@ -27,23 +31,19 @@
                 <h4 class="label-title">Areas of expertise</h4>
                 <div class="panel-view-result">
                     <div id="area_of_expertise">
+                        @{
+                            string[] aoe = MyMP.AreaOfExperties.Remove(MyMP.AreaOfExperties.Length - 1, 1).Split(',');
 
-                        <div class="chips-view"><span>Business Plan/Model</span><span>Branding</span><span>Legal</span><span>Financial Consulting</span><span>Customer Engagement</span><span>Branding</span><span>AI</span><span>Software Development</span><span>Testing/Beta</span></div>
+                        }
+                        <div class="chips-view">
+                            @foreach (var a in aoe)
+                            {
+                            <span>@a</span>
+                            }
+                        </div>
 
 
 
-                        <!--
-                                        <div class="col-sm-4">
-                                          <div class="indst-checkbox">
-                                            <label for="industry1">
-                                              <span class="data-table">
-                                                <span class="data-cell">
-                                                                          </span>
-                                              </span>
-                                            </label>
-                                          </div>
-                                        </div>
-                        -->
 
                     </div>
                 </div>
@@ -53,7 +53,7 @@
             <div class="panel-view-row">
                 <h4 class="label-title">My primary industry</h4>
                 <div class="panel-view-result" id="primary_industry">
-                    <p>Internet , E Commerce</p>
+                    <p>@MyMP.PrimaryIndustry</p>
                 </div>
             </div>
         </div>
@@ -153,7 +153,7 @@
                 <div class="panel-view-result  panel-view-only" id="manual_professional">
 
                     <div id="industry_roles">
-                        <p><b>Role - </b>CEO/CTO/CFO/CXO</p><p><b>Company - </b>SVGC</p><p><b>Contribution / KRA - </b>jxkksd akdkajd aksjkajd akdjkljadl</p><br />
+                        <p><b>Role - </b>@MyMP.YourRole</p><p><b>Company - </b>@MyMP.YourCompany</p><p><b>Contribution / KRA - </b></p><br />
                     </div>
                 </div>
 
@@ -222,7 +222,7 @@
 
 
                 <div class="panel-view-result panel-view-only" id="manual_achievement">
-                    <div id="achievements">nlcklkslknlfdsflkklfjkljf sdkflkjslfks</div>
+                    <div id="achievements">@MyMP.Achievements</div>
                 </div>
 
 
@@ -252,13 +252,23 @@
             <div class="panel-view-row">
                 <h4 class="label-title">Type of business problems interest me</h4>
                 <div class="panel-view-result">
-                    <p id="business_problems">hsdlhlsf sdlknflsf slkkdnfkljslf slkflsjfd sslkdjfsndf </p>
+                    <p id="business_problems">@MyMP.BusinessProblemInterest </p>
                 </div>
             </div>
             <div class="panel-view-row">
                 <h4 class="label-title">Activities that I prefer when advising others</h4>
                 <div class="panel-view-result">
-                    <div class="chips-view" id="advising_activities"><span>Mail</span><span>Phone</span><span>Physical Interactions</span><span>Your Workshops</span></div>
+                    @{
+                        string[] advisingacti = MyMP.AdvisingActivities.Remove(MyMP.AdvisingActivities.Length - 1, 1).Split(',');
+
+                    }
+                    <div class="chips-view" id="advising_activities">
+                        @foreach (var aa in advisingacti)
+                        {
+                            <span>@aa</span>
+                        }
+
+                    </div>
                 </div>
             </div>
 
@@ -318,68 +328,53 @@
         <h4 class="panel-view-title"><span>Stages of the Startup business that I prefer helping</span> <a href="javascript:void(0)" class="btn btn-edit edit_anchor"><i class="fa fa-pencil"></i></a> </h4>
         <div class="panel-view-body panel-view-only" id="manual_stage">
             <div class="panel-view-row">
-                <!--
-                              <h4 class="label-title">You played and how did you contribute</h4>
-                -->
+               
                 <div class="panel-view-result">
+                    @{
+                        string[] stages = MyMP.StageOfBusiness.Remove(MyMP.StageOfBusiness.Length - 1, 1).Split(',');
 
+                    }
                     <div class="select-stage" id="stages">
-
+                        @foreach (var s in stages)
+                        {
                         <div class="stage-checkbox active">
                             <label for="checkbox0">
                                 <i class="icon icon-stage1"></i>
-                                <span>Ideation</span>
+                                <span>@s</span>
                             </label>
                         </div>
-
-                        <div class="stage-checkbox active">
-                            <label for="checkbox1">
-                                <i class="icon icon-stage2"></i>
-                                <span>POC</span>
-                            </label>
-                        </div>
-
-                        <div class="stage-checkbox active">
-                            <label for="checkbox2">
-                                <i class="icon icon-stage3"></i>
-                                <span>Early Growth</span>
-                            </label>
-                        </div>
-
-                        <div class="stage-checkbox active">
-                            <label for="checkbox3">
-                                <i class="icon icon-stage4"></i>
-                                <span>Growth</span>
-                            </label>
-                        </div>
-
-                        <div class="stage-checkbox active">
-                            <label for="checkbox4">
-                                <i class="icon icon-stage5"></i>
-                                <span>Mature</span>
-                            </label>
-                        </div>
+                        }
+                       
                     </div>
                 </div>
             </div>
             <div class="panel-view-row">
                 <h4 class="label-title">Years of business management experience do I have</h4>
                 <div class="panel-view-result">
-                    <p id="business_experience">1-2 Years</p>
+                    <p id="business_experience">@MyMP.BusinessMgtExp</p>
                 </div>
             </div>
             <div class="panel-view-row">
                 <h4 class="label-title">Experience in ownership management (if applicable)</h4>
                 <div class="panel-view-result">
-                    <p id="ownership_experience">1-2 Years</p>
+                    <p id="ownership_experience">@MyMP.OwnershipMgtExp</p>
                 </div>
             </div>
             <div class="panel-view-row">
                 <h4 class="label-title">Countries in which I have professional business experience</h4>
                 <div class="panel-view-result">
                     <div id="countries_experience">
+                        @{
+                            string[] pbc = MyMP.BusinessExpCountry.Remove(MyMP.BusinessExpCountry.Length - 1, 1).Split(',');
 
-                        <div class="chips-view"><span>India</span></div>
+                        }
+                        <div class="chips-view">
+                            @foreach (var c in pbc)
+                            {
+                                <span>@c</span>
+                            }
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -808,154 +803,154 @@
 
 </div>
 <script>
-        $("#eduDiv").on('change', '.industry_roles select', function () {
-            var val = $(this).val();
-            var text_div = $(this).parents('.contri');
-            if (val == 'Others') {
-                text_div.find('.add_other_input').html('<input type="text" class="form-control other_input_box" style="margin-top: 20px;" placeholder="Other Roles" name="other_industry_roles[]"/>');
-            }
-            else if (val !== 'Others') {
-                text_div.find('.add_other_input').html('');
-                text_div.find('.other_input_box_div').hide()
-            }
-        });
-        $(document).ready(function () {
-            $('.edit_anchor').click(function () {
-                $(this).parents('.panel-view').find('#manual_expertise').toggle();
-                $(this).parents('.panel-view').find('#update_expertise').toggle();
-                $(this).parents('.panel-view').find('#manual_professional').toggle();
-                $(this).parents('.panel-view').find('#update_professional').toggle();
-                $(this).parents('.panel-view').find('#manual_achievement').toggle();
-                $(this).parents('.panel-view').find('#update_achievement').toggle();
-                $(this).parents('.panel-view').find('#manual_business').toggle();
-                $(this).parents('.panel-view').find('#update_business').toggle();
-                $(this).parents('.panel-view').find('#manual_stage').toggle();
-                $(this).parents('.panel-view').find('#update_stage').toggle();
+    $("#eduDiv").on('change', '.industry_roles select', function () {
+        var val = $(this).val();
+        var text_div = $(this).parents('.contri');
+        if (val == 'Others') {
+            text_div.find('.add_other_input').html('<input type="text" class="form-control other_input_box" style="margin-top: 20px;" placeholder="Other Roles" name="other_industry_roles[]"/>');
+        }
+        else if (val !== 'Others') {
+            text_div.find('.add_other_input').html('');
+            text_div.find('.other_input_box_div').hide()
+        }
+    });
+    $(document).ready(function () {
+        $('.edit_anchor').click(function () {
+            $(this).parents('.panel-view').find('#manual_expertise').toggle();
+            $(this).parents('.panel-view').find('#update_expertise').toggle();
+            $(this).parents('.panel-view').find('#manual_professional').toggle();
+            $(this).parents('.panel-view').find('#update_professional').toggle();
+            $(this).parents('.panel-view').find('#manual_achievement').toggle();
+            $(this).parents('.panel-view').find('#update_achievement').toggle();
+            $(this).parents('.panel-view').find('#manual_business').toggle();
+            $(this).parents('.panel-view').find('#update_business').toggle();
+            $(this).parents('.panel-view').find('#manual_stage').toggle();
+            $(this).parents('.panel-view').find('#update_stage').toggle();
 
 
-            })
+        })
 
-            $('.save_anchor').click(function () {
-                $(this).parents('.panel-view').find('#manual_expertise').toggle();
-                $(this).parents('.panel-view').find('#update_expertise').toggle();
-                $(this).parents('.panel-view').find('#manual_professional').toggle();
-                $(this).parents('.panel-view').find('#update_professional').toggle();
-                $(this).parents('.panel-view').find('#manual_achievement').toggle();
-                $(this).parents('.panel-view').find('#update_achievement').toggle();
-                $(this).parents('.panel-view').find('#manual_business').toggle();
-                $(this).parents('.panel-view').find('#update_business').toggle();
-                $(this).parents('.panel-view').find('#manual_stage').toggle();
-                $(this).parents('.panel-view').find('#update_stage').toggle();
+        $('.save_anchor').click(function () {
+            $(this).parents('.panel-view').find('#manual_expertise').toggle();
+            $(this).parents('.panel-view').find('#update_expertise').toggle();
+            $(this).parents('.panel-view').find('#manual_professional').toggle();
+            $(this).parents('.panel-view').find('#update_professional').toggle();
+            $(this).parents('.panel-view').find('#manual_achievement').toggle();
+            $(this).parents('.panel-view').find('#update_achievement').toggle();
+            $(this).parents('.panel-view').find('#manual_business').toggle();
+            $(this).parents('.panel-view').find('#update_business').toggle();
+            $(this).parents('.panel-view').find('#manual_stage').toggle();
+            $(this).parents('.panel-view').find('#update_stage').toggle();
 
-                var area_of_expertise = $("select[name='area_of_expertise[]']").map(function () { return $(this).val(); }).get();
+            var area_of_expertise = $("select[name='area_of_expertise[]']").map(function () { return $(this).val(); }).get();
 
-                var stages = $('.stages:checked').map(function () {
-                    return this.value;
-                }).get();
+            var stages = $('.stages:checked').map(function () {
+                return this.value;
+            }).get();
 
-                var advising_activities = $('.advising_activities:checked').map(function () {
-                    return this.value;
-                }).get();
-
-
-                var primary_industry = $('#pi').val();
-                var industry_roles = $(this).parents('.panel-view').find("select[name='industry_roles[]']").map(function () { return $(this).val(); }).get();
-                var your_company = $(this).parents('.panel-view').find("input[name='your_company[]']").map(function () { return $(this).val(); }).get();
-                var other_industry_roles = $(this).parents('.panel-view').find("input[name='other_industry_roles[]']").map(function () { return $(this).val(); }).get();
-                var contribution = $(this).parents('.panel-view').find("textarea[name='contribution[]']").map(function () { return $(this).val(); }).get();
-
-                var achievements = $('#ac').val();
-                var business_problems = $('#bp').val();
-
-                var area_of_business = $('#aob').val();
-                var business_experience = $('#be').val();
-                var ownership_experience = $('#oe').val();
-                var countries_experience = $('#ce').val();
+            var advising_activities = $('.advising_activities:checked').map(function () {
+                return this.value;
+            }).get();
 
 
-                if (area_of_expertise != 'undefined' || primary_industry != 'undefined' || industry_roles != 'undefined' || contribution != 'undefined' || achievements != 'undefined' || business_problems != 'undefined' || advising_activities != 'undefined' || area_of_business != 'undefined' || stages != 'undefined' || business_experience != 'undefined' || ownership_experience != 'undefined' || countries_experience != 'undefined') {
-                    var post_data = { area_of_expertise: area_of_expertise, primary_industry: primary_industry, industry_roles: industry_roles, other_industry_roles: other_industry_roles, your_company: your_company, contribution: contribution, achievements: achievements, business_problems: business_problems, advising_activities: advising_activities, area_of_business: area_of_business, business_experience: business_experience, ownership_experience: ownership_experience, countries_experience: countries_experience, stages: stages }
-                    $.ajax({
-                        type: "POST",
-                        url: base_url + 'Ajaxcontroller/ajax_update_fields',
-                        data: post_data,
-                        async: false,
-                        dataType: "json",//return type expected as json
-                        beforeSend: function () {
-                            $('.loading_more').show();
-                            $('body').addClass('loader-active');
+            var primary_industry = $('#pi').val();
+            var industry_roles = $(this).parents('.panel-view').find("select[name='industry_roles[]']").map(function () { return $(this).val(); }).get();
+            var your_company = $(this).parents('.panel-view').find("input[name='your_company[]']").map(function () { return $(this).val(); }).get();
+            var other_industry_roles = $(this).parents('.panel-view').find("input[name='other_industry_roles[]']").map(function () { return $(this).val(); }).get();
+            var contribution = $(this).parents('.panel-view').find("textarea[name='contribution[]']").map(function () { return $(this).val(); }).get();
 
-                        },
-                        success: function (response) {
-                            $('.loading_more').fadeOut(500);
-                            $('body').removeClass('loader-active');
-                            if (response.status) {
-                                if (!jQuery.isEmptyObject(response.mentor)) {
-                                    if (response.mentor.area_of_expertise != '' || response.mentor.area_of_expertise != null)
-                                        $('#manual_expertise').find('#area_of_expertise').html(response.mentor.area_of_expertise);
+            var achievements = $('#ac').val();
+            var business_problems = $('#bp').val();
 
-                                    if (response.mentor.primary_industry != '' || response.mentor.primary_industry != null)
-                                        $('#manual_expertise').find('#primary_industry').html(response.mentor.primary_industry);
-
-                                    if (response.mentor.industry_roles != '' || response.mentor.industry_roles != null)
-                                        $('#manual_professional').find('#industry_roles').html(response.mentor.industry_roles);
+            var area_of_business = $('#aob').val();
+            var business_experience = $('#be').val();
+            var ownership_experience = $('#oe').val();
+            var countries_experience = $('#ce').val();
 
 
-                                    if (response.mentor.achievements != '' || response.mentor.achievements != null)
-                                        $('#manual_achievement').find('#achievements').html(response.mentor.achievements);
+            if (area_of_expertise != 'undefined' || primary_industry != 'undefined' || industry_roles != 'undefined' || contribution != 'undefined' || achievements != 'undefined' || business_problems != 'undefined' || advising_activities != 'undefined' || area_of_business != 'undefined' || stages != 'undefined' || business_experience != 'undefined' || ownership_experience != 'undefined' || countries_experience != 'undefined') {
+                var post_data = { area_of_expertise: area_of_expertise, primary_industry: primary_industry, industry_roles: industry_roles, other_industry_roles: other_industry_roles, your_company: your_company, contribution: contribution, achievements: achievements, business_problems: business_problems, advising_activities: advising_activities, area_of_business: area_of_business, business_experience: business_experience, ownership_experience: ownership_experience, countries_experience: countries_experience, stages: stages }
+                $.ajax({
+                    type: "POST",
+                    url: base_url + 'Ajaxcontroller/ajax_update_fields',
+                    data: post_data,
+                    async: false,
+                    dataType: "json",//return type expected as json
+                    beforeSend: function () {
+                        $('.loading_more').show();
+                        $('body').addClass('loader-active');
 
-                                    if (response.mentor.business_problems != '' || response.mentor.business_problems != null)
-                                        $('#manual_business').find('#business_problems').html(response.mentor.business_problems);
+                    },
+                    success: function (response) {
+                        $('.loading_more').fadeOut(500);
+                        $('body').removeClass('loader-active');
+                        if (response.status) {
+                            if (!jQuery.isEmptyObject(response.mentor)) {
+                                if (response.mentor.area_of_expertise != '' || response.mentor.area_of_expertise != null)
+                                    $('#manual_expertise').find('#area_of_expertise').html(response.mentor.area_of_expertise);
 
-                                    if (response.mentor.advising_activities != '' || response.mentor.advising_activities != null)
-                                        $('#manual_business').find('#advising_activities').html(response.mentor.advising_activities);
+                                if (response.mentor.primary_industry != '' || response.mentor.primary_industry != null)
+                                    $('#manual_expertise').find('#primary_industry').html(response.mentor.primary_industry);
 
-                                    if (response.mentor.area_of_business != '' || response.mentor.area_of_business != null)
-                                        $('#manual_business').find('#area_of_business').html(response.mentor.area_of_business);
+                                if (response.mentor.industry_roles != '' || response.mentor.industry_roles != null)
+                                    $('#manual_professional').find('#industry_roles').html(response.mentor.industry_roles);
 
-                                    if (response.mentor.stages != '' || response.mentor.stages != null)
-                                        $('#manual_stage').find('#stages').html(response.mentor.stages);
 
-                                    if (response.mentor.business_experience != '' || response.mentor.business_experience != null)
-                                        $('#manual_stage').find('#business_experience').html(response.mentor.business_experience);
+                                if (response.mentor.achievements != '' || response.mentor.achievements != null)
+                                    $('#manual_achievement').find('#achievements').html(response.mentor.achievements);
 
-                                    if (response.mentor.ownership_experience != '' || response.mentor.ownership_experience != null)
-                                        $('#manual_stage').find('#ownership_experience').html(response.mentor.ownership_experience);
+                                if (response.mentor.business_problems != '' || response.mentor.business_problems != null)
+                                    $('#manual_business').find('#business_problems').html(response.mentor.business_problems);
 
-                                    if (response.mentor.countries_experience != '' || response.mentor.countries_experience != null)
-                                        $('#manual_stage').find('#countries_experience').html(response.mentor.countries_experience);
+                                if (response.mentor.advising_activities != '' || response.mentor.advising_activities != null)
+                                    $('#manual_business').find('#advising_activities').html(response.mentor.advising_activities);
 
-                                }
+                                if (response.mentor.area_of_business != '' || response.mentor.area_of_business != null)
+                                    $('#manual_business').find('#area_of_business').html(response.mentor.area_of_business);
+
+                                if (response.mentor.stages != '' || response.mentor.stages != null)
+                                    $('#manual_stage').find('#stages').html(response.mentor.stages);
+
+                                if (response.mentor.business_experience != '' || response.mentor.business_experience != null)
+                                    $('#manual_stage').find('#business_experience').html(response.mentor.business_experience);
+
+                                if (response.mentor.ownership_experience != '' || response.mentor.ownership_experience != null)
+                                    $('#manual_stage').find('#ownership_experience').html(response.mentor.ownership_experience);
+
+                                if (response.mentor.countries_experience != '' || response.mentor.countries_experience != null)
+                                    $('#manual_stage').find('#countries_experience').html(response.mentor.countries_experience);
+
                             }
-                            else {
-                                alert(response.msg);
-                                return false;
-                            }
-
-                            $('.selectpicker').selectpicker('refresh');
                         }
-                    });
-                }
+                        else {
+                            alert(response.msg);
+                            return false;
+                        }
 
-            })
-            $("#aa_all").click(function () {
-
-                $(".advising_activities").prop("checked", $(this).prop("checked"));
-                //$(".advising_activities").prop("checked",false);
-            });
-
-            $(".advising_activities").click(function () {
-                var sList = 0;
-                $('.advising_activities').each(function () {
-                    if ($(this).is(":checked")) {
-                        sList = sList + 1;
+                        $('.selectpicker').selectpicker('refresh');
                     }
                 });
-                if (sList < 5)
-                    $('#aa_all').attr('checked', false);
-                if (sList == 4) {
-                    $("#aa_all").prop("checked", $(this).prop("checked"));
-                }
-            })
+            }
+
         })
+        $("#aa_all").click(function () {
+
+            $(".advising_activities").prop("checked", $(this).prop("checked"));
+            //$(".advising_activities").prop("checked",false);
+        });
+
+        $(".advising_activities").click(function () {
+            var sList = 0;
+            $('.advising_activities').each(function () {
+                if ($(this).is(":checked")) {
+                    sList = sList + 1;
+                }
+            });
+            if (sList < 5)
+                $('#aa_all').attr('checked', false);
+            if (sList == 4) {
+                $("#aa_all").prop("checked", $(this).prop("checked"));
+            }
+        })
+    })
 </script>

@@ -39,4 +39,32 @@ namespace GMS.Models
         public string postal_code { get; set; }
         public string invest_opportunity { get; set; }
     }
+    public class MentorProfile
+    {
+
+        public string Name { get; set; }
+        public string PrimaryIndustry { get; set; }
+        public string BusinessMgtExp { get; set; }
+        public string BusinessExpCountry { get; set; }
+        public string OwnershipMgtExp { get; set; }
+        public string Achievements { get; set; }
+        public string AreaOfExperties { get; set; }
+        public string BusinessProblemInterest { get; set; }
+        public string AdvisingActivities { get; set; }
+        public string StageOfBusiness { get; set; }
+        public string WebLink { get; set; }
+        public string YourCompany { get; set; }
+        public string YourRole { get; set; }
+        public string Language { get; set; }
+        public string Country { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string Pin { get; set; }
+        public string IsInvestor { get; set; }
+        public string Email { get; set; }
+        public string Mobile { get; set; }
+
+        public string Image { get; set; }
+
+}
 }

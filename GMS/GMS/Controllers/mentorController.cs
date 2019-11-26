@@ -33,7 +33,52 @@ namespace GMS.Controllers
                     {
                         if (IsProfile.ToString() == "True")
                         {
-                            return View();
+
+                            SqlCommand cmd1 = new SqlCommand("SelectMentorProfile", con);
+                            cmd1.CommandType = CommandType.StoredProcedure;
+
+                            cmd1.Parameters.AddWithValue("@email", Session["UserEmail"].ToString());
+                            con.Open();
+
+                            SqlDataReader dr = cmd1.ExecuteReader();
+                            dr.Read();
+                            if (dr.HasRows)
+                            {
+
+                                MentorProfile mp = new MentorProfile
+                                {
+
+                                    Name = dr["Name"].ToString(),
+                                    PrimaryIndustry = dr["PrimaryIndustry"].ToString(),
+                                    BusinessMgtExp = dr["BusinessMgtExp"].ToString(),
+                                    BusinessExpCountry = dr["BusinessExpCountry"].ToString(),
+                                    OwnershipMgtExp = dr["OwnershipMgtExp"].ToString(),
+                                    Achievements = dr["Achievements"].ToString(),
+                                    AreaOfExperties = dr["AreaOfExperties"].ToString(),
+                                    BusinessProblemInterest = dr["BusinessProblemInterest"].ToString(),
+                                    AdvisingActivities = dr["AdvisingActivities"].ToString(),
+                                    StageOfBusiness = dr["StageOfBusiness"].ToString(),
+                                    WebLink = dr["WebLink"].ToString(),
+                                    YourCompany = dr["YourCompany"].ToString(),
+                                    YourRole = dr["YourRole"].ToString(),
+                                    Language = dr["Language"].ToString(),
+                                    Country = dr["Country"].ToString(),
+                                    State = dr["State"].ToString(),
+                                    City = dr["City"].ToString(),
+                                    Pin = dr["Pin"].ToString(),
+                                    IsInvestor = dr["IsInvestor"].ToString(),
+                                    Email = dr["Email"].ToString(),
+                                    Mobile = dr["Mobile"].ToString(),
+
+                                    Image = dr["Image"].ToString()
+                                };
+                                ViewData["MyMP"] = mp;
+                                return View();
+                            }
+                            else
+                            {
+                                return RedirectToAction("register_info", "mentor");
+                            }
                         }
                         else
                         {
